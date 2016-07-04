@@ -113,24 +113,14 @@
 
 - (void)pauseUpdating
 {
-    self.delegate = nil;
-    
-    [self.displayLink invalidate];
-    
-    self.displayLink = nil;
+    self.displayLink.paused = YES;
 }
 
 - (void)resumeUpdating
 {
     if (self.updatable && self.isAutoUpdateEnabled)
     {
-        [self.displayLink invalidate];
-        
-        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-        
-        self.displayLink.frameInterval = 1;
-        
-        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        self.displayLink.paused = NO;
     }
 }
 
