@@ -122,7 +122,6 @@
 		D40179A61D2114BF00C0899E /* UBPictureBrowsePictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178921D2114BF00C0899E /* UBPictureBrowsePictureView.m */; };
 		D40179A71D2114BF00C0899E /* UBPictureBrowseAccessoryDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178951D2114BF00C0899E /* UBPictureBrowseAccessoryDownloader.m */; };
 		D40179A81D2114BF00C0899E /* UBPictureBrowseToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178981D2114BF00C0899E /* UBPictureBrowseToolBar.m */; };
-		D40179A91D2114BF00C0899E /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D401789A1D2114BF00C0899E /* UBPictureBrowsePicture.m */; };
 		D40179AA1D2114BF00C0899E /* UBPictureBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D401789C1D2114BF00C0899E /* UBPictureBrowseViewController.m */; };
 		D40179AB1D2114BF00C0899E /* UBPictureBrowseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D401789D1D2114BF00C0899E /* UBPictureBrowseViewController.xib */; };
 		D40179AC1D2114BF00C0899E /* UBListingPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178A11D2114BF00C0899E /* UBListingPictureCell.m */; };
@@ -183,6 +182,8 @@
 		D40179E51D2114EE00C0899E /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */; };
 		D40179E71D2114FE00C0899E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E61D2114FE00C0899E /* libsqlite3.tbd */; };
 		D40179E91D21150600C0899E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E81D21150600C0899E /* Photos.framework */; };
+		D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */; };
+		D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A16A1D2B860400ED449A /* UBPictureBrowseToolBarItem.m */; };
 		D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE291D2263FA00B6B596 /* DispatchableTask.m */; };
 		D426BE3D1D2263FA00B6B596 /* BlockTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE2C1D2263FA00B6B596 /* BlockTask.m */; };
 		D426BE3E1D2263FA00B6B596 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE2E1D2263FA00B6B596 /* Task.m */; };
@@ -423,8 +424,6 @@
 		D40178951D2114BF00C0899E /* UBPictureBrowseAccessoryDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseAccessoryDownloader.m; sourceTree = "<group>"; };
 		D40178971D2114BF00C0899E /* UBPictureBrowseToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseToolBar.h; sourceTree = "<group>"; };
 		D40178981D2114BF00C0899E /* UBPictureBrowseToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseToolBar.m; sourceTree = "<group>"; };
-		D40178991D2114BF00C0899E /* UBPictureBrowsePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePicture.h; sourceTree = "<group>"; };
-		D401789A1D2114BF00C0899E /* UBPictureBrowsePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePicture.m; sourceTree = "<group>"; };
 		D401789B1D2114BF00C0899E /* UBPictureBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseViewController.h; sourceTree = "<group>"; };
 		D401789C1D2114BF00C0899E /* UBPictureBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseViewController.m; sourceTree = "<group>"; };
 		D401789D1D2114BF00C0899E /* UBPictureBrowseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBPictureBrowseViewController.xib; sourceTree = "<group>"; };
@@ -540,6 +539,10 @@
 		D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D40179E61D2114FE00C0899E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D40179E81D21150600C0899E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		D424A1661D2B856C00ED449A /* UBPictureBrowsePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePicture.h; sourceTree = "<group>"; };
+		D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePicture.m; sourceTree = "<group>"; };
+		D424A1691D2B860400ED449A /* UBPictureBrowseToolBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseToolBarItem.h; sourceTree = "<group>"; };
+		D424A16A1D2B860400ED449A /* UBPictureBrowseToolBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowseToolBarItem.m; sourceTree = "<group>"; };
 		D426BE281D2263FA00B6B596 /* DispatchableTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchableTask.h; sourceTree = "<group>"; };
 		D426BE291D2263FA00B6B596 /* DispatchableTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchableTask.m; sourceTree = "<group>"; };
 		D426BE2B1D2263FA00B6B596 /* BlockTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTask.h; sourceTree = "<group>"; };
@@ -1645,14 +1648,13 @@
 		D401788D1D2114BF00C0899E /* PictureBrowse */ = {
 			isa = PBXGroup;
 			children = (
-				D401788E1D2114BF00C0899E /* Cell */,
-				D40178931D2114BF00C0899E /* Downloader */,
-				D40178961D2114BF00C0899E /* ToolBar */,
-				D40178991D2114BF00C0899E /* UBPictureBrowsePicture.h */,
-				D401789A1D2114BF00C0899E /* UBPictureBrowsePicture.m */,
 				D401789B1D2114BF00C0899E /* UBPictureBrowseViewController.h */,
 				D401789C1D2114BF00C0899E /* UBPictureBrowseViewController.m */,
 				D401789D1D2114BF00C0899E /* UBPictureBrowseViewController.xib */,
+				D424A1651D2B856C00ED449A /* picture */,
+				D401788E1D2114BF00C0899E /* Cell */,
+				D40178961D2114BF00C0899E /* ToolBar */,
+				D40178931D2114BF00C0899E /* Downloader */,
 			);
 			path = PictureBrowse;
 			sourceTree = "<group>";
@@ -1682,6 +1684,8 @@
 			children = (
 				D40178971D2114BF00C0899E /* UBPictureBrowseToolBar.h */,
 				D40178981D2114BF00C0899E /* UBPictureBrowseToolBar.m */,
+				D424A1691D2B860400ED449A /* UBPictureBrowseToolBarItem.h */,
+				D424A16A1D2B860400ED449A /* UBPictureBrowseToolBarItem.m */,
 			);
 			path = ToolBar;
 			sourceTree = "<group>";
@@ -2088,6 +2092,15 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		D424A1651D2B856C00ED449A /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				D424A1661D2B856C00ED449A /* UBPictureBrowsePicture.h */,
+				D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */,
+			);
+			path = picture;
+			sourceTree = "<group>";
+		};
 		D426BE261D2263FA00B6B596 /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -2288,13 +2301,13 @@
 				D40179C11D2114BF00C0899E /* UFEmoji.m in Sources */,
 				D401795B1D2114BF00C0899E /* NSString+URLEncode.m in Sources */,
 				D401796D1D2114BF00C0899E /* NotificationObserver.m in Sources */,
+				D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */,
 				D40179501D2114BF00C0899E /* EPub.m in Sources */,
 				D40179C01D2114BF00C0899E /* UFAttributedStringEmojiUpdater.m in Sources */,
 				D40179B21D2114BF00C0899E /* UIImageView+URL.m in Sources */,
 				D40179391D2114BF00C0899E /* HTTPRequestMessageParser.m in Sources */,
 				D40179591D2114BF00C0899E /* NSData+MD5.m in Sources */,
 				D40179571D2114BF00C0899E /* ZlibDecompressor.m in Sources */,
-				D40179A91D2114BF00C0899E /* UBPictureBrowsePicture.m in Sources */,
 				D40179451D2114BF00C0899E /* DBDefine.m in Sources */,
 				D401795A1D2114BF00C0899E /* NSFileHandle+MD5.m in Sources */,
 				D40179CF1D2114BF00C0899E /* UFKeyboardAdjuster.m in Sources */,
@@ -2356,6 +2369,7 @@
 				D40179661D2114BF00C0899E /* HTTPMultipartFormEntity.m in Sources */,
 				D401794E1D2114BF00C0899E /* EPubBookInfomation.m in Sources */,
 				D40179341D2114BF00C0899E /* HTTPMessageBodySerializer.m in Sources */,
+				D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */,
 				D401797B1D2114BF00C0899E /* NSString+Character.m in Sources */,
 				D40179721D2114BF00C0899E /* IPRouteItem.m in Sources */,
 				D40179531D2114BF00C0899E /* EPub2_OPF.m in Sources */,

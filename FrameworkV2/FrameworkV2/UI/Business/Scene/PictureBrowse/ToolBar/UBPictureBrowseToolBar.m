@@ -44,15 +44,7 @@
     
     for (UBPictureBrowseToolBarItem *item in items)
     {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        button.backgroundColor = [UIColor clearColor];
-        
-        [button setTitle:item.itemId forState:UIControlStateNormal];
-        
-        [button setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-        
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        UIButton *button = [UIButton buttonWithPictureBrowseToolBarItem:item];
         
         button.enabled = item.isEnabled;
         
@@ -119,9 +111,21 @@
 @end
 
 
-@implementation UBPictureBrowseToolBarItem
+@implementation UIButton (PictureBrowseToolBar)
+
++ (UIButton *)buttonWithPictureBrowseToolBarItem:(UBPictureBrowseToolBarItem *)item
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    button.backgroundColor = [UIColor clearColor];
+    
+    [button setTitle:item.itemId forState:UIControlStateNormal];
+    
+    [button setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+    
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+    return button;
+}
 
 @end
-
-
-NSString * const kPictureBrowseToolBarItemId_Share = @"share";

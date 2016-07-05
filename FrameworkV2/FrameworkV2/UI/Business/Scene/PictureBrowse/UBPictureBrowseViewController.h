@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UBPictureBrowsePicture.h"
+#import "UBPictureBrowseToolBarItem.h"
 
 /*********************************************************
  
@@ -30,6 +31,11 @@
  * @brief 当前可见图片
  */
 @property (nonatomic, readonly) UBPictureBrowsePicture *visiblePicture;
+
+/*!
+ * @brief 可选的工具栏选项
+ */
+@property (nonatomic) NSArray<NSString *> *toolBarItemIds;
 
 /*!
  * @brief 显示指定图片

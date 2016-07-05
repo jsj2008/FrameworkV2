@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class UBPictureBrowseToolBarItem;
+#import "UBPictureBrowseToolBarItem.h"
 
 @protocol UBPictureBrowseToolBarDelegate;
 
@@ -74,33 +73,22 @@
 
 /*********************************************************
  
-    @class
-        UBPictureBrowseToolBarItem
+    @category
+        UIButton (PictureBrowseToolBar)
  
     @abstract
-        图片浏览工具项
+        按钮的图片浏览工具栏扩展
  
  *********************************************************/
 
-@interface UBPictureBrowseToolBarItem : NSObject
+@interface UIButton (PictureBrowseToolBar)
 
 /*!
- * @brief ID
+ * @brief 按照工具项生成指定样式的按钮
+ * @discussion 生成的按钮只能配置样式，不要添加消息处理等操作
+ * @param item 工具项
+ * @result 按钮
  */
-@property (nonatomic, copy) NSString *itemId;
-
-/*!
- * @brief 使能状态
- */
-@property (nonatomic, getter=isEnabled) BOOL enable;
-
-/*!
- * @brief 选中状态
- */
-@property (nonatomic) BOOL selected;
++ (UIButton *)buttonWithPictureBrowseToolBarItem:(UBPictureBrowseToolBarItem *)item;
 
 @end
-
-
-// 这里定义工具项的ID
-extern NSString * const kPictureBrowseToolBarItemId_Share;
