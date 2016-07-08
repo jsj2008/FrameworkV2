@@ -62,7 +62,7 @@
     {
         self.downloadImageObservers = [[NSMutableDictionary alloc] init];
         
-        self.syncQueue = dispatch_queue_create("ImageManager", nil);
+        self.syncQueue = dispatch_queue_create("ImageManager", DISPATCH_QUEUE_CONCURRENT);
         
         self.taskDispatcher = [[AsyncTaskDispatcher alloc] init];
     }

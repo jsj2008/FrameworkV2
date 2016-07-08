@@ -30,7 +30,7 @@
     {
         self.diskDirectory = diskPath;
         
-        self.syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"HTTPConnectionResumeStorage: %@", diskPath] UTF8String], NULL);
+        self.syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"HTTPConnectionResumeStorage: %@", diskPath] UTF8String], DISPATCH_QUEUE_CONCURRENT);
         
         BOOL isDirectory = NO;
         

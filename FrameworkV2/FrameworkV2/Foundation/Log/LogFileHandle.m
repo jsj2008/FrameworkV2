@@ -10,10 +10,8 @@
 
 @interface LogFileHandle ()
 {
-    // 同步队列
-    dispatch_queue_t _syncQueue;
+    dispatch_queue_t _queue;
     
-    // 文件管理器
     NSFileManager *_fm;
 }
 
@@ -43,7 +41,7 @@
 
 - (void)dealloc
 {
-    dispatch_sync(_syncQueue, ^{});
+    dispatch_sync(_queue, ^{});
 }
 
 - (id)initWithRootDirectory:(NSString *)rootDirectory
@@ -54,7 +52,7 @@
         
         _fm = [[NSFileManager alloc] init];
         
-        _syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"LogFileHandle: %@", rootDirectory] UTF8String], NULL);
+        _queue = dispatch_queue_create([[NSString stringWithFormat:@"LogFileHandle: %@", rootDirectory] UTF8String], NULL);
     }
     
     return self;
@@ -67,81 +65,72 @@
         return;
     }
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(_queue, ^{
         
-        dispatch_sync(_syncQueue, ^{
+        if (!self.fileHandle)
+        {
+            NSString *logFilePath = [self usingLogPath];
             
-            if (!self.fileHandle)
+            if ([[_fm attributesOfItemAtPath:logFilePath error:nil] fileSize] > APPLogFileSize)
             {
-                NSString *logFilePath = [self usingLogPath];
+                [_fm moveItemAtPath:logFilePath toPath:[self availableHistoryLogPath] error:nil];
+            }
+            
+            if ([_fm fileExistsAtPath:logFilePath])
+            {
+                self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
+            }
+            else
+            {
+                BOOL isDir = NO;
                 
-                if ([[_fm attributesOfItemAtPath:logFilePath error:nil] fileSize] > APPLogFileSize)
+                if (!([_fm fileExistsAtPath:_rootDirectory isDirectory:&isDir] && isDir))
                 {
-                    [_fm moveItemAtPath:logFilePath toPath:[self availableHistoryLogPath] error:nil];
+                    [_fm createDirectoryAtPath:_rootDirectory withIntermediateDirectories:YES attributes:nil error:nil];
                 }
                 
-                if ([_fm fileExistsAtPath:logFilePath])
+                if ([_fm createFileAtPath:logFilePath contents:nil attributes:nil])
                 {
                     self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
                 }
-                else
-                {
-                    BOOL isDir = NO;
-                    
-                    if (!([_fm fileExistsAtPath:_rootDirectory isDirectory:&isDir] && isDir))
-                    {
-                        [_fm createDirectoryAtPath:_rootDirectory withIntermediateDirectories:YES attributes:nil error:nil];
-                    }
-                    
-                    if ([_fm createFileAtPath:logFilePath contents:nil attributes:nil])
-                    {
-                        self.fileHandle = [NSFileHandle fileHandleForWritingAtPath:logFilePath];
-                    }
-                }
             }
-            
-            [self.fileHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
-            
-            if ([self.fileHandle seekToEndOfFile] > APPLogFileSize)
-            {
-                self.fileHandle = nil;
-            }
-        });
+        }
+        
+        [self.fileHandle writeData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        if ([self.fileHandle seekToEndOfFile] > APPLogFileSize)
+        {
+            self.fileHandle = nil;
+        }
     });
 }
 
 - (void)cleanAllLog
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(_queue, ^{
         
-        dispatch_sync(_syncQueue, ^{
-            
-            self.fileHandle = nil;
-            
-            [_fm removeItemAtPath:_rootDirectory error:nil];
-            
-            [_fm createDirectoryAtPath:_rootDirectory withIntermediateDirectories:YES attributes:nil error:nil];
-        });
+        self.fileHandle = nil;
+        
+        [_fm removeItemAtPath:_rootDirectory error:nil];
+        
+        [_fm createDirectoryAtPath:_rootDirectory withIntermediateDirectories:YES attributes:nil error:nil];
     });
 }
 
 - (void)cleanLogAtPath:(NSString *)path
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(_queue, ^{
         
-        dispatch_sync(_syncQueue, ^{
-            
-            if (![path isEqualToString:[self usingLogPath]])
-            {
-                [_fm removeItemAtPath:path error:nil];
-            }
-        });
+        if (![path isEqualToString:[self usingLogPath]])
+        {
+            [_fm removeItemAtPath:path error:nil];
+        }
     });
 }
 
 - (void)resetLogs
 {
-    dispatch_sync(_syncQueue, ^{
+    dispatch_sync(_queue, ^{
         
         [_fm moveItemAtPath:[self usingLogPath] toPath:[self availableHistoryLogPath] error:nil];
         
@@ -153,7 +142,7 @@
 {
     NSMutableArray *pathes = [[NSMutableArray alloc] init];
     
-    dispatch_sync(_syncQueue, ^{
+    dispatch_sync(_queue, ^{
         
         for (NSString *content in [_fm contentsOfDirectoryAtPath:_rootDirectory error:nil])
         {
