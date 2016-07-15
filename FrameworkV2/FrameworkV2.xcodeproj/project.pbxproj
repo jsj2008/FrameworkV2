@@ -520,7 +520,6 @@
 		D40179181D2114BF00C0899E /* UFScrollLoadMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadMoreFooterView.m; sourceTree = "<group>"; };
 		D40179191D2114BF00C0899E /* UIScrollView+LoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LoadMoreFooter.h"; sourceTree = "<group>"; };
 		D401791A1D2114BF00C0899E /* UIScrollView+LoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LoadMoreFooter.m"; sourceTree = "<group>"; };
-		D401791B1D2114BF00C0899E /* UIScrollView+UpLoadMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UpLoadMore.h"; sourceTree = "<group>"; };
 		D401791D1D2114BF00C0899E /* UFScrollRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollRefreshHeaderView.h; sourceTree = "<group>"; };
 		D401791E1D2114BF00C0899E /* UFScrollRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollRefreshHeaderView.m; sourceTree = "<group>"; };
 		D401791F1D2114BF00C0899E /* UIScrollView+RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshHeader.h"; sourceTree = "<group>"; };
@@ -2040,7 +2039,6 @@
 				D40179181D2114BF00C0899E /* UFScrollLoadMoreFooterView.m */,
 				D40179191D2114BF00C0899E /* UIScrollView+LoadMoreFooter.h */,
 				D401791A1D2114BF00C0899E /* UIScrollView+LoadMoreFooter.m */,
-				D401791B1D2114BF00C0899E /* UIScrollView+UpLoadMore.h */,
 			);
 			path = ScrollLoadMore;
 			sourceTree = "<group>";

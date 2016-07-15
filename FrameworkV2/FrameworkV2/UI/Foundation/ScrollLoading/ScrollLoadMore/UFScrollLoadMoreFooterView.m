@@ -70,6 +70,7 @@
     
     if (autoLoadingWhenContentSizeVisible && self.isEnabled)
     {
+        // 为触发KVO进行的无用操作
         self.scrollView.contentOffset = self.scrollView.contentOffset;
     }
 }
