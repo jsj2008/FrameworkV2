@@ -22,6 +22,8 @@
 
 - (void)didCancel;
 
+@property (nonatomic) BOOL finished;
+
 @end
 
 
@@ -122,16 +124,20 @@
 
 - (void)didSelectOption:(NSAttributedString *)attributedOption
 {
-    if (self.optionOperation)
+    if (!self.finished && self.optionOperation)
     {
+        self.finished = YES;
+        
         self.optionOperation(attributedOption);
     }
 }
 
 - (void)didCancel
 {
-    if (self.cancelOperation)
+    if (!self.finished && self.cancelOperation)
     {
+        self.finished = YES;
+        
         self.cancelOperation();
     }
 }
