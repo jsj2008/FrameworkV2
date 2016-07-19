@@ -96,7 +96,6 @@
 		D40179881D2114BF00C0899E /* ImageLocalLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178361D2114BF00C0899E /* ImageLocalLoadTask.m */; };
 		D40179891D2114BF00C0899E /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178391D2114BF00C0899E /* ImageManager.m */; };
 		D401798A1D2114BF00C0899E /* ImageManagerDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D401783B1D2114BF00C0899E /* ImageManagerDownloadTask.m */; };
-		D401798B1D2114BF00C0899E /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178411D2114BF00C0899E /* XXXJsonSerialization.m */; };
 		D401798C1D2114BF00C0899E /* HTTPDataRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178451D2114BF00C0899E /* HTTPDataRequestTask.m */; };
 		D401798D1D2114BF00C0899E /* HTTPDownloadRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178471D2114BF00C0899E /* HTTPDownloadRequestTask.m */; };
 		D401798E1D2114BF00C0899E /* HTTPRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178491D2114BF00C0899E /* HTTPRequestTask.m */; };
@@ -193,6 +192,9 @@
 		D426BE421D2263FA00B6B596 /* SyncTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */; };
 		D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
+		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
+		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
+		D4FF89C71D3DCF4E00B39D60 /* XXXRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -372,8 +374,6 @@
 		D40178391D2114BF00C0899E /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		D401783A1D2114BF00C0899E /* ImageManagerDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManagerDownloadTask.h; sourceTree = "<group>"; };
 		D401783B1D2114BF00C0899E /* ImageManagerDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManagerDownloadTask.m; sourceTree = "<group>"; };
-		D40178401D2114BF00C0899E /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
-		D40178411D2114BF00C0899E /* XXXJsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXJsonSerialization.m; sourceTree = "<group>"; };
 		D40178441D2114BF00C0899E /* HTTPDataRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDataRequestTask.h; sourceTree = "<group>"; };
 		D40178451D2114BF00C0899E /* HTTPDataRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDataRequestTask.m; sourceTree = "<group>"; };
 		D40178461D2114BF00C0899E /* HTTPDownloadRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDownloadRequestTask.h; sourceTree = "<group>"; };
@@ -560,6 +560,12 @@
 		D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDispatcher.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
+		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
+		D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXJsonSerialization.m; sourceTree = "<group>"; };
+		D4FF89C11D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXRequestResponseJsonContent.h; sourceTree = "<group>"; };
+		D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXRequestResponseJsonContent.m; sourceTree = "<group>"; };
+		D4FF89C51D3DCF4E00B39D60 /* XXXRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXRequestError.h; sourceTree = "<group>"; };
+		D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXRequestError.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1372,37 +1378,12 @@
 		D401783C1D2114BF00C0899E /* RemoteRequest */ = {
 			isa = PBXGroup;
 			children = (
-				D401783D1D2114BF00C0899E /* DataSerialization */,
 				D40178421D2114BF00C0899E /* HTTP */,
-				D40178561D2114BF00C0899E /* Request */,
 				D40178571D2114BF00C0899E /* URL */,
+				D4FF89BA1D3DC57100B39D60 /* XXXRequestKit */,
+				D40178561D2114BF00C0899E /* Request */,
 			);
 			path = RemoteRequest;
-			sourceTree = "<group>";
-		};
-		D401783D1D2114BF00C0899E /* DataSerialization */ = {
-			isa = PBXGroup;
-			children = (
-				D401783E1D2114BF00C0899E /* Data */,
-				D401783F1D2114BF00C0899E /* Serialization */,
-			);
-			path = DataSerialization;
-			sourceTree = "<group>";
-		};
-		D401783E1D2114BF00C0899E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		D401783F1D2114BF00C0899E /* Serialization */ = {
-			isa = PBXGroup;
-			children = (
-				D40178401D2114BF00C0899E /* XXXJsonSerialization.h */,
-				D40178411D2114BF00C0899E /* XXXJsonSerialization.m */,
-			);
-			path = Serialization;
 			sourceTree = "<group>";
 		};
 		D40178421D2114BF00C0899E /* HTTP */ = {
@@ -1418,12 +1399,12 @@
 		D40178431D2114BF00C0899E /* HTTPRequestTask */ = {
 			isa = PBXGroup;
 			children = (
+				D40178481D2114BF00C0899E /* HTTPRequestTask.h */,
+				D40178491D2114BF00C0899E /* HTTPRequestTask.m */,
 				D40178441D2114BF00C0899E /* HTTPDataRequestTask.h */,
 				D40178451D2114BF00C0899E /* HTTPDataRequestTask.m */,
 				D40178461D2114BF00C0899E /* HTTPDownloadRequestTask.h */,
 				D40178471D2114BF00C0899E /* HTTPDownloadRequestTask.m */,
-				D40178481D2114BF00C0899E /* HTTPRequestTask.h */,
-				D40178491D2114BF00C0899E /* HTTPRequestTask.m */,
 				D401784A1D2114BF00C0899E /* HTTPUploadRequestTask.h */,
 				D401784B1D2114BF00C0899E /* HTTPUploadRequestTask.m */,
 			);
@@ -2171,6 +2152,51 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		D4FF89BA1D3DC57100B39D60 /* XXXRequestKit */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF89C41D3DC85A00B39D60 /* Error */,
+				D4FF89BB1D3DC57100B39D60 /* Data */,
+				D4FF89BC1D3DC57100B39D60 /* Serialization */,
+				D4FF89C01D3DC58E00B39D60 /* Response */,
+			);
+			path = XXXRequestKit;
+			sourceTree = "<group>";
+		};
+		D4FF89BB1D3DC57100B39D60 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D4FF89BC1D3DC57100B39D60 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */,
+				D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */,
+			);
+			path = Serialization;
+			sourceTree = "<group>";
+		};
+		D4FF89C01D3DC58E00B39D60 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF89C11D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.h */,
+				D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		D4FF89C41D3DC85A00B39D60 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF89C51D3DCF4E00B39D60 /* XXXRequestError.h */,
+				D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2360,9 +2386,11 @@
 				D401794C1D2114BF00C0899E /* DBSQL_Extension.m in Sources */,
 				D40179D11D2114BF00C0899E /* UIView+KeyboardAdjust.m in Sources */,
 				D40179C31D2114BF00C0899E /* UFEmojiSet.m in Sources */,
+				D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */,
 				D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */,
 				D40179651D2114BF00C0899E /* NSURLSessionTask+Delegate.m in Sources */,
 				D40179DE1D2114BF00C0899E /* UFScrollLoadingView.m in Sources */,
+				D4FF89C71D3DCF4E00B39D60 /* XXXRequestError.m in Sources */,
 				D401792F1D2114BF00C0899E /* APPConfiguration.m in Sources */,
 				D40179661D2114BF00C0899E /* HTTPMultipartFormEntity.m in Sources */,
 				D401794E1D2114BF00C0899E /* EPubBookInfomation.m in Sources */,
@@ -2383,10 +2411,10 @@
 				D40179521D2114BF00C0899E /* EPub2_OCF.m in Sources */,
 				D40179A21D2114BF00C0899E /* ImageStorage.m in Sources */,
 				D401798F1D2114BF00C0899E /* HTTPUploadRequestTask.m in Sources */,
+				D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */,
 				D401798C1D2114BF00C0899E /* HTTPDataRequestTask.m in Sources */,
 				D40179B81D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m in Sources */,
 				D40179991D2114BF00C0899E /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
-				D401798B1D2114BF00C0899E /* XXXJsonSerialization.m in Sources */,
 				D401795D1D2114BF00C0899E /* HTTPDataConnection.m in Sources */,
 				D401794F1D2114BF00C0899E /* EpubBookLoadHandle.m in Sources */,
 				D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */,
