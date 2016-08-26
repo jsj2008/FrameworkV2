@@ -138,7 +138,6 @@
 		D40179B81D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */; };
 		D40179B91D2114BF00C0899E /* UBTextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */; };
 		D40179BA1D2114BF00C0899E /* UBTextFieldKeyboardInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */; };
-		D40179BB1D2114BF00C0899E /* UBToastView+ToastType.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178C41D2114BF00C0899E /* UBToastView+ToastType.m */; };
 		D40179BC1D2114BF00C0899E /* UBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178C61D2114BF00C0899E /* UBToastView.m */; };
 		D40179BD1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178CA1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m */; };
 		D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178CD1D2114BF00C0899E /* UIColor+Hex.m */; };
@@ -191,6 +190,7 @@
 		D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE361D2263FA00B6B596 /* TaskOperation.m */; };
 		D426BE421D2263FA00B6B596 /* SyncTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */; };
 		D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */; };
+		D4B364BD1D702DE100C75C29 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B364BC1D702DE100C75C29 /* UIView+Toast.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
@@ -455,8 +455,6 @@
 		D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInput.m; sourceTree = "<group>"; };
 		D40178C01D2114BF00C0899E /* UBTextFieldKeyboardInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldKeyboardInput.h; sourceTree = "<group>"; };
 		D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldKeyboardInput.m; sourceTree = "<group>"; };
-		D40178C31D2114BF00C0899E /* UBToastView+ToastType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UBToastView+ToastType.h"; sourceTree = "<group>"; };
-		D40178C41D2114BF00C0899E /* UBToastView+ToastType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UBToastView+ToastType.m"; sourceTree = "<group>"; };
 		D40178C51D2114BF00C0899E /* UBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBToastView.h; sourceTree = "<group>"; };
 		D40178C61D2114BF00C0899E /* UBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBToastView.m; sourceTree = "<group>"; };
 		D40178C91D2114BF00C0899E /* UFExtendedResponsiveSizeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFExtendedResponsiveSizeButton.h; sourceTree = "<group>"; };
@@ -558,6 +556,8 @@
 		D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncTaskDispatcher.m; sourceTree = "<group>"; };
 		D426BE3A1D2263FA00B6B596 /* TaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDispatcher.h; sourceTree = "<group>"; };
 		D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDispatcher.m; sourceTree = "<group>"; };
+		D4B364BB1D702DE100C75C29 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		D4B364BC1D702DE100C75C29 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
@@ -1764,10 +1764,10 @@
 		D40178C21D2114BF00C0899E /* Toast */ = {
 			isa = PBXGroup;
 			children = (
-				D40178C31D2114BF00C0899E /* UBToastView+ToastType.h */,
-				D40178C41D2114BF00C0899E /* UBToastView+ToastType.m */,
 				D40178C51D2114BF00C0899E /* UBToastView.h */,
 				D40178C61D2114BF00C0899E /* UBToastView.m */,
+				D4B364BB1D702DE100C75C29 /* UIView+Toast.h */,
+				D4B364BC1D702DE100C75C29 /* UIView+Toast.m */,
 			);
 			path = Toast;
 			sourceTree = "<group>";
@@ -2355,6 +2355,7 @@
 				D40179DD1D2114BF00C0899E /* UFScrollContentOffsetUpdater.m in Sources */,
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
 				D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */,
+				D4B364BD1D702DE100C75C29 /* UIView+Toast.m in Sources */,
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
 				D40179401D2114BF00C0899E /* NSObject+HTTPServerNotification.m in Sources */,
 				D401796B1D2114BF00C0899E /* APPLog.m in Sources */,
@@ -2442,7 +2443,6 @@
 				D40179941D2114BF00C0899E /* RemoteRequestURLManager.m in Sources */,
 				D40179AA1D2114BF00C0899E /* UBPictureBrowseViewController.m in Sources */,
 				D40179A61D2114BF00C0899E /* UBPictureBrowsePictureView.m in Sources */,
-				D40179BB1D2114BF00C0899E /* UBToastView+ToastType.m in Sources */,
 				D40177201D21148100C0899E /* main.m in Sources */,
 				D40179AC1D2114BF00C0899E /* UBListingPictureCell.m in Sources */,
 				D40179681D2114BF00C0899E /* HTTPConnectionInputStream+HTTPMultipartForm.m in Sources */,

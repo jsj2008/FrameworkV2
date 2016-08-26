@@ -84,6 +84,11 @@
 @property (nonatomic, copy) NSString *title;
 
 /*!
+ * @brief 是否允许编辑图片
+ */
+@property (nonatomic) BOOL enableEditing;
+
+/*!
  * @brief 对象生成
  * @param actionId ID
  * @param title 在actionSheet中显示的标题
