@@ -138,7 +138,7 @@
         
         UFEmojiUpdater *updater = [self.emojiUpdaters objectForKey:rangeValue];
         
-        [updater updateWithDuration:self.displayLink.duration];
+        [updater updateWithDuration:self.displayLink.duration * self.displayLink.frameInterval];
         
         UIImage *emojiImage = [updater currentImage];
         

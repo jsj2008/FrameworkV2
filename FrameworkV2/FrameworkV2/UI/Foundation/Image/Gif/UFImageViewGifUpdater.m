@@ -110,7 +110,7 @@
 
 - (void)update
 {
-    self.elapsedDuration += self.displayLink.duration;
+    self.elapsedDuration += (self.displayLink.duration * self.displayLink.frameInterval);
     
     UIImage *image = nil;
     
