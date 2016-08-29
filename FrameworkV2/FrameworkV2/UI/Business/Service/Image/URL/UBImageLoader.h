@@ -1,5 +1,5 @@
 //
-//  UBImageViewImageLoader.h
+//  UBImageLoader.h
 //  FrameworkV1
 //
 //  Created by ww on 16/5/31.
@@ -8,19 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol UBImageViewImageLoaderDelegate;
+@protocol UBImageLoaderDelegate;
 
 /*********************************************************
  
     @class
-        UBImageViewImageLoader
+        UBImageLoader
  
     @abstract
-        ImageView图片加载器
+        UI图片加载器
  
  *********************************************************/
 
-@interface UBImageViewImageLoader : NSObject
+@interface UBImageLoader : NSObject
 
 /*!
  * @brief 初始化
@@ -37,7 +37,12 @@
 /*!
  * @brief 消息代理
  */
-@property (nonatomic, weak) id<UBImageViewImageLoaderDelegate> delegate;
+@property (nonatomic, weak) id<UBImageLoaderDelegate> delegate;
+
+/*!
+ * @brief 用户字典
+ */
+@property (nonatomic) NSDictionary *userInfo;
 
 /*!
  * @brief 启动加载
@@ -55,14 +60,14 @@
 /*********************************************************
  
     @protocol
-        UBImageViewImageLoaderDelegate
+        UBImageLoaderDelegate
  
     @abstract
         ImageView图片加载器消息协议
  
  *********************************************************/
 
-@protocol UBImageViewImageLoaderDelegate <NSObject>
+@protocol UBImageLoaderDelegate <NSObject>
 
 /*!
  * @brief 图片加载完成
@@ -70,7 +75,9 @@
  * @param imageLoader 加载器
  * @param data 图片数据
  */
-- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data;
+- (void)imageLoader:(UBImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data;
+
+@optional
 
 /*!
  * @brief 图片加载进度
@@ -78,6 +85,6 @@
  * @param downloadedSize 已下载量
  * @param expectedSize 预期下载量
  */
-- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
+- (void)imageLoader:(UBImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
 
 @end

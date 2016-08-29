@@ -28,8 +28,6 @@
 - (void)dealloc
 {
     [self.displayLink invalidate];
-    
-    self.displayLink = nil;
 }
 
 - (instancetype)init
@@ -66,7 +64,7 @@
 {
     if (self.elapsedDuration < self.duration)
     {
-        self.elapsedDuration += self.displayLink.duration;
+        self.elapsedDuration += (self.displayLink.duration * self.displayLink.frameInterval);
         
         self.scrollView.contentOffset = CGPointMake(self.originalContentOffset.x + (self.contentOffset.x - self.originalContentOffset.x) * self.elapsedDuration / self.duration, self.originalContentOffset.y + (self.contentOffset.y - self.originalContentOffset.y) * self.elapsedDuration / self.duration);
     }

@@ -92,10 +92,6 @@
 		D401797B1D2114BF00C0899E /* NSString+Character.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178111D2114BF00C0899E /* NSString+Character.m */; };
 		D401797C1D2114BF00C0899E /* NSDictionary+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178141D2114BF00C0899E /* NSDictionary+KeyValue.m */; };
 		D401797D1D2114BF00C0899E /* NSString+KeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178161D2114BF00C0899E /* NSString+KeyValue.m */; };
-		D40179871D2114BF00C0899E /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178341D2114BF00C0899E /* ImageDownloadTask.m */; };
-		D40179881D2114BF00C0899E /* ImageLocalLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178361D2114BF00C0899E /* ImageLocalLoadTask.m */; };
-		D40179891D2114BF00C0899E /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178391D2114BF00C0899E /* ImageManager.m */; };
-		D401798A1D2114BF00C0899E /* ImageManagerDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D401783B1D2114BF00C0899E /* ImageManagerDownloadTask.m */; };
 		D401798C1D2114BF00C0899E /* HTTPDataRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178451D2114BF00C0899E /* HTTPDataRequestTask.m */; };
 		D401798D1D2114BF00C0899E /* HTTPDownloadRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178471D2114BF00C0899E /* HTTPDownloadRequestTask.m */; };
 		D401798E1D2114BF00C0899E /* HTTPRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178491D2114BF00C0899E /* HTTPRequestTask.m */; };
@@ -128,7 +124,7 @@
 		D40179AE1D2114BF00C0899E /* UBListingPicturePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178A41D2114BF00C0899E /* UBListingPicturePickerViewController.m */; };
 		D40179AF1D2114BF00C0899E /* UBListingPicturePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40178A51D2114BF00C0899E /* UBListingPicturePickerViewController.xib */; };
 		D40179B01D2114BF00C0899E /* UBPicturePickerActionSheetScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178A71D2114BF00C0899E /* UBPicturePickerActionSheetScene.m */; };
-		D40179B11D2114BF00C0899E /* UBImageViewImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178AC1D2114BF00C0899E /* UBImageViewImageLoader.m */; };
+		D40179B11D2114BF00C0899E /* UBImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178AC1D2114BF00C0899E /* UBImageLoader.m */; };
 		D40179B21D2114BF00C0899E /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178AE1D2114BF00C0899E /* UIImageView+URL.m */; };
 		D40179B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m */; };
 		D40179B41D2114BF00C0899E /* UBAgeRangeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178B51D2114BF00C0899E /* UBAgeRangeInput.m */; };
@@ -190,7 +186,10 @@
 		D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE361D2263FA00B6B596 /* TaskOperation.m */; };
 		D426BE421D2263FA00B6B596 /* SyncTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */; };
 		D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */; };
+		D44E48411D73D5FC00EB6F86 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E483E1D73D5FC00EB6F86 /* ImageManager.m */; };
+		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
 		D4B364BD1D702DE100C75C29 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B364BC1D702DE100C75C29 /* UIView+Toast.m */; };
+		D4B364C11D704C0500C75C29 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B364C01D704C0500C75C29 /* UIViewController+NavigationBar.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
@@ -366,14 +365,6 @@
 		D40178141D2114BF00C0899E /* NSDictionary+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KeyValue.m"; sourceTree = "<group>"; };
 		D40178151D2114BF00C0899E /* NSString+KeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KeyValue.h"; sourceTree = "<group>"; };
 		D40178161D2114BF00C0899E /* NSString+KeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KeyValue.m"; sourceTree = "<group>"; };
-		D40178331D2114BF00C0899E /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
-		D40178341D2114BF00C0899E /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
-		D40178351D2114BF00C0899E /* ImageLocalLoadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLocalLoadTask.h; sourceTree = "<group>"; };
-		D40178361D2114BF00C0899E /* ImageLocalLoadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLocalLoadTask.m; sourceTree = "<group>"; };
-		D40178381D2114BF00C0899E /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
-		D40178391D2114BF00C0899E /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
-		D401783A1D2114BF00C0899E /* ImageManagerDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManagerDownloadTask.h; sourceTree = "<group>"; };
-		D401783B1D2114BF00C0899E /* ImageManagerDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManagerDownloadTask.m; sourceTree = "<group>"; };
 		D40178441D2114BF00C0899E /* HTTPDataRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDataRequestTask.h; sourceTree = "<group>"; };
 		D40178451D2114BF00C0899E /* HTTPDataRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDataRequestTask.m; sourceTree = "<group>"; };
 		D40178461D2114BF00C0899E /* HTTPDownloadRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDownloadRequestTask.h; sourceTree = "<group>"; };
@@ -435,8 +426,8 @@
 		D40178A51D2114BF00C0899E /* UBListingPicturePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBListingPicturePickerViewController.xib; sourceTree = "<group>"; };
 		D40178A61D2114BF00C0899E /* UBPicturePickerActionSheetScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPicturePickerActionSheetScene.h; sourceTree = "<group>"; };
 		D40178A71D2114BF00C0899E /* UBPicturePickerActionSheetScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPicturePickerActionSheetScene.m; sourceTree = "<group>"; };
-		D40178AB1D2114BF00C0899E /* UBImageViewImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageViewImageLoader.h; sourceTree = "<group>"; };
-		D40178AC1D2114BF00C0899E /* UBImageViewImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageViewImageLoader.m; sourceTree = "<group>"; };
+		D40178AB1D2114BF00C0899E /* UBImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageLoader.h; sourceTree = "<group>"; };
+		D40178AC1D2114BF00C0899E /* UBImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageLoader.m; sourceTree = "<group>"; };
 		D40178AD1D2114BF00C0899E /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
 		D40178AE1D2114BF00C0899E /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
 		D40178B21D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UBAgeRangeInput+XXXDataAccess.h"; sourceTree = "<group>"; };
@@ -556,8 +547,14 @@
 		D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncTaskDispatcher.m; sourceTree = "<group>"; };
 		D426BE3A1D2263FA00B6B596 /* TaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDispatcher.h; sourceTree = "<group>"; };
 		D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDispatcher.m; sourceTree = "<group>"; };
+		D44E483D1D73D5FC00EB6F86 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		D44E483E1D73D5FC00EB6F86 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
+		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D4B364BB1D702DE100C75C29 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		D4B364BC1D702DE100C75C29 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		D4B364BF1D704C0500C75C29 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
+		D4B364C01D704C0500C75C29 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
@@ -1355,24 +1352,12 @@
 		D40178321D2114BF00C0899E /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				D40178331D2114BF00C0899E /* ImageDownloadTask.h */,
-				D40178341D2114BF00C0899E /* ImageDownloadTask.m */,
-				D40178351D2114BF00C0899E /* ImageLocalLoadTask.h */,
-				D40178361D2114BF00C0899E /* ImageLocalLoadTask.m */,
-				D40178371D2114BF00C0899E /* Manager */,
+				D44E483D1D73D5FC00EB6F86 /* ImageManager.h */,
+				D44E483E1D73D5FC00EB6F86 /* ImageManager.m */,
+				D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */,
+				D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */,
 			);
 			path = Image;
-			sourceTree = "<group>";
-		};
-		D40178371D2114BF00C0899E /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				D40178381D2114BF00C0899E /* ImageManager.h */,
-				D40178391D2114BF00C0899E /* ImageManager.m */,
-				D401783A1D2114BF00C0899E /* ImageManagerDownloadTask.h */,
-				D401783B1D2114BF00C0899E /* ImageManagerDownloadTask.m */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		D401783C1D2114BF00C0899E /* RemoteRequest */ = {
@@ -1602,6 +1587,7 @@
 			children = (
 				D40178891D2114BF00C0899E /* Scene */,
 				D40178A81D2114BF00C0899E /* Service */,
+				D4B364BE1D704BD600C75C29 /* Extension */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -1714,8 +1700,8 @@
 		D40178AA1D2114BF00C0899E /* URL */ = {
 			isa = PBXGroup;
 			children = (
-				D40178AB1D2114BF00C0899E /* UBImageViewImageLoader.h */,
-				D40178AC1D2114BF00C0899E /* UBImageViewImageLoader.m */,
+				D40178AB1D2114BF00C0899E /* UBImageLoader.h */,
+				D40178AC1D2114BF00C0899E /* UBImageLoader.m */,
 				D40178AD1D2114BF00C0899E /* UIImageView+URL.h */,
 				D40178AE1D2114BF00C0899E /* UIImageView+URL.m */,
 			);
@@ -2143,6 +2129,15 @@
 			path = SyncTaskDispatcher;
 			sourceTree = "<group>";
 		};
+		D4B364BE1D704BD600C75C29 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4B364BF1D704C0500C75C29 /* UIViewController+NavigationBar.h */,
+				D4B364C01D704C0500C75C29 /* UIViewController+NavigationBar.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D4EC6AD71D24F8E700638BAB /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -2275,17 +2270,15 @@
 				D40179971D2114BF00C0899E /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
 				D40179B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m in Sources */,
+				D4B364C11D704C0500C75C29 /* UIViewController+NavigationBar.m in Sources */,
 				D40179BC1D2114BF00C0899E /* UBToastView.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
-				D40179871D2114BF00C0899E /* ImageDownloadTask.m in Sources */,
-				D401798A1D2114BF00C0899E /* ImageManagerDownloadTask.m in Sources */,
 				D40179CD1D2114BF00C0899E /* UFDataPickerInput.m in Sources */,
 				D40179551D2114BF00C0899E /* EPubXML.m in Sources */,
 				D401795C1D2114BF00C0899E /* FileListener.m in Sources */,
 				D401793F1D2114BF00C0899E /* HTTPServerListener.m in Sources */,
 				D401795E1D2114BF00C0899E /* HTTPConnectionResumeStorage.m in Sources */,
-				D40179881D2114BF00C0899E /* ImageLocalLoadTask.m in Sources */,
 				D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */,
 				D401798D1D2114BF00C0899E /* HTTPDownloadRequestTask.m in Sources */,
 				D40179A11D2114BF00C0899E /* DBCenter.m in Sources */,
@@ -2319,6 +2312,7 @@
 				D401796E1D2114BF00C0899E /* NSObject+Delegate.m in Sources */,
 				D40179621D2114BF00C0899E /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D401797C1D2114BF00C0899E /* NSDictionary+KeyValue.m in Sources */,
+				D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */,
 				D40179701D2114BF00C0899E /* LightLoadingPermanentQueue.m in Sources */,
 				D401796F1D2114BF00C0899E /* NSObject+ThreadOperation.m in Sources */,
 				D40179441D2114BF00C0899E /* TCPServerListener.m in Sources */,
@@ -2365,6 +2359,7 @@
 				D40179C61D2114BF00C0899E /* UFImageEditMaskView.m in Sources */,
 				D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
+				D44E48411D73D5FC00EB6F86 /* ImageManager.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
 				D401793B1D2114BF00C0899E /* HTTPResponseMessageSerializer.m in Sources */,
 				D40179DC1D2114BF00C0899E /* UIScrollView+RefreshHeader.m in Sources */,
@@ -2429,10 +2424,9 @@
 				D401797D1D2114BF00C0899E /* NSString+KeyValue.m in Sources */,
 				D40179D41D2114BF00C0899E /* UITextView+KeyboardAdjust.m in Sources */,
 				D40179751D2114BF00C0899E /* NSCoder+DataedEncoding.m in Sources */,
-				D40179B11D2114BF00C0899E /* UBImageViewImageLoader.m in Sources */,
+				D40179B11D2114BF00C0899E /* UBImageLoader.m in Sources */,
 				D40179B41D2114BF00C0899E /* UBAgeRangeInput.m in Sources */,
 				D40179A81D2114BF00C0899E /* UBPictureBrowseToolBar.m in Sources */,
-				D40179891D2114BF00C0899E /* ImageManager.m in Sources */,
 				D40179D01D2114BF00C0899E /* UFKeyboardAdjustPoint.m in Sources */,
 				D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */,
 				D40179431D2114BF00C0899E /* TCPServerIPAddress.m in Sources */,
