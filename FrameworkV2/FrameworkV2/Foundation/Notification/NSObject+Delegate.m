@@ -95,7 +95,7 @@
         
         [lock lock];
         
-        [[self delegateNotificationObservingSet] notifyObservers:operation onThread:nil];
+        [[self delegateNotificationObservingSet] notifyObservers:operation];
         
         [lock unlock];
     }

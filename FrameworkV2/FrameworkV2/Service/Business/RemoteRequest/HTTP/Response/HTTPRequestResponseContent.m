@@ -8,25 +8,7 @@
 
 #import "HTTPRequestResponseContent.h"
 
-@interface HTTPRequestResponseContent ()
-{
-    NSError *_requestError;
-    
-    NSHTTPURLResponse *_response;
-    
-    NSData *_data;
-}
-
-@end
-
-
 @implementation HTTPRequestResponseContent
-
-@synthesize requestError = _requestError;
-
-@synthesize response = _response;
-
-@synthesize data = _data;
 
 - (instancetype)initWithRequestError:(NSError *)error response:(NSHTTPURLResponse *)response data:(NSData *)data
 {

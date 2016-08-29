@@ -188,8 +188,10 @@
 		D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */; };
 		D44E48411D73D5FC00EB6F86 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E483E1D73D5FC00EB6F86 /* ImageManager.m */; };
 		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
+		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
+		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
+		D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48571D742B0E00EB6F86 /* LoginManager.m */; };
 		D4B364BD1D702DE100C75C29 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B364BC1D702DE100C75C29 /* UIView+Toast.m */; };
-		D4B364C11D704C0500C75C29 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B364C01D704C0500C75C29 /* UIViewController+NavigationBar.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
@@ -551,10 +553,14 @@
 		D44E483E1D73D5FC00EB6F86 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
+		D44E48441D7401CE00EB6F86 /* LoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTask.h; sourceTree = "<group>"; };
+		D44E48451D7401CE00EB6F86 /* LoginTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTask.m; sourceTree = "<group>"; };
+		D44E484D1D740E0100EB6F86 /* LogoutTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutTask.h; sourceTree = "<group>"; };
+		D44E484E1D740E0100EB6F86 /* LogoutTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutTask.m; sourceTree = "<group>"; };
+		D44E48561D742B0E00EB6F86 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
+		D44E48571D742B0E00EB6F86 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
 		D4B364BB1D702DE100C75C29 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		D4B364BC1D702DE100C75C29 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		D4B364BF1D704C0500C75C29 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
-		D4B364C01D704C0500C75C29 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
@@ -1343,8 +1349,9 @@
 		D40178311D2114BF00C0899E /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				D40178321D2114BF00C0899E /* Image */,
 				D401783C1D2114BF00C0899E /* RemoteRequest */,
+				D40178321D2114BF00C0899E /* Image */,
+				D44E48431D73DFF800EB6F86 /* Login */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -1585,9 +1592,8 @@
 		D40178881D2114BF00C0899E /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				D40178891D2114BF00C0899E /* Scene */,
 				D40178A81D2114BF00C0899E /* Service */,
-				D4B364BE1D704BD600C75C29 /* Extension */,
+				D40178891D2114BF00C0899E /* Scene */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -2129,13 +2135,17 @@
 			path = SyncTaskDispatcher;
 			sourceTree = "<group>";
 		};
-		D4B364BE1D704BD600C75C29 /* Extension */ = {
+		D44E48431D73DFF800EB6F86 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D4B364BF1D704C0500C75C29 /* UIViewController+NavigationBar.h */,
-				D4B364C01D704C0500C75C29 /* UIViewController+NavigationBar.m */,
+				D44E48561D742B0E00EB6F86 /* LoginManager.h */,
+				D44E48571D742B0E00EB6F86 /* LoginManager.m */,
+				D44E48441D7401CE00EB6F86 /* LoginTask.h */,
+				D44E48451D7401CE00EB6F86 /* LoginTask.m */,
+				D44E484D1D740E0100EB6F86 /* LogoutTask.h */,
+				D44E484E1D740E0100EB6F86 /* LogoutTask.m */,
 			);
-			path = Extension;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D4EC6AD71D24F8E700638BAB /* Button */ = {
@@ -2270,7 +2280,6 @@
 				D40179971D2114BF00C0899E /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
 				D40179B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m in Sources */,
-				D4B364C11D704C0500C75C29 /* UIViewController+NavigationBar.m in Sources */,
 				D40179BC1D2114BF00C0899E /* UBToastView.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
@@ -2319,6 +2328,7 @@
 				D40179C11D2114BF00C0899E /* UFEmoji.m in Sources */,
 				D401795B1D2114BF00C0899E /* NSString+URLEncode.m in Sources */,
 				D401796D1D2114BF00C0899E /* NotificationObserver.m in Sources */,
+				D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */,
 				D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */,
 				D40179501D2114BF00C0899E /* EPub.m in Sources */,
 				D40179C01D2114BF00C0899E /* UFAttributedStringEmojiUpdater.m in Sources */,
@@ -2353,6 +2363,7 @@
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
 				D40179401D2114BF00C0899E /* NSObject+HTTPServerNotification.m in Sources */,
 				D401796B1D2114BF00C0899E /* APPLog.m in Sources */,
+				D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */,
 				D401793D1D2114BF00C0899E /* HTTPServerConnection.m in Sources */,
 				D401794B1D2114BF00C0899E /* DBFormat.m in Sources */,
 				D401799B1D2114BF00C0899E /* NetworkManager.m in Sources */,
@@ -2375,6 +2386,7 @@
 				D40179741D2114BF00C0899E /* JsonSerialize.m in Sources */,
 				D40179981D2114BF00C0899E /* SharedHTTPSessionManager.m in Sources */,
 				D40179C51D2114BF00C0899E /* UFEmojiView.m in Sources */,
+				D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */,
 				D426BE3D1D2263FA00B6B596 /* BlockTask.m in Sources */,
 				D40179711D2114BF00C0899E /* NetworkReachability.m in Sources */,
 				D40179D21D2114BF00C0899E /* UITextField+KeyboardAdjust.m in Sources */,

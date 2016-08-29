@@ -62,7 +62,7 @@
     {
         self.downloadImageObservers = [[NSMutableDictionary alloc] init];
         
-        self.syncQueue = dispatch_queue_create("ImageManager", DISPATCH_QUEUE_CONCURRENT);
+        self.syncQueue = dispatch_queue_create("ImageManager", 0);
         
         self.taskDispatcher = [[AsyncTaskDispatcher alloc] init];
     }
@@ -87,7 +87,9 @@
         return;
     }
     
-    dispatch_sync(self.syncQueue, ^{
+    NSThread *currentThread = [NSThread currentThread];
+    
+    dispatch_async(self.syncQueue, ^{
         
         if ([URL isFileURL])
         {
@@ -100,7 +102,7 @@
                     [observer imageManager:self didFinishDownloadImageByURL:URL withError:nil imageData:data];
                 }
                 
-            } onThread:[NSThread currentThread]];
+            } onThread:currentThread];
         }
         else
         {
@@ -115,7 +117,7 @@
                         [observer imageManager:self didFinishDownloadImageByURL:URL withError:nil imageData:data];
                     }
                     
-                } onThread:[NSThread currentThread]];
+                } onThread:currentThread];
             }
             else
             {
@@ -146,7 +148,7 @@
                 
                 notificationObserver.observer = observer;
                 
-                notificationObserver.notifyThread = [NSThread currentThread];
+                notificationObserver.notifyThread = currentThread;
                 
                 [set.observerDictionary setObject:notificationObserver forKey:index];
             }
@@ -158,7 +160,7 @@
 {
     if (URL && observer)
     {
-        dispatch_sync(self.syncQueue, ^{
+        dispatch_async(self.syncQueue, ^{
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:URL];
             
@@ -183,7 +185,7 @@
 {
     if (URL)
     {
-        dispatch_sync(self.syncQueue, ^{
+        dispatch_async(self.syncQueue, ^{
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:URL];
             
@@ -198,7 +200,7 @@
 {
     if (task.imageURL)
     {
-        dispatch_sync(self.syncQueue, ^{
+        dispatch_async(self.syncQueue, ^{
             
             [[ImageStorage sharedInstance] saveImageByURL:task.imageURL withDataPath:[task.resourceURL path]];
             
@@ -213,7 +215,7 @@
                     [observer imageManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:imageData];
                 }
                 
-            } onThread:nil];
+            }];
             
             [self.taskDispatcher removeTask:task];
             
@@ -226,7 +228,7 @@
 {
     if (task.imageURL)
     {
-        dispatch_sync(self.syncQueue, ^{
+        dispatch_async(self.syncQueue, ^{
             
             NotificationObservingSet *set = [self.downloadImageObservers objectForKey:task.imageURL];
             
@@ -236,7 +238,7 @@
                 {
                     [observer imageManager:self didDownloadImageByURL:task.imageURL withDownloadedSize:downloadedSize expectedSize:expectedSize];
                 }
-            } onThread:nil];
+            }];
         });
     }
 }
