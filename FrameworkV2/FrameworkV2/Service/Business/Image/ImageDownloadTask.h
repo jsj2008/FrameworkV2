@@ -1,14 +1,15 @@
 //
 //  ImageDownloadTask.h
-//  FrameworkV1
+//  DuomaiFrameWork
 //
-//  Created by ww on 16/5/5.
-//  Copyright © 2016年 WW. All rights reserved.
+//  Created by Baymax on 4/14/15.
+//  Copyright (c) 2015 Baymax. All rights reserved.
 //
 
 #import "ServiceTask.h"
 
 @protocol ImageDownloadTaskDelegate;
+
 
 /*********************************************************
  
@@ -16,26 +17,22 @@
         ImageDownloadTask
  
     @abstract
-        图片下载任务
- 
-    @discussion
-        支持加载文件和HTTP图片
+        图片管理器下载任务
  
  *********************************************************/
 
 @interface ImageDownloadTask : ServiceTask
 
 /*!
- * @brief 初始化
- * @param URL 图片URL，支持文件URL和HTTP类型URL
- * @result 初始化对象
- */
-- (instancetype)initWithURL:(NSURL *)URL;
-
-/*!
  * @brief 图片URL
  */
-@property (nonatomic, readonly, copy) NSURL *URL;
+@property (nonatomic, copy) NSURL *imageURL;
+
+/*!
+ * @brief 资源URL，下载完成后将文件转移到该URL位置
+ * @discussion 使用者需确保URL可用，路径中的目录已被正确创建
+ */
+@property (nonatomic, copy) NSURL *resourceURL;
 
 @end
 
@@ -46,7 +43,7 @@
         ImageDownloadTaskDelegate
  
     @abstract
-        URL图片下载消息协议
+        图片管理器下载任务代理消息
  
  *********************************************************/
 
@@ -58,9 +55,7 @@
  * @param error 错误信息
  * @param data 图片数据
  */
-- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data;
-
-@optional
+- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error;
 
 /*!
  * @brief 图片下载进度
