@@ -134,7 +134,6 @@
 		D40179B81D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */; };
 		D40179B91D2114BF00C0899E /* UBTextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */; };
 		D40179BA1D2114BF00C0899E /* UBTextFieldKeyboardInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */; };
-		D40179BC1D2114BF00C0899E /* UBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178C61D2114BF00C0899E /* UBToastView.m */; };
 		D40179BD1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178CA1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m */; };
 		D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178CD1D2114BF00C0899E /* UIColor+Hex.m */; };
 		D40179BF1D2114BF00C0899E /* UINavigationController+PushPopExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178D01D2114BF00C0899E /* UINavigationController+PushPopExtension.m */; };
@@ -159,9 +158,6 @@
 		D40179D21D2114BF00C0899E /* UITextField+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179051D2114BF00C0899E /* UITextField+KeyboardAdjust.m */; };
 		D40179D31D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179081D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m */; };
 		D40179D41D2114BF00C0899E /* UITextView+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D401790A1D2114BF00C0899E /* UITextView+KeyboardAdjust.m */; };
-		D40179D51D2114BF00C0899E /* UFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D401790D1D2114BF00C0899E /* UFLoadingView.m */; };
-		D40179D61D2114BF00C0899E /* UFViewLoadingUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D401790F1D2114BF00C0899E /* UFViewLoadingUpdater.m */; };
-		D40179D71D2114BF00C0899E /* UIView+Loading.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179111D2114BF00C0899E /* UIView+Loading.m */; };
 		D40179D81D2114BF00C0899E /* UFScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179141D2114BF00C0899E /* UFScene.m */; };
 		D40179D91D2114BF00C0899E /* UFScrollLoadMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179181D2114BF00C0899E /* UFScrollLoadMoreFooterView.m */; };
 		D40179DA1D2114BF00C0899E /* UIScrollView+LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D401791A1D2114BF00C0899E /* UIScrollView+LoadMoreFooter.m */; };
@@ -177,6 +173,7 @@
 		D40179E71D2114FE00C0899E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E61D2114FE00C0899E /* libsqlite3.tbd */; };
 		D40179E91D21150600C0899E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E81D21150600C0899E /* Photos.framework */; };
 		D415B2251D751F2F00B09BB3 /* UBImageDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */; };
+		D415B22C1D7533AA00B09BB3 /* UBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D415B2291D7533AA00B09BB3 /* UBToastView.m */; };
 		D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */; };
 		D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A16A1D2B860400ED449A /* UBPictureBrowseToolBarItem.m */; };
 		D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE291D2263FA00B6B596 /* DispatchableTask.m */; };
@@ -191,7 +188,9 @@
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
 		D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48571D742B0E00EB6F86 /* LoginManager.m */; };
-		D4B364BD1D702DE100C75C29 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B364BC1D702DE100C75C29 /* UIView+Toast.m */; };
+		D4B99F0D1D757A570018CD03 /* UBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F0A1D757A570018CD03 /* UBActivityIndicatorView.m */; };
+		D4B99F0E1D757A570018CD03 /* UBProgressIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */; };
+		D4B99F111D7580F10018CD03 /* UBNothingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
@@ -448,8 +447,6 @@
 		D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInput.m; sourceTree = "<group>"; };
 		D40178C01D2114BF00C0899E /* UBTextFieldKeyboardInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldKeyboardInput.h; sourceTree = "<group>"; };
 		D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldKeyboardInput.m; sourceTree = "<group>"; };
-		D40178C51D2114BF00C0899E /* UBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBToastView.h; sourceTree = "<group>"; };
-		D40178C61D2114BF00C0899E /* UBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBToastView.m; sourceTree = "<group>"; };
 		D40178C91D2114BF00C0899E /* UFExtendedResponsiveSizeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFExtendedResponsiveSizeButton.h; sourceTree = "<group>"; };
 		D40178CA1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFExtendedResponsiveSizeButton.m; sourceTree = "<group>"; };
 		D40178CC1D2114BF00C0899E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -499,12 +496,6 @@
 		D40179081D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewKeyboardAdjustAssistant.m; sourceTree = "<group>"; };
 		D40179091D2114BF00C0899E /* UITextView+KeyboardAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+KeyboardAdjust.h"; sourceTree = "<group>"; };
 		D401790A1D2114BF00C0899E /* UITextView+KeyboardAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+KeyboardAdjust.m"; sourceTree = "<group>"; };
-		D401790C1D2114BF00C0899E /* UFLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFLoadingView.h; sourceTree = "<group>"; };
-		D401790D1D2114BF00C0899E /* UFLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFLoadingView.m; sourceTree = "<group>"; };
-		D401790E1D2114BF00C0899E /* UFViewLoadingUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFViewLoadingUpdater.h; sourceTree = "<group>"; };
-		D401790F1D2114BF00C0899E /* UFViewLoadingUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFViewLoadingUpdater.m; sourceTree = "<group>"; };
-		D40179101D2114BF00C0899E /* UIView+Loading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Loading.h"; sourceTree = "<group>"; };
-		D40179111D2114BF00C0899E /* UIView+Loading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Loading.m"; sourceTree = "<group>"; };
 		D40179131D2114BF00C0899E /* UFScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScene.h; sourceTree = "<group>"; };
 		D40179141D2114BF00C0899E /* UFScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScene.m; sourceTree = "<group>"; };
 		D40179171D2114BF00C0899E /* UFScrollLoadMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadMoreFooterView.h; sourceTree = "<group>"; };
@@ -531,6 +522,8 @@
 		D40179E81D21150600C0899E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageDownloadManager.h; sourceTree = "<group>"; };
 		D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageDownloadManager.m; sourceTree = "<group>"; };
+		D415B2281D7533AA00B09BB3 /* UBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBToastView.h; sourceTree = "<group>"; };
+		D415B2291D7533AA00B09BB3 /* UBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBToastView.m; sourceTree = "<group>"; };
 		D424A1661D2B856C00ED449A /* UBPictureBrowsePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePicture.h; sourceTree = "<group>"; };
 		D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePicture.m; sourceTree = "<group>"; };
 		D424A1691D2B860400ED449A /* UBPictureBrowseToolBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseToolBarItem.h; sourceTree = "<group>"; };
@@ -559,8 +552,12 @@
 		D44E484E1D740E0100EB6F86 /* LogoutTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutTask.m; sourceTree = "<group>"; };
 		D44E48561D742B0E00EB6F86 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		D44E48571D742B0E00EB6F86 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
-		D4B364BB1D702DE100C75C29 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
-		D4B364BC1D702DE100C75C29 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		D4B99F091D757A570018CD03 /* UBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBActivityIndicatorView.h; sourceTree = "<group>"; };
+		D4B99F0A1D757A570018CD03 /* UBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBActivityIndicatorView.m; sourceTree = "<group>"; };
+		D4B99F0B1D757A570018CD03 /* UBProgressIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBProgressIndicatorView.h; sourceTree = "<group>"; };
+		D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBProgressIndicatorView.m; sourceTree = "<group>"; };
+		D4B99F0F1D7580F10018CD03 /* UBNothingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBNothingIndicatorView.h; sourceTree = "<group>"; };
+		D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBNothingIndicatorView.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
@@ -1688,7 +1685,7 @@
 			children = (
 				D40178A91D2114BF00C0899E /* Image */,
 				D40178AF1D2114BF00C0899E /* Input */,
-				D40178C21D2114BF00C0899E /* Toast */,
+				D415B2261D7533AA00B09BB3 /* View */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1704,12 +1701,12 @@
 		D40178AA1D2114BF00C0899E /* URL */ = {
 			isa = PBXGroup;
 			children = (
-				D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */,
-				D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */,
-				D40178AB1D2114BF00C0899E /* UBImageLoader.h */,
-				D40178AC1D2114BF00C0899E /* UBImageLoader.m */,
 				D40178AD1D2114BF00C0899E /* UIImageView+URL.h */,
 				D40178AE1D2114BF00C0899E /* UIImageView+URL.m */,
+				D40178AB1D2114BF00C0899E /* UBImageLoader.h */,
+				D40178AC1D2114BF00C0899E /* UBImageLoader.m */,
+				D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */,
+				D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */,
 			);
 			path = URL;
 			sourceTree = "<group>";
@@ -1725,15 +1722,15 @@
 		D40178B01D2114BF00C0899E /* TextFieldInput */ = {
 			isa = PBXGroup;
 			children = (
-				D40178B11D2114BF00C0899E /* demo */,
-				D40178BA1D2114BF00C0899E /* UBTextFieldDataPickerInput.h */,
-				D40178BB1D2114BF00C0899E /* UBTextFieldDataPickerInput.m */,
-				D40178BC1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.h */,
-				D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */,
 				D40178BE1D2114BF00C0899E /* UBTextFieldInput.h */,
 				D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */,
 				D40178C01D2114BF00C0899E /* UBTextFieldKeyboardInput.h */,
 				D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */,
+				D40178BA1D2114BF00C0899E /* UBTextFieldDataPickerInput.h */,
+				D40178BB1D2114BF00C0899E /* UBTextFieldDataPickerInput.m */,
+				D40178BC1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.h */,
+				D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */,
+				D40178B11D2114BF00C0899E /* demo */,
 			);
 			path = TextFieldInput;
 			sourceTree = "<group>";
@@ -1753,17 +1750,6 @@
 			path = demo;
 			sourceTree = "<group>";
 		};
-		D40178C21D2114BF00C0899E /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-				D40178C51D2114BF00C0899E /* UBToastView.h */,
-				D40178C61D2114BF00C0899E /* UBToastView.m */,
-				D4B364BB1D702DE100C75C29 /* UIView+Toast.h */,
-				D4B364BC1D702DE100C75C29 /* UIView+Toast.m */,
-			);
-			path = Toast;
-			sourceTree = "<group>";
-		};
 		D40178C71D2114BF00C0899E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1774,7 +1760,6 @@
 				D40178DE1D2114BF00C0899E /* Image */,
 				D40178EC1D2114BF00C0899E /* Input */,
 				D40178FB1D2114BF00C0899E /* Keyboard */,
-				D401790B1D2114BF00C0899E /* Loading */,
 				D40179121D2114BF00C0899E /* Scene */,
 				D40179151D2114BF00C0899E /* ScrollLoading */,
 				D40179251D2114BF00C0899E /* TextView */,
@@ -1970,19 +1955,6 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
-		D401790B1D2114BF00C0899E /* Loading */ = {
-			isa = PBXGroup;
-			children = (
-				D401790C1D2114BF00C0899E /* UFLoadingView.h */,
-				D401790D1D2114BF00C0899E /* UFLoadingView.m */,
-				D401790E1D2114BF00C0899E /* UFViewLoadingUpdater.h */,
-				D401790F1D2114BF00C0899E /* UFViewLoadingUpdater.m */,
-				D40179101D2114BF00C0899E /* UIView+Loading.h */,
-				D40179111D2114BF00C0899E /* UIView+Loading.m */,
-			);
-			path = Loading;
-			sourceTree = "<group>";
-		};
 		D40179121D2114BF00C0899E /* Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -2061,6 +2033,24 @@
 				D401792E1D2114BF00C0899E /* UFButtonWindow.m */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		D415B2261D7533AA00B09BB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4B99F081D757A570018CD03 /* Indicator */,
+				D415B2271D7533AA00B09BB3 /* Toast */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D415B2271D7533AA00B09BB3 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				D415B2281D7533AA00B09BB3 /* UBToastView.h */,
+				D415B2291D7533AA00B09BB3 /* UBToastView.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		D424A1651D2B856C00ED449A /* picture */ = {
@@ -2146,6 +2136,19 @@
 				D44E484E1D740E0100EB6F86 /* LogoutTask.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D4B99F081D757A570018CD03 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				D4B99F091D757A570018CD03 /* UBActivityIndicatorView.h */,
+				D4B99F0A1D757A570018CD03 /* UBActivityIndicatorView.m */,
+				D4B99F0B1D757A570018CD03 /* UBProgressIndicatorView.h */,
+				D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */,
+				D4B99F0F1D7580F10018CD03 /* UBNothingIndicatorView.h */,
+				D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */,
+			);
+			path = Indicator;
 			sourceTree = "<group>";
 		};
 		D4EC6AD71D24F8E700638BAB /* Button */ = {
@@ -2280,7 +2283,6 @@
 				D40179971D2114BF00C0899E /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
 				D40179B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m in Sources */,
-				D40179BC1D2114BF00C0899E /* UBToastView.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
 				D40179CD1D2114BF00C0899E /* UFDataPickerInput.m in Sources */,
@@ -2301,7 +2303,6 @@
 				D40179B01D2114BF00C0899E /* UBPicturePickerActionSheetScene.m in Sources */,
 				D40179471D2114BF00C0899E /* DBHandle.m in Sources */,
 				D401794A1D2114BF00C0899E /* DBTable.m in Sources */,
-				D40179D51D2114BF00C0899E /* UFLoadingView.m in Sources */,
 				D40179461D2114BF00C0899E /* DBError.m in Sources */,
 				D40179541D2114BF00C0899E /* EPub2_Package.m in Sources */,
 				D40179421D2114BF00C0899E /* TCPServerError.m in Sources */,
@@ -2309,14 +2310,17 @@
 				D426BE3E1D2263FA00B6B596 /* Task.m in Sources */,
 				D40179D31D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m in Sources */,
 				D40179301D2114BF00C0899E /* HTTPRequestHeader.m in Sources */,
+				D4B99F0E1D757A570018CD03 /* UBProgressIndicatorView.m in Sources */,
 				D40179361D2114BF00C0899E /* HTTPMessageParser.m in Sources */,
 				D40179331D2114BF00C0899E /* HTTPMessageBodyParser.m in Sources */,
 				D401795F1D2114BF00C0899E /* HTTPDownloadConnection.m in Sources */,
 				D40179C21D2114BF00C0899E /* UFEmojiImage.m in Sources */,
+				D4B99F111D7580F10018CD03 /* UBNothingIndicatorView.m in Sources */,
 				D40179381D2114BF00C0899E /* HTTPRequestMessageHeaderParser.m in Sources */,
 				D40179641D2114BF00C0899E /* HTTPSession.m in Sources */,
 				D40179961D2114BF00C0899E /* FoundationServiceUnit.m in Sources */,
 				D40179901D2114BF00C0899E /* HTTPRequestBody+MIME.m in Sources */,
+				D415B22C1D7533AA00B09BB3 /* UBToastView.m in Sources */,
 				D40179CE1D2114BF00C0899E /* UFTextFieldDataPickerInput.m in Sources */,
 				D401796E1D2114BF00C0899E /* NSObject+Delegate.m in Sources */,
 				D40179621D2114BF00C0899E /* HTTPConnectionInputStreamChunk.m in Sources */,
@@ -2357,10 +2361,10 @@
 				D40179371D2114BF00C0899E /* HTTPMessageSerializer.m in Sources */,
 				D40179791D2114BF00C0899E /* StateMachine.m in Sources */,
 				D40179C81D2114BF00C0899E /* UIImage+Orientation.m in Sources */,
+				D4B99F0D1D757A570018CD03 /* UBActivityIndicatorView.m in Sources */,
 				D40179DD1D2114BF00C0899E /* UFScrollContentOffsetUpdater.m in Sources */,
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
 				D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */,
-				D4B364BD1D702DE100C75C29 /* UIView+Toast.m in Sources */,
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
 				D40179401D2114BF00C0899E /* NSObject+HTTPServerNotification.m in Sources */,
 				D401796B1D2114BF00C0899E /* APPLog.m in Sources */,
@@ -2408,9 +2412,7 @@
 				D40179721D2114BF00C0899E /* IPRouteItem.m in Sources */,
 				D40179531D2114BF00C0899E /* EPub2_OPF.m in Sources */,
 				D401796A1D2114BF00C0899E /* NSHTTPURLResponse+ContentValidation.m in Sources */,
-				D40179D61D2114BF00C0899E /* UFViewLoadingUpdater.m in Sources */,
 				D40179B71D2114BF00C0899E /* UBTextFieldDataPickerInput.m in Sources */,
-				D40179D71D2114BF00C0899E /* UIView+Loading.m in Sources */,
 				D40179C91D2114BF00C0899E /* UFImageViewGifUpdater.m in Sources */,
 				D401797A1D2114BF00C0899E /* IndexingFileStorage.m in Sources */,
 				D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */,

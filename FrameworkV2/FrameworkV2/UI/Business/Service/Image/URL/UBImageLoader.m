@@ -10,7 +10,7 @@
 #import "UBImageDownloadManager.h"
 #import "ImageStorage.h"
 
-@interface UBImageLoader () <ImageManagerDelegate>
+@interface UBImageLoader () <UBImageDownloadManagerDelegate>
 
 - (void)finishWithError:(NSError *)error imageData:(NSData *)data;
 
@@ -65,7 +65,7 @@
     [[UBImageDownloadManager sharedInstance] cancelDownLoadImageByURL:self.URL withObserver:self];
 }
 
-- (void)imageManager:(UBImageDownloadManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data
+- (void)imageDownloadManager:(UBImageDownloadManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data
 {
     if ([URL isEqual:self.URL])
     {
@@ -73,7 +73,7 @@
     }
 }
 
-- (void)imageManager:(UBImageDownloadManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
+- (void)imageDownloadManager:(UBImageDownloadManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
 {
     if ([URL isEqual:self.URL] && self.delegate && [self.delegate respondsToSelector:@selector(imageLoader:didDownloadImageWithDownloadedSize:expectedSize:)])
     {

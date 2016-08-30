@@ -63,7 +63,7 @@
     return self;
 }
 
-- (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer
+- (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<UBImageDownloadManagerDelegate>)observer
 {
     if (!URL)
     {
@@ -100,7 +100,7 @@
     [set.observerDictionary setObject:notificationObserver forKey:index];
 }
 
-- (void)cancelDownLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer
+- (void)cancelDownLoadImageByURL:(NSURL *)URL withObserver:(id<UBImageDownloadManagerDelegate>)observer
 {
     if (URL && observer)
     {
@@ -142,9 +142,9 @@
         
         [set notifyObservers:^(id observer) {
             
-            if (observer && [observer respondsToSelector:@selector(imageManager:didFinishDownloadImageByURL:withError:imageData:)])
+            if (observer && [observer respondsToSelector:@selector(imageDownloadManager:didFinishDownloadImageByURL:withError:imageData:)])
             {
-                [observer imageManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:data];
+                [observer imageDownloadManager:self didFinishDownloadImageByURL:task.imageURL withError:error imageData:data];
             }
         }];
         
@@ -162,9 +162,9 @@
         
         [set notifyObservers:^(id observer) {
             
-            if (observer && [observer respondsToSelector:@selector(imageManager:didDownloadImageByURL:withDownloadedSize:expectedSize:)])
+            if (observer && [observer respondsToSelector:@selector(imageDownloadManager:didDownloadImageByURL:withDownloadedSize:expectedSize:)])
             {
-                [observer imageManager:self didDownloadImageByURL:task.imageURL withDownloadedSize:downloadedSize expectedSize:expectedSize];
+                [observer imageDownloadManager:self didDownloadImageByURL:task.imageURL withDownloadedSize:downloadedSize expectedSize:expectedSize];
             }
         }];
     }

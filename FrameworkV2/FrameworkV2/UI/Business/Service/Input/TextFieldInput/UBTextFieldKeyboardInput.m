@@ -42,6 +42,11 @@
     if ([self.textField isFirstResponder])
     {
         [self didInputText:self.textField.text];
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldInputDidUpdateInput:)])
+        {
+            [self.delegate textFieldInputDidUpdateInput:self];
+        }
     }
 }
 

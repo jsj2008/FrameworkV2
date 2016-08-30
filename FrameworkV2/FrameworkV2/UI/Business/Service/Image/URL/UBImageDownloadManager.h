@@ -8,16 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol  ImageManagerDelegate;
+@protocol  UBImageDownloadManagerDelegate;
 
 
 /*********************************************************
  
     @class
-        ImageManager
+        UBImageDownloadManager
  
     @abstract
-        图片管理器
+        图片下载管理器
  
     @discussion
         1，管理器内部调度ImageDownloadTask实现图片下载
@@ -37,14 +37,14 @@
  * @param URL 图片URL，支持HTTP和文件URL
  * @param observer 下载操作观察者，若为nil，将启动一个无观察者的下载任务
  */
-- (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer;
+- (void)downLoadImageByURL:(NSURL *)URL withObserver:(id<UBImageDownloadManagerDelegate>)observer;
 
 /*!
  * @brief 取消下载图片
  * @param URL 图片URL
  * @param observer 下载操作观察者，nil无效
  */
-- (void)cancelDownLoadImageByURL:(NSURL *)URL withObserver:(id<ImageManagerDelegate>)observer;
+- (void)cancelDownLoadImageByURL:(NSURL *)URL withObserver:(id<UBImageDownloadManagerDelegate>)observer;
 
 /*!
  * @brief 取消下载图片
@@ -58,14 +58,14 @@
 /*********************************************************
  
     @protocol
-        ImageManagerDelegate
+        UBImageDownloadManagerDelegate
  
     @abstract
-        图片管理器图片下载协议
+        图片下载管理器协议
  
  *********************************************************/
 
-@protocol ImageManagerDelegate <NSObject>
+@protocol UBImageDownloadManagerDelegate <NSObject>
 
 /*!
  * @brief 图片下载完成
@@ -74,7 +74,7 @@
  * @param error 错误信息
  * @param data 图片数据
  */
-- (void)imageManager:(UBImageDownloadManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data;
+- (void)imageDownloadManager:(UBImageDownloadManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data;
 
 @optional
 
@@ -85,6 +85,6 @@
  * @param downloadedSize 已下载量
  * @param expectedSize 预期下载量
  */
-- (void)imageManager:(UBImageDownloadManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
+- (void)imageDownloadManager:(UBImageDownloadManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize;
 
 @end
