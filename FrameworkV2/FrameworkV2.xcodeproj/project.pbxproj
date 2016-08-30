@@ -176,6 +176,7 @@
 		D40179E51D2114EE00C0899E /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */; };
 		D40179E71D2114FE00C0899E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E61D2114FE00C0899E /* libsqlite3.tbd */; };
 		D40179E91D21150600C0899E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E81D21150600C0899E /* Photos.framework */; };
+		D415B2251D751F2F00B09BB3 /* UBImageDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */; };
 		D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */; };
 		D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A16A1D2B860400ED449A /* UBPictureBrowseToolBarItem.m */; };
 		D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE291D2263FA00B6B596 /* DispatchableTask.m */; };
@@ -186,7 +187,6 @@
 		D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE361D2263FA00B6B596 /* TaskOperation.m */; };
 		D426BE421D2263FA00B6B596 /* SyncTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */; };
 		D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */; };
-		D44E48411D73D5FC00EB6F86 /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E483E1D73D5FC00EB6F86 /* ImageManager.m */; };
 		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
@@ -529,6 +529,8 @@
 		D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D40179E61D2114FE00C0899E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D40179E81D21150600C0899E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageDownloadManager.h; sourceTree = "<group>"; };
+		D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageDownloadManager.m; sourceTree = "<group>"; };
 		D424A1661D2B856C00ED449A /* UBPictureBrowsePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePicture.h; sourceTree = "<group>"; };
 		D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePicture.m; sourceTree = "<group>"; };
 		D424A1691D2B860400ED449A /* UBPictureBrowseToolBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseToolBarItem.h; sourceTree = "<group>"; };
@@ -549,8 +551,6 @@
 		D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncTaskDispatcher.m; sourceTree = "<group>"; };
 		D426BE3A1D2263FA00B6B596 /* TaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDispatcher.h; sourceTree = "<group>"; };
 		D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDispatcher.m; sourceTree = "<group>"; };
-		D44E483D1D73D5FC00EB6F86 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
-		D44E483E1D73D5FC00EB6F86 /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
 		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D44E48441D7401CE00EB6F86 /* LoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTask.h; sourceTree = "<group>"; };
@@ -1359,8 +1359,6 @@
 		D40178321D2114BF00C0899E /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				D44E483D1D73D5FC00EB6F86 /* ImageManager.h */,
-				D44E483E1D73D5FC00EB6F86 /* ImageManager.m */,
 				D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */,
 				D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */,
 			);
@@ -1706,6 +1704,8 @@
 		D40178AA1D2114BF00C0899E /* URL */ = {
 			isa = PBXGroup;
 			children = (
+				D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */,
+				D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */,
 				D40178AB1D2114BF00C0899E /* UBImageLoader.h */,
 				D40178AC1D2114BF00C0899E /* UBImageLoader.m */,
 				D40178AD1D2114BF00C0899E /* UIImageView+URL.h */,
@@ -2344,6 +2344,7 @@
 				D40179481D2114BF00C0899E /* DBMachine.m in Sources */,
 				D40179CC1D2114BF00C0899E /* UFDataPickerSource.m in Sources */,
 				D40179A31D2114BF00C0899E /* StorageUnit.m in Sources */,
+				D415B2251D751F2F00B09BB3 /* UBImageDownloadManager.m in Sources */,
 				D401798E1D2114BF00C0899E /* HTTPRequestTask.m in Sources */,
 				D40179771D2114BF00C0899E /* XMLSprite.m in Sources */,
 				D40179BF1D2114BF00C0899E /* UINavigationController+PushPopExtension.m in Sources */,
@@ -2370,7 +2371,6 @@
 				D40179C61D2114BF00C0899E /* UFImageEditMaskView.m in Sources */,
 				D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
-				D44E48411D73D5FC00EB6F86 /* ImageManager.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
 				D401793B1D2114BF00C0899E /* HTTPResponseMessageSerializer.m in Sources */,
 				D40179DC1D2114BF00C0899E /* UIScrollView+RefreshHeader.m in Sources */,

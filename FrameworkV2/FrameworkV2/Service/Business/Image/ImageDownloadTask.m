@@ -9,14 +9,13 @@
 #import "ImageDownloadTask.h"
 #import "HTTPDownloadConnection.h"
 #import "SharedHTTPSessionManager.h"
+#import "ImageStorage.h"
 
 @interface ImageDownloadTask () <HTTPDownloadConnectionDelegate>
 
 @property (nonatomic) HTTPDownloadConnection *connection;
 
-@property (nonatomic) NSData *data;
-
-- (void)finishWithError:(NSError *)error;
+- (void)finishWithError:(NSError *)error data:(NSData *)data;
 
 @end
 
@@ -25,13 +24,20 @@
 
 - (void)run
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:self.imageURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:3 * 60];
-    
-    self.connection = [[HTTPDownloadConnection alloc] initWithRequest:request session:[SharedHTTPSessionManager sharedInstance].defaultConfigurationSession];
-    
-    self.connection.delegate = self;
-    
-    [self.connection start];
+    if ([self.imageURL isFileURL])
+    {
+        [self finishWithError:nil data:[NSData dataWithContentsOfURL:self.imageURL]];
+    }
+    else
+    {
+        NSURLRequest *request = [NSURLRequest requestWithURL:self.imageURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:3 * 60];
+        
+        self.connection = [[HTTPDownloadConnection alloc] initWithRequest:request session:[SharedHTTPSessionManager sharedInstance].defaultConfigurationSession];
+        
+        self.connection.delegate = self;
+        
+        [self.connection start];
+    }
 }
 
 - (void)cancel
@@ -45,16 +51,17 @@
     self.connection = nil;
 }
 
-- (void)finishWithError:(NSError *)error
+- (void)finishWithError:(NSError *)error data:(NSData *)data
 {
     [self cancel];
     
     [self notify:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(imageDownloadTask:didFinishWithError:)])
+        if (self.delegate && [self.delegate respondsToSelector:@selector(imageDownloadTask:didFinishWithError:data:)])
         {
-            [self.delegate imageDownloadTask:self didFinishWithError:error];
+            [self.delegate imageDownloadTask:self didFinishWithError:error data:data];
         }
+        
     } onThread:self.notifyThread];
 }
 
@@ -62,24 +69,23 @@
 {
     if (error)
     {
-        [self finishWithError:error];
+        [self finishWithError:error data:nil];
     }
-    else if (location)
+    else
     {
-        NSError *error = nil;
+        NSError *saveError = nil;
         
-        NSFileManager *fileManager = [[NSFileManager alloc] init];
+        NSData *data = location ? [NSData dataWithContentsOfURL:location] : nil;
         
-        if ((![fileManager moveItemAtURL:location toURL:self.resourceURL error:&error]))
-        {
-            [self finishWithError:error];
-        }
+        [[ImageStorage sharedInstance] saveImageByURL:self.imageURL withDataPath:location.path error:&saveError];
+        
+        [self finishWithError:saveError data:saveError ? nil : data];
     }
 }
 
 - (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didFinishWithError:(NSError *)error response:(NSHTTPURLResponse *)response
 {
-    [self finishWithError:error];
+    [self finishWithError:error data:nil];
 }
 
 - (void)HTTPDownloadConnection:(HTTPDownloadConnection *)downloadConnection didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
@@ -90,6 +96,7 @@
         {
             [self.delegate imageDownloadTask:self didDownloadImageWithDownloadedSize:totalBytesWritten expectedSize:totalBytesExpectedToWrite];
         }
+        
     } onThread:self.notifyThread];
 }
 

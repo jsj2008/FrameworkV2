@@ -54,8 +54,9 @@
  * @brief 保存图片
  * @param URL 图片URL
  * @param dataPath 图片数据路径
+ * @param error 错误信息
  */
-- (void)saveImageByURL:(NSURL *)URL withDataPath:(NSString *)dataPath;
+- (void)saveImageByURL:(NSURL *)URL withDataPath:(NSString *)dataPath error:(NSError **)error;
 
 /*!
  * @brief 清理图片数据

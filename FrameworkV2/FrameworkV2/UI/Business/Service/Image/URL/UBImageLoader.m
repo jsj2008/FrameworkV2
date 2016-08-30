@@ -7,15 +7,10 @@
 //
 
 #import "UBImageLoader.h"
-#import "ImageManager.h"
-#import "AsyncTaskDispatcher.h"
+#import "UBImageDownloadManager.h"
+#import "ImageStorage.h"
 
 @interface UBImageLoader () <ImageManagerDelegate>
-{
-    NSURL *_URL;
-}
-
-@property (nonatomic) AsyncTaskDispatcher *taskDispatcher;
 
 - (void)finishWithError:(NSError *)error imageData:(NSData *)data;
 
@@ -24,11 +19,9 @@
 
 @implementation UBImageLoader
 
-@synthesize URL = _URL;
-
 - (void)dealloc
 {
-    [[ImageManager sharedInstance] cancelDownLoadImageByURL:self.URL withObserver:self];
+    [[UBImageDownloadManager sharedInstance] cancelDownLoadImageByURL:self.URL withObserver:self];
 }
 
 - (instancetype)initWithURL:(NSURL *)URL
@@ -37,7 +30,7 @@
     {
         _URL = [URL copy];
         
-        self.taskDispatcher = [[AsyncTaskDispatcher alloc] init];
+        self.enableLocalImage = YES;
     }
     
     return self;
@@ -45,15 +38,34 @@
 
 - (void)start
 {
-    [[ImageManager sharedInstance] downLoadImageByURL:self.URL withObserver:self];
+    if (self.enableLocalImage)
+    {
+        NSData *imageData = [[ImageStorage sharedInstance] imageDataByURL:self.URL];
+        
+        if (imageData)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self finishWithError:nil imageData:imageData];
+            });
+        }
+        else
+        {
+            [[UBImageDownloadManager sharedInstance] downLoadImageByURL:self.URL withObserver:self];
+        }
+    }
+    else
+    {
+        [[UBImageDownloadManager sharedInstance] downLoadImageByURL:self.URL withObserver:self];
+    }
 }
 
 - (void)cancel
 {
-    [[ImageManager sharedInstance] cancelDownLoadImageByURL:self.URL withObserver:self];
+    [[UBImageDownloadManager sharedInstance] cancelDownLoadImageByURL:self.URL withObserver:self];
 }
 
-- (void)imageManager:(ImageManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data
+- (void)imageManager:(UBImageDownloadManager *)manager didFinishDownloadImageByURL:(NSURL *)URL withError:(NSError *)error imageData:(NSData *)data
 {
     if ([URL isEqual:self.URL])
     {
@@ -61,7 +73,7 @@
     }
 }
 
-- (void)imageManager:(ImageManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
+- (void)imageManager:(UBImageDownloadManager *)manager didDownloadImageByURL:(NSURL *)URL withDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
 {
     if ([URL isEqual:self.URL] && self.delegate && [self.delegate respondsToSelector:@selector(imageLoader:didDownloadImageWithDownloadedSize:expectedSize:)])
     {

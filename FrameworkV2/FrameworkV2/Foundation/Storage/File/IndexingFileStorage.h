@@ -40,9 +40,10 @@
  * @param path 待存储的数据路径
  * @param index 数据索引
  * @param moveOrCopy 移动或拷贝文件，YES为移动，NO为拷贝
+ * @param error 错误信息
  * @result 存储是否成功
  */
-- (BOOL)saveDataWithPath:(NSString *)path forIndex:(NSString *)index moveOrCopy:(BOOL)moveOrCopy;
+- (BOOL)saveDataWithPath:(NSString *)path forIndex:(NSString *)index moveOrCopy:(BOOL)moveOrCopy error:(NSError **)error;
 
 /*!
  * @brief 读取数据

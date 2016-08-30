@@ -40,6 +40,12 @@
 @property (nonatomic, weak) id<UBImageLoaderDelegate> delegate;
 
 /*!
+ * @brief 是否允许使用本地图片
+ * @discussion 默认YES
+ */
+@property (nonatomic) BOOL enableLocalImage;
+
+/*!
  * @brief 用户字典
  */
 @property (nonatomic) NSDictionary *userInfo;

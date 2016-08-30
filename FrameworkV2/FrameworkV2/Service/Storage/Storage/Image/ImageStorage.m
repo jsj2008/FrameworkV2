@@ -52,9 +52,9 @@
     [self.storage saveData:data forIndex:[self indexOfURL:URL]];
 }
 
-- (void)saveImageByURL:(NSURL *)URL withDataPath:(NSString *)dataPath
+- (void)saveImageByURL:(NSURL *)URL withDataPath:(NSString *)dataPath error:(NSError *__autoreleasing *)error
 {
-    [self.storage saveDataWithPath:dataPath forIndex:[self indexOfURL:URL] moveOrCopy:YES];
+    [self.storage saveDataWithPath:dataPath forIndex:[self indexOfURL:URL] moveOrCopy:YES error:error];
 }
 
 - (void)removeAllImages
@@ -64,7 +64,21 @@
 
 - (NSData *)imageDataByURL:(NSURL *)URL
 {
-    return [self.storage dataForIndex:[self indexOfURL:URL]];
+    NSData *data = nil;
+    
+    if (URL)
+    {
+        if ([URL isFileURL])
+        {
+            data = [NSData dataWithContentsOfURL:URL];
+        }
+        else
+        {
+            data = [self.storage dataForIndex:[self indexOfURL:URL]];
+        }
+    }
+    
+    return data;
 }
 
 - (long long)currentImageContentSize
