@@ -172,6 +172,7 @@
 		D40179E51D2114EE00C0899E /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */; };
 		D40179E71D2114FE00C0899E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E61D2114FE00C0899E /* libsqlite3.tbd */; };
 		D40179E91D21150600C0899E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E81D21150600C0899E /* Photos.framework */; };
+		D41417211D767744004594A4 /* NSURL+ImageSize.m in Sources */ = {isa = PBXBuildFile; fileRef = D41417201D767744004594A4 /* NSURL+ImageSize.m */; };
 		D415B2251D751F2F00B09BB3 /* UBImageDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */; };
 		D415B22C1D7533AA00B09BB3 /* UBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D415B2291D7533AA00B09BB3 /* UBToastView.m */; };
 		D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */; };
@@ -520,6 +521,8 @@
 		D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D40179E61D2114FE00C0899E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D40179E81D21150600C0899E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		D414171F1D767744004594A4 /* NSURL+ImageSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+ImageSize.h"; sourceTree = "<group>"; };
+		D41417201D767744004594A4 /* NSURL+ImageSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+ImageSize.m"; sourceTree = "<group>"; };
 		D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBImageDownloadManager.h; sourceTree = "<group>"; };
 		D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageDownloadManager.m; sourceTree = "<group>"; };
 		D415B2281D7533AA00B09BB3 /* UBToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBToastView.h; sourceTree = "<group>"; };
@@ -1707,6 +1710,8 @@
 				D40178AC1D2114BF00C0899E /* UBImageLoader.m */,
 				D415B2231D751F2F00B09BB3 /* UBImageDownloadManager.h */,
 				D415B2241D751F2F00B09BB3 /* UBImageDownloadManager.m */,
+				D414171F1D767744004594A4 /* NSURL+ImageSize.h */,
+				D41417201D767744004594A4 /* NSURL+ImageSize.m */,
 			);
 			path = URL;
 			sourceTree = "<group>";
@@ -2318,6 +2323,7 @@
 				D4B99F111D7580F10018CD03 /* UBNothingIndicatorView.m in Sources */,
 				D40179381D2114BF00C0899E /* HTTPRequestMessageHeaderParser.m in Sources */,
 				D40179641D2114BF00C0899E /* HTTPSession.m in Sources */,
+				D41417211D767744004594A4 /* NSURL+ImageSize.m in Sources */,
 				D40179961D2114BF00C0899E /* FoundationServiceUnit.m in Sources */,
 				D40179901D2114BF00C0899E /* HTTPRequestBody+MIME.m in Sources */,
 				D415B22C1D7533AA00B09BB3 /* UBToastView.m in Sources */,

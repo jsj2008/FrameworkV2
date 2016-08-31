@@ -34,6 +34,17 @@ static const char kUIViewPropertyKey_ActivityIndicatorCount[] = "activityIndicat
 - (void)setActivityIndicatorView:(UBActivityIndicatorView *)activityIndicatorView
 {
     objc_setAssociatedObject(self, kUIViewPropertyKey_ActivityIndicatorView, activityIndicatorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    if (activityIndicatorView)
+    {
+        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:
+                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:0],
+                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:0],
+                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0],
+                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0], nil]];
+    }
 }
 
 - (UBActivityIndicatorView *)activityIndicatorView
@@ -59,18 +70,8 @@ static const char kUIViewPropertyKey_ActivityIndicatorCount[] = "activityIndicat
     }
     
     if (self.activityIndicatorCount == 0)
-    {
-        UBActivityIndicatorView *activityIndicatorView = self.activityIndicatorView;
-        
-        [self addSubview:activityIndicatorView];
-        
-        activityIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:
-                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:0],
-                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:0],
-                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0],
-                                                 [NSLayoutConstraint constraintWithItem:activityIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0], nil]];
+    {        
+        [self addSubview:self.activityIndicatorView];
         
         [self.activityIndicatorView startAnimating];
     }

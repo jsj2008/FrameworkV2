@@ -24,6 +24,17 @@ static const char kUIViewPropertyKey_ProgressIndicatorProgressValue[] = "progres
 - (void)setProgressIndicatorView:(UBProgressIndicatorView *)progressIndicatorView
 {
     objc_setAssociatedObject(self, kUIViewPropertyKey_ProgressIndicatorView, progressIndicatorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    if (progressIndicatorView)
+    {
+        progressIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:
+                                                 [NSLayoutConstraint constraintWithItem:progressIndicatorView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:0],
+                                                 [NSLayoutConstraint constraintWithItem:progressIndicatorView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:0],
+                                                 [NSLayoutConstraint constraintWithItem:progressIndicatorView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0],
+                                                 [NSLayoutConstraint constraintWithItem:progressIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0], nil]];
+    }
 }
 
 - (UBProgressIndicatorView *)progressIndicatorView
