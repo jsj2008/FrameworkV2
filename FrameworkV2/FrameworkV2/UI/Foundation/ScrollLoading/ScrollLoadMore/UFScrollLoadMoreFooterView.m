@@ -64,28 +64,6 @@
     }
 }
 
-- (void)setAutoLoadingWhenContentSizeVisible:(BOOL)autoLoadingWhenContentSizeVisible
-{
-    _autoLoadingWhenContentSizeVisible = autoLoadingWhenContentSizeVisible;
-    
-    if (autoLoadingWhenContentSizeVisible && self.isEnabled)
-    {
-        // 为触发KVO进行的无用操作
-        self.scrollView.contentOffset = self.scrollView.contentOffset;
-    }
-}
-
-- (void)setEnable:(BOOL)enable
-{
-    _enable = enable;
-    
-    if (enable && self.autoLoadingWhenContentSizeVisible)
-    {
-        // 为触发KVO进行的无用操作
-        self.scrollView.contentOffset = self.scrollView.contentOffset;
-    }
-}
-
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"contentOffset"] || [keyPath isEqualToString:@"contentSize"] || [keyPath isEqualToString:@"contentInset"] || [keyPath isEqualToString:@"frame"] || [keyPath isEqualToString:@"bounds"])
@@ -100,100 +78,94 @@
         }
     }
     
-    if (self.isEnabled)
+    if (!self.isEnabled || self.status == UFScrollLoadingViewStatus_Loading)
     {
-        if ([keyPath isEqualToString:@"contentOffset"])
-        {
-            if (self.status == UFScrollLoadingViewStatus_Loading)
-            {
-                ;
-            }
-            else if (self.scrollView.contentSize.height == 0)
-            {
-                ;
-            }
-            else if (self.scrollView.contentSize.height + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom + self.loadingContentHeight <= self.scrollView.frame.size.height)
-            {
-                if (self.scrollView.isTracking)
-                {
-                    if (self.scrollView.contentOffset.y > - self.scrollView.contentInset.top)
-                    {
-                        if (self.status != UFScrollLoadingViewStatus_Prepare)
-                        {
-                            [self prepare];
-                        }
-                    }
-                    else if (self.scrollView.contentOffset.y < - self.scrollView.contentInset.top)
-                    {
-                        if (self.status != UFScrollLoadingViewStatus_Reset)
-                        {
-                            [self reset];
-                        }
-                    }
-                }
-                else
-                {
-                    if (self.autoLoadingWhenContentSizeVisible)
-                    {
-                        if (self.status != UFScrollLoadingViewStatus_Loading)
-                        {
-                            [self start];
-                        }
-                    }
-                    else
-                    {
-                        if (self.scrollView.contentOffset.y == - self.scrollView.contentInset.top)
-                        {
-                            if (self.status == UFScrollLoadingViewStatus_Prepare)
-                            {
-                                [self start];
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (self.scrollView.isTracking)
-                {
-                    if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.loadingContentHeight + self.scrollView.contentInset.bottom)
-                    {
-                        if (self.status != UFScrollLoadingViewStatus_Prepare)
-                        {
-                            [self prepare];
-                        }
-                    }
-                    else
-                    {
-                        if (self.status != UFScrollLoadingViewStatus_Reset)
-                        {
-                            [self reset];
-                        }
-                    }
-                }
-                else
-                {
-                    if (fabs(self.scrollView.contentOffset.y + self.scrollView.frame.size.height - self.scrollView.contentSize.height - self.loadingContentHeight - self.scrollView.contentInset.bottom) < 1)
-                    {
-                        if (self.status == UFScrollLoadingViewStatus_Prepare)
-                        {
-                            [self start];
-                        }
-                    }
-                }
-            }
-        }
-        
+        return;
+    }
+    
+    // 加载更多视图在滚动视图的可视范围内外处理不同
+    if (self.scrollView.contentSize.height + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom + self.loadingContentHeight <= self.scrollView.frame.size.height)
+    {
         if ([keyPath isEqualToString:@"state"])
         {
             if (self.scrollView.panGestureRecognizer.state == UIGestureRecognizerStateEnded)
             {
-                if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.scrollView.contentInset.bottom + self.loadingContentHeight && self.scrollView.contentSize.height + self.loadingContentHeight + self.scrollView.contentInset.top + self.scrollView.contentInset.bottom > self.scrollView.frame.size.height)
+                __weak typeof(self) weakSelf = self;
+                
+                if (- self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
                 {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
-                        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, self.loadingContentHeight + self.scrollView.contentSize.height + self.scrollView.contentInset.bottom - self.scrollView.frame.size.height) animated:YES];
+                        [weakSelf.scrollView setContentOffset:CGPointMake(weakSelf.scrollView.contentOffset.x, - self.scrollView.contentInset.top) animated:YES];
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            
+                            [weakSelf start];
+                        });
                     });
+                }
+            }
+        }
+        else if ([keyPath isEqualToString:@"contentOffset"])
+        {
+            if (self.scrollView.isTracking)
+            {
+                if (- self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
+                {
+                    if (self.status != UFScrollLoadingViewStatus_Prepare)
+                    {
+                        [self prepare];
+                    }
+                }
+                else
+                {
+                    if (self.status != UFScrollLoadingViewStatus_Reset)
+                    {
+                        [self reset];
+                    }
+                }
+            }
+        }
+    }
+    else
+    {
+        if ([keyPath isEqualToString:@"state"])
+        {
+            if (self.scrollView.panGestureRecognizer.state == UIGestureRecognizerStateEnded)
+            {
+                __weak typeof(self) weakSelf = self;
+                
+                if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.scrollView.contentInset.bottom + self.loadingContentHeight)
+                {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        [weakSelf.scrollView setContentOffset:CGPointMake(weakSelf.scrollView.contentOffset.x, self.scrollView.contentSize.height + self.scrollView.contentInset.bottom + self.loadingContentHeight - self.scrollView.frame.size.height) animated:YES];
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            
+                            [weakSelf start];
+                        });
+                    });
+                }
+            }
+        }
+        else if ([keyPath isEqualToString:@"contentOffset"])
+        {
+            if (self.scrollView.isTracking)
+            {
+                if (self.scrollView.contentOffset.y + self.scrollView.frame.size.height > self.scrollView.contentSize.height + self.scrollView.contentInset.bottom + self.loadingContentHeight)
+                {
+                    if (self.status != UFScrollLoadingViewStatus_Prepare)
+                    {
+                        [self prepare];
+                    }
+                }
+                else
+                {
+                    if (self.status != UFScrollLoadingViewStatus_Reset)
+                    {
+                        [self reset];
+                    }
                 }
             }
         }
