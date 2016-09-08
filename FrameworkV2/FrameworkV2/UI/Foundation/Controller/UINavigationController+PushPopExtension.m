@@ -12,32 +12,35 @@
 
 - (void)pushViewController:(UIViewController *)viewController onNewTopViewController:(UIViewController *)newTopViewController animated:(BOOL)animated
 {
-    if (viewController)
+    if (!viewController)
     {
-        if (!newTopViewController)
+        return;
+    }
+    
+    if (!newTopViewController)
+    {
+        // 使用viewController作为导航控制器内的唯一视图控制器，不能使用动画效果
+        [self setViewControllers:[NSArray arrayWithObject:viewController]];
+    }
+    else if (self.topViewController == newTopViewController)
+    {
+        [self pushViewController:viewController animated:animated];
+    }
+    else
+    {
+        NSUInteger index = [self.viewControllers indexOfObject:newTopViewController];
+        
+        if (index != NSNotFound)
         {
-            [self setViewControllers:[NSArray arrayWithObject:viewController]];
-        }
-        else if (self.topViewController == newTopViewController)
-        {
-            [self pushViewController:viewController animated:animated];
+            NSMutableArray *newViewControllers = [[NSMutableArray alloc] initWithArray:[self.viewControllers subarrayWithRange:NSMakeRange(0, index + 1)]];
+            
+            [newViewControllers addObject:viewController];
+            
+            [self setViewControllers:newViewControllers animated:animated];
         }
         else
         {
-            NSUInteger index = [self.viewControllers indexOfObject:newTopViewController];
-            
-            if (index != NSNotFound)
-            {
-                NSMutableArray *newViewControllers = [[NSMutableArray alloc] initWithArray:[self.viewControllers subarrayWithRange:NSMakeRange(0, index + 1)]];
-                
-                [newViewControllers addObject:viewController];
-                
-                [self setViewControllers:newViewControllers animated:animated];
-            }
-            else
-            {
-                [self pushViewController:viewController animated:animated];
-            }
+            [self pushViewController:viewController animated:animated];
         }
     }
 }

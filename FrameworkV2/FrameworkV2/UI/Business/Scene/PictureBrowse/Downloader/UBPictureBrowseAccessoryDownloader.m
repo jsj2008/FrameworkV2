@@ -7,17 +7,15 @@
 //
 
 #import "UBPictureBrowseAccessoryDownloader.h"
-#import "ImageDownloadTask.h"
+#import "UBImageLoader.h"
 #import "AsyncTaskDispatcher.h"
 
 static NSString * const kTaskUserInfoKey_Picture = @"picture";
 
 
-@interface UBPictureBrowseAccessoryDownloader () <ImageDownloadTaskDelegate>
+@interface UBPictureBrowseAccessoryDownloader () <UBImageLoaderDelegate>
 
-@property (nonatomic) NSMutableArray<ImageDownloadTask *> *downloadTasks;
-
-@property (nonatomic) AsyncTaskDispatcher *taskDispatcher;
+@property (nonatomic) NSMutableArray<UBImageLoader *> *imageLoaders;
 
 @end
 
@@ -26,16 +24,14 @@ static NSString * const kTaskUserInfoKey_Picture = @"picture";
 
 - (void)dealloc
 {
-    [self.taskDispatcher cancel];
+    [self cancel];
 }
 
 - (instancetype)init
 {
     if (self = [super init])
     {
-        self.downloadTasks = [[NSMutableArray alloc] init];
-        
-        self.taskDispatcher = [[AsyncTaskDispatcher alloc] init];
+        self.imageLoaders = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -50,9 +46,9 @@ static NSString * const kTaskUserInfoKey_Picture = @"picture";
     
     BOOL exist = NO;
     
-    for (ImageDownloadTask *task in self.downloadTasks)
+    for (UBImageLoader *imageLoader in self.imageLoaders)
     {
-        if ([task.URL isEqual:picture.URL])
+        if ([imageLoader.URL isEqual:picture.URL])
         {
             exist = YES;
             
@@ -62,42 +58,45 @@ static NSString * const kTaskUserInfoKey_Picture = @"picture";
     
     if (!exist)
     {
-        if (self.downloadTasks.count >= self.maxConcurrentDownloadCount)
+        if (self.imageLoaders.count >= self.maxConcurrentDownloadCount)
         {
-            ImageDownloadTask *task = [self.downloadTasks firstObject];
+            UBImageLoader *imageLoader = [self.imageLoaders firstObject];
             
-            if (task)
+            if (imageLoader)
             {
-                [self.taskDispatcher cancelTask:task];
+                [imageLoader cancel];
                 
-                [self.downloadTasks removeObjectAtIndex:0];
+                [self.imageLoaders removeObjectAtIndex:0];
             }
         }
         
-        ImageDownloadTask *task = [[ImageDownloadTask alloc] initWithURL:picture.URL];
+        UBImageLoader *imageLoader = [[UBImageLoader alloc] initWithURL:picture.URL];
         
-        task.delegate = self;
+        imageLoader.delegate = self;
         
-        task.userInfo = [NSDictionary dictionaryWithObject:picture forKey:kTaskUserInfoKey_Picture];
+        imageLoader.userInfo = [NSDictionary dictionaryWithObject:picture forKey:kTaskUserInfoKey_Picture];
         
-        [self.taskDispatcher addTask:task];
+        [self.imageLoaders addObject:imageLoader];
         
-        [self.downloadTasks addObject:task];
+        [imageLoader start];
     }
 }
 
 - (void)cancel
 {
-    [self.taskDispatcher cancel];
+    for (UBImageLoader *imageLoader in self.imageLoaders)
+    {
+        [imageLoader cancel];
+    }
     
-    [self.downloadTasks removeAllObjects];
+    [self.imageLoaders removeAllObjects];
 }
 
-- (void)imageDownloadTask:(ImageDownloadTask *)task didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageLoader:(UBImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
 {
     if (error)
     {
-        UBPictureBrowseURLPicture *picture = [task.userInfo objectForKey:kTaskUserInfoKey_Picture];
+        UBPictureBrowseURLPicture *picture = [imageLoader.userInfo objectForKey:kTaskUserInfoKey_Picture];
         
         picture.downloadError = error;
     }

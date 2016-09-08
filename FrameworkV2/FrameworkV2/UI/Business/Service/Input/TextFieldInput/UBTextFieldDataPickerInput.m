@@ -49,6 +49,11 @@
 - (void)textFieldDataPickerInput:(UFTextFieldDataPickerInput *)input didSelectIndexes:(NSArray<NSNumber *> *)indexes
 {
     [self didInputIndexes:indexes];
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(textFieldInputDidUpdateInput:)])
+    {
+        [self.delegate textFieldInputDidUpdateInput:self];
+    }
 }
 
 - (void)textFieldDataPickerInputDidCancel:(UFTextFieldDataPickerInput *)input

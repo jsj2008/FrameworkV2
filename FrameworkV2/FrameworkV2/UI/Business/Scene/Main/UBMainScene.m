@@ -10,9 +10,4 @@
 
 @implementation UBMainScene
 
-- (void)stop
-{
-    
-}
-
 @end

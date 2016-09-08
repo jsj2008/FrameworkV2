@@ -20,9 +20,4 @@
 
 @interface UBMainScene : UFScene
 
-/*!
- * @brief 结束场景
- */
-- (void)stop;
-
 @end

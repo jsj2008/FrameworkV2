@@ -25,21 +25,21 @@
 
 @implementation LightLoadingPermanentQueue
 
+- (void)dealloc
+{
+    dispatch_sync(self.syncQueue, ^{});
+}
+
 - (id)init
 {
     if (self = [super init])
     {
         self.blocks = [[NSMutableArray alloc] init];
         
-        self.syncQueue = dispatch_queue_create("LightLoadingPermanentQueue", NULL);
+        self.syncQueue = dispatch_queue_create("LightLoadingPermanentQueue", DISPATCH_QUEUE_CONCURRENT);
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    dispatch_sync(self.syncQueue, ^{});
 }
 
 - (void)start

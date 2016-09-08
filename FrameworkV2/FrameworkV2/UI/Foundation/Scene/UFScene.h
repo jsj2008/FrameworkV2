@@ -17,7 +17,7 @@
         场景，特定的页面和逻辑组成的UI业务场景，调度controller间的跳转
  
     @discussion
-        场景内部使用UINavigationController管理controller的跳转
+        1，场景内部建议使用UINavigationController管理controller的跳转，对于present产生的controller，应在场景的stop方法中做dismiss的保护，避免场景意外退出后仍有controller被present
  
  *********************************************************/
 
@@ -45,5 +45,10 @@
  * @brief 启动场景
  */
 - (void)start;
+
+/*!
+ * @brief 结束场景
+ */
+- (void)stop;
 
 @end

@@ -8,14 +8,6 @@
 
 #import "UFScene.h"
 
-@interface UFScene ()
-{
-    __weak UINavigationController *_navigationController;
-}
-
-@end
-
-
 @implementation UFScene
 
 @synthesize navigationController = _navigationController;
@@ -31,6 +23,11 @@
 }
 
 - (void)start
+{
+    
+}
+
+- (void)stop
 {
     
 }

@@ -26,7 +26,7 @@
 
 - (NotificationObservingSet *)delegateNotificationObservingSet;
 
-- (dispatch_queue_t)delegateSyncQueue;
+- (NSLock *)delegateLock;
 
 @end
 
@@ -38,59 +38,66 @@
 
 - (void)addDelegate:(id)delegate
 {
-    if (delegate)
+    if (!delegate)
     {
-        dispatch_queue_t syncQueue = [self delegateSyncQueue];
-        
-        NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
-        
-        NSThread *currentThread = [NSThread currentThread];
-        
-        dispatch_sync(syncQueue, ^{
-            
-            NotificationObservingSet *set = [self delegateNotificationObservingSet];
-            
-            if (![[set.observerDictionary allKeys] containsObject:index])
-            {
-                NotificationObserver *observer = [[NotificationObserver alloc] init];
-                
-                observer.observer = delegate;
-                
-                observer.notifyThread = currentThread;
-                
-                [set.observerDictionary setObject:observer forKey:index];
-            }
-        });
+        return;
     }
+    
+    NSLock *lock = [self delegateLock];
+    
+    NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
+    
+    NSThread *currentThread = [NSThread currentThread];
+    
+    [lock lock];
+    
+    NotificationObservingSet *set = [self delegateNotificationObservingSet];
+    
+    if (![[set.observerDictionary allKeys] containsObject:index])
+    {
+        NotificationObserver *observer = [[NotificationObserver alloc] init];
+        
+        observer.observer = delegate;
+        
+        observer.notifyThread = currentThread;
+        
+        [set.observerDictionary setObject:observer forKey:index];
+    }
+    
+    [lock unlock];
 }
 
 - (void)removeDelegate:(id)delegate
 {
-    if (delegate)
+    if (!delegate)
     {
-        dispatch_queue_t syncQueue = [self delegateSyncQueue];
-        
-        NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
-        
-        dispatch_sync(syncQueue, ^{
-            
-            NotificationObservingSet *set = [self delegateNotificationObservingSet];
-            
-            [set.observerDictionary removeObjectForKey:index];
-        });
+        return;
     }
+    
+    NSLock *lock = [self delegateLock];
+    
+    NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
+    
+    [lock lock];
+    
+    NotificationObservingSet *set = [self delegateNotificationObservingSet];
+    
+    [set.observerDictionary removeObjectForKey:index];
+    
+    [lock unlock];
 }
 
 - (void)operateDelegate:(void (^)(id))operation
 {
     if (operation)
     {
-        dispatch_queue_t syncQueue = [self delegateSyncQueue];
+        NSLock *lock = [self delegateLock];
         
-        dispatch_sync(syncQueue, ^{
-            
-            [[self delegateNotificationObservingSet] notifyObservers:operation onThread:nil];
-        });
+        [lock lock];
+        
+        [[self delegateNotificationObservingSet] notifyObservers:operation];
+        
+        [lock unlock];
     }
 }
 
@@ -102,7 +109,7 @@
 
 static char kNSObjectPropertyKey_DelegateNotificationObservingSet[] = "delegateNotificationObservingSet";
 
-static char kNSObjectPropertyKey_DelegateSyncQueue[] = "delegateSyncQueue";
+static char kNSObjectPropertyKey_DelegateLock[] = "delegateLock";
 
 
 @implementation NSObject (Delegate_Internal)
@@ -121,18 +128,18 @@ static char kNSObjectPropertyKey_DelegateSyncQueue[] = "delegateSyncQueue";
     return set;
 }
 
-- (dispatch_queue_t)delegateSyncQueue
+- (NSLock *)delegateLock
 {
-    dispatch_queue_t queue = objc_getAssociatedObject(self, kNSObjectPropertyKey_DelegateSyncQueue);
+    NSLock *lock = objc_getAssociatedObject(self, kNSObjectPropertyKey_DelegateLock);
     
-    if (!queue)
+    if (!lock)
     {
-        queue = dispatch_queue_create("NSObject_delegateSyncQueue", NULL);
+        lock = [[NSLock alloc] init];
         
-        objc_setAssociatedObject(self, kNSObjectPropertyKey_DelegateSyncQueue, queue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, kNSObjectPropertyKey_DelegateLock, lock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     
-    return queue;
+    return lock;
 }
 
 @end

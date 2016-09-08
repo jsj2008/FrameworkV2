@@ -46,7 +46,7 @@
 @end
 
 
-#pragma mark - USImageViewURLLoadingConfiguration
+#pragma mark - UBImageViewURLLoadingConfiguration
 
 
 /*!

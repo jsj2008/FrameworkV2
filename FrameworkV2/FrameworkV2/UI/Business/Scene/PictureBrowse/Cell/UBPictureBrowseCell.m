@@ -8,15 +8,15 @@
 
 #import "UBPictureBrowseCell.h"
 #import "UBPictureBrowsePictureView.h"
-#import "UBImageViewImageLoader.h"
+#import "UBImageLoader.h"
 
-@interface UBPictureBrowseCell () <UBImageViewImageLoaderDelegate>
+@interface UBPictureBrowseCell () <UBImageLoaderDelegate>
 
 @property (strong, nonatomic) UIView *pictureView;
 
 @property (strong, nonatomic) UILabel *textLabel;
 
-@property (nonatomic) UBImageViewImageLoader *imageLoader;
+@property (nonatomic) UBImageLoader *imageLoader;
 
 - (void)customInit;
 
@@ -96,7 +96,7 @@
         {
             [self showLoading];
             
-            self.imageLoader = [[UBImageViewImageLoader alloc] initWithURL:((UBPictureBrowseURLPicture *)picture).URL];
+            self.imageLoader = [[UBImageLoader alloc] initWithURL:((UBPictureBrowseURLPicture *)picture).URL];
             
             self.imageLoader.delegate = self;
             
@@ -113,7 +113,7 @@
     self.textLabel.text = picture.text;
 }
 
-- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageLoader:(UBImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
 {
     if ([self.picture isKindOfClass:[UBPictureBrowseURLPicture class]] && [((UBPictureBrowseURLPicture *)self.picture).URL isEqual:imageLoader.URL])
     {
@@ -130,7 +130,7 @@
     }
 }
 
-- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
+- (void)imageLoader:(UBImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
 {
     
 }

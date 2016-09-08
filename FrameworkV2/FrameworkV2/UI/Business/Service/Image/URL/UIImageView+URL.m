@@ -8,16 +8,16 @@
 
 #import "UIImageView+URL.h"
 #import <objc/runtime.h>
-#import "UBImageViewImageLoader.h"
+#import "UBImageLoader.h"
 
 static const char kUIImageViewPropertyKey_URLLoadingConfiguration[] = "URLLoadingConfiguration";
 
 static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
 
 
-@interface UIImageView (URL_Internal) <UBImageViewImageLoaderDelegate>
+@interface UIImageView (URL_Internal) <UBImageLoaderDelegate>
 
-@property (nonatomic) UBImageViewImageLoader *URLImageLoader;
+@property (nonatomic) UBImageLoader *URLImageLoader;
 
 @end
 
@@ -40,7 +40,7 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
     
     [self.URLImageLoader cancel];
     
-    self.URLImageLoader = [[UBImageViewImageLoader alloc] initWithURL:self.URLLoadingConfiguration.URL];
+    self.URLImageLoader = [[UBImageLoader alloc] initWithURL:self.URLLoadingConfiguration.URL];
     
     self.URLImageLoader.delegate = self;
     
@@ -64,17 +64,17 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
 
 @implementation UIImageView (URL_Internal)
 
-- (void)setURLImageLoader:(UBImageViewImageLoader *)URLImageLoader
+- (void)setURLImageLoader:(UBImageLoader *)URLImageLoader
 {
     objc_setAssociatedObject(self, kUIImageViewPropertyKey_URLImageLoader, URLImageLoader, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UBImageViewImageLoader *)URLImageLoader
+- (UBImageLoader *)URLImageLoader
 {
     return objc_getAssociatedObject(self, kUIImageViewPropertyKey_URLImageLoader);
 }
 
-- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
+- (void)imageLoader:(UBImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
 {
     if (error)
     {
@@ -94,7 +94,7 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
     }
 }
 
-- (void)imageViewImageLoader:(UBImageViewImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
+- (void)imageLoader:(UBImageLoader *)imageLoader didDownloadImageWithDownloadedSize:(long long)downloadedSize expectedSize:(long long)expectedSize
 {
     if (self.URLLoadingConfiguration.progressing)
     {

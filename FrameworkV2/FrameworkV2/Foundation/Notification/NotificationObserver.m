@@ -13,21 +13,7 @@
 @end
 
 
-@interface NotificationObservingSet ()
-{
-    NSMutableArray *_observerArray;
-    
-    NSMutableDictionary *_observerDictionary;
-}
-
-@end
-
-
 @implementation NotificationObservingSet
-
-@synthesize observerArray = _observerArray;
-
-@synthesize observerDictionary = _observerDictionary;
 
 - (id)init
 {
@@ -41,7 +27,7 @@
     return self;
 }
 
-- (void)notifyObservers:(void (^)(id))notification onThread:(NSThread *)thread
+- (void)notifyObservers:(void (^)(id))notification
 {
     if (notification)
     {

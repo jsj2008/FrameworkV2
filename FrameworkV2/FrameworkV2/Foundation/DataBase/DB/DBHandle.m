@@ -34,7 +34,7 @@
 {
     if (self = [super init])
     {
-        _syncQueue = dispatch_queue_create("DB handle", NULL);
+        _syncQueue = dispatch_queue_create("DB handle", DISPATCH_QUEUE_CONCURRENT);
     }
     
     return self;

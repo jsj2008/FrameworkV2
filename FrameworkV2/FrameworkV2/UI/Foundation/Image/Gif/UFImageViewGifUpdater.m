@@ -100,25 +100,17 @@
 
 - (void)pauseUpdating
 {
-    [self.displayLink invalidate];
-    
-    self.displayLink = nil;
+    self.displayLink.paused = YES;
 }
 
 - (void)resumeUpdating
 {
-    [self.displayLink invalidate];
-    
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-    
-    self.displayLink.frameInterval = 1;
-    
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    self.displayLink.paused = NO;
 }
 
 - (void)update
 {
-    self.elapsedDuration += self.displayLink.duration;
+    self.elapsedDuration += (self.displayLink.duration * self.displayLink.frameInterval);
     
     UIImage *image = nil;
     

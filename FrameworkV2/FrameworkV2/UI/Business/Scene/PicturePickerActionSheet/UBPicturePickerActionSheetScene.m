@@ -17,6 +17,8 @@
 
 @property (nonatomic) UIViewController *pickerController;
 
+@property (nonatomic) UBPicturePickerAction *selectedAction;
+
 - (void)didSelectAction:(UBPicturePickerAction *)action;
 
 - (void)showPhotoLibrary;
@@ -72,6 +74,8 @@
 
 - (void)didSelectAction:(UBPicturePickerAction *)action
 {
+    self.selectedAction = action;
+    
     // 在这里需要判断权限
     if ([action.actionId isEqualToString:kPicturePickerActionId_Cancel])
     {
@@ -264,7 +268,7 @@
         
         pickerController.delegate = self;
         
-        pickerController.allowsEditing = YES;
+        pickerController.allowsEditing = self.selectedAction.enableEditing;
         
         pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         
@@ -286,7 +290,7 @@
         
         pickerController.delegate = self;
         
-        pickerController.allowsEditing = YES;
+        pickerController.allowsEditing = self.selectedAction.enableEditing;
         
         pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
         
@@ -308,7 +312,7 @@
         
         pickerController.delegate = self;
         
-        pickerController.allowsEditing = YES;
+        pickerController.allowsEditing = self.selectedAction.enableEditing;
         
         pickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
         
@@ -341,7 +345,7 @@
 {
     UBPicturePickerPickedImage *pickedImage = [[UBPicturePickerPickedImage alloc] init];
     
-    pickedImage.image = [info objectForKey:UIImagePickerControllerEditedImage];
+    pickedImage.image = picker.allowsEditing ? [info objectForKey:UIImagePickerControllerEditedImage] : [info objectForKey:UIImagePickerControllerOriginalImage];
     
     __weak typeof(self) weakSelf = self;
     

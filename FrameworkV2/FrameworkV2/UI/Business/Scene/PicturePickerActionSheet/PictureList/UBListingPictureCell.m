@@ -58,11 +58,7 @@
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                if (error)
-                {
-                    [weakSelf finishRequestWithError:error image:nil info:info];
-                }
-                else
+                if (!error)
                 {
                     [weakSelf updateRequestProgress:progress withInfo:info];
                 }
@@ -79,9 +75,15 @@
         
         PHImageRequestID requestId = [[info objectForKey:PHImageResultRequestIDKey] intValue];
         
-        if (requestId == weakSelf.requestId)
+        NSError *error = [info objectForKey:PHImageErrorKey];
+        
+        BOOL isDegraded = [[info objectForKey:PHImageResultIsDegradedKey] boolValue];
+        
+        BOOL isCancelled = [[info objectForKey:PHImageCancelledKey] boolValue];
+        
+        if (requestId == weakSelf.requestId && !isDegraded && !isCancelled)
         {
-            [weakSelf finishRequestWithError:nil image:result info:info];
+            [weakSelf finishRequestWithError:error image:result info:info];
         }
     }];
     

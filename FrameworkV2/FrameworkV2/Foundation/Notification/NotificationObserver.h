@@ -64,11 +64,9 @@
 @property (nonatomic, readonly) NSMutableDictionary<NSString *, NotificationObserver *> *observerDictionary;
 
 /*!
- * @brief 在指定线程上发送块消息
- * @discussion 消息块将在之后的runloop中得到执行
+ * @brief 发送块消息
  * @param notification 待发送的消息
- * @param thread 发送线程，若为nil，则在各NotificationObserver的通知线程上发送消息，若NotificationObserver的通知线程为nil，则在当前线程上发送消息
  */
-- (void)notifyObservers:(void (^)(id observer))notification onThread:(NSThread *)thread;
+- (void)notifyObservers:(void (^)(id observer))notification;
 
 @end

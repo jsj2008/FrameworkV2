@@ -46,27 +46,28 @@ static NSString * const kCellIdentifier = @"cell";
     
     [self.pictureView registerClass:[UBPictureBrowseCell class] forCellWithReuseIdentifier:kCellIdentifier];
     
-    UBPictureBrowseToolBarItem *item1 = [[UBPictureBrowseToolBarItem alloc] init];
+    NSMutableArray *toolBarItems = [[NSMutableArray alloc] init];
     
-    item1.itemId = @"item1";
+    for (NSString *itemId in self.toolBarItemIds)
+    {
+        UBPictureBrowseToolBarItem *item = [[UBPictureBrowseToolBarItem alloc] init];
+        
+        item.itemId = itemId;
+        
+        item.enable = YES;
+        
+        item.selected = NO;
+        
+        [toolBarItems addObject:item];
+    }
     
-    item1.enable = YES;
-    
-    item1.selected = NO;
-    
-    UBPictureBrowseToolBarItem *item2 = [[UBPictureBrowseToolBarItem alloc] init];
-    
-    item2.itemId = @"item2";
-    
-    item2.enable = YES;
-    
-    item2.selected = NO;
-    
-    self.toolBar.items = [NSArray arrayWithObjects:item1, item2, nil];
+    self.toolBar.items = toolBarItems;
     
     self.toolBar.delegate = self;
     
     self.toolBar.backgroundColor = [UIColor grayColor];
+    
+    self.toolBar.hidden = self.toolBarItemIds.count == 0;
     
     self.accessoryDownloader = [[UBPictureBrowseAccessoryDownloader alloc] init];
     

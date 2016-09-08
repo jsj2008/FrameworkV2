@@ -34,7 +34,7 @@
         
         self.fileManager = [[NSFileManager alloc] init];
         
-        self.syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"IndexingFileStorage: %@", directory] UTF8String], NULL);
+        self.syncQueue = dispatch_queue_create([[NSString stringWithFormat:@"IndexingFileStorage: %@", directory] UTF8String], DISPATCH_QUEUE_CONCURRENT);
         
         BOOL isDirectory = NO;
         
@@ -64,7 +64,7 @@
     return success;
 }
 
-- (BOOL)saveDataWithPath:(NSString *)path forIndex:(NSString *)index moveOrCopy:(BOOL)moveOrCopy
+- (BOOL)saveDataWithPath:(NSString *)path forIndex:(NSString *)index moveOrCopy:(BOOL)moveOrCopy error:(NSError *__autoreleasing *)error
 {
     __block BOOL success = NO;
     
@@ -76,11 +76,11 @@
             
             if (moveOrCopy)
             {
-                success = [self.fileManager moveItemAtPath:path toPath:dataPath error:nil];
+                success = [self.fileManager moveItemAtPath:path toPath:dataPath error:error];
             }
             else
             {
-                success = [self.fileManager copyItemAtPath:path toPath:dataPath error:nil];
+                success = [self.fileManager copyItemAtPath:path toPath:dataPath error:error];
             }
         });
     }
