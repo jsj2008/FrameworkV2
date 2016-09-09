@@ -45,7 +45,7 @@
     return self;
 }
 
-- (void)run
+- (void)main
 {
     NSURL *URL = self.URL ? self.URL : [NSURL URLWithString:@""];
     

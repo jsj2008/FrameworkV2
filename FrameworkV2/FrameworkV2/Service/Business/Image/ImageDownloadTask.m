@@ -22,7 +22,7 @@
 
 @implementation ImageDownloadTask
 
-- (void)run
+- (void)main
 {
     if ([self.imageURL isFileURL])
     {
