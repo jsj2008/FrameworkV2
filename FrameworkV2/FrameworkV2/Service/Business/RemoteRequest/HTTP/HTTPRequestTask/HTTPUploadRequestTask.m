@@ -21,7 +21,7 @@
 
 @implementation HTTPUploadRequestTask
 
-- (void)run
+- (void)main
 {
     NSURL *URL = self.URL ? self.URL : [NSURL URLWithString:@""];
     
