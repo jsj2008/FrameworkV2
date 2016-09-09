@@ -36,21 +36,6 @@
 
 @implementation UBPicturePickerActionSheetScene
 
-- (void)dealloc
-{
-    // 为防止alertController显示时，scene被撤销而可能导致alertController一直被显示，这里需要进行一次dismiss操作
-    if (self.alertController && self.alertController.presentingViewController)
-    {
-        [self.alertController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-    }
-    
-    // 为防止pickerController显示时，scene被撤销而可能导致pickerController一直被显示，这里需要进行一次dismiss操作
-    if (self.pickerController && self.pickerController.presentingViewController)
-    {
-        [self.pickerController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
-    }
-}
-
 - (void)start
 {
     __weak typeof(self) weakSelf = self;
@@ -70,6 +55,21 @@
     self.alertController = alertController;
     
     [self.navigationController.topViewController presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)stop
+{
+    // 为防止alertController显示时，scene被撤销而可能导致alertController一直被显示，这里需要进行一次dismiss操作
+    if (self.alertController && self.alertController.presentingViewController)
+    {
+        [self.alertController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    }
+    
+    // 为防止pickerController显示时，scene被撤销而可能导致pickerController一直被显示，这里需要进行一次dismiss操作
+    if (self.pickerController && self.pickerController.presentingViewController)
+    {
+        [self.pickerController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    }
 }
 
 - (void)didSelectAction:(UBPicturePickerAction *)action
