@@ -192,6 +192,8 @@
 		D4B99F0E1D757A570018CD03 /* UBProgressIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */; };
 		D4B99F111D7580F10018CD03 /* UBNothingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
+		D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */; };
+		D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
 		D4FF89C71D3DCF4E00B39D60 /* XXXRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */; };
@@ -560,6 +562,10 @@
 		D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBNothingIndicatorView.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
+		D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UFScene+Scene.h"; sourceTree = "<group>"; };
+		D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UFScene+Scene.m"; sourceTree = "<group>"; };
+		D4F248111D83D56B00D4FD14 /* UIViewController+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Scene.h"; sourceTree = "<group>"; };
+		D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Scene.m"; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
 		D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXJsonSerialization.m; sourceTree = "<group>"; };
 		D4FF89C11D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXRequestResponseJsonContent.h; sourceTree = "<group>"; };
@@ -1962,6 +1968,10 @@
 			children = (
 				D40179131D2114BF00C0899E /* UFScene.h */,
 				D40179141D2114BF00C0899E /* UFScene.m */,
+				D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */,
+				D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */,
+				D4F248111D83D56B00D4FD14 /* UIViewController+Scene.h */,
+				D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -2361,6 +2371,7 @@
 				D40179791D2114BF00C0899E /* StateMachine.m in Sources */,
 				D40179C81D2114BF00C0899E /* UIImage+Orientation.m in Sources */,
 				D4B99F0D1D757A570018CD03 /* UBActivityIndicatorView.m in Sources */,
+				D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */,
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
 				D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */,
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
@@ -2373,6 +2384,7 @@
 				D40179C61D2114BF00C0899E /* UFImageEditMaskView.m in Sources */,
 				D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
+				D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
 				D401793B1D2114BF00C0899E /* HTTPResponseMessageSerializer.m in Sources */,
 				D401799A1D2114BF00C0899E /* APPLog+SharedInstance.m in Sources */,
