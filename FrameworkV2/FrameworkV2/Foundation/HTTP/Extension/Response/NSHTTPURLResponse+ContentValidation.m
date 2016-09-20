@@ -17,7 +17,7 @@
     
     NSString *MIMEType = self.MIMEType;
     
-    CFStringEncoding stringEncoding = CFStringConvertIANACharSetNameToEncoding((CFStringRef)self.textEncodingName);;
+    CFStringEncoding stringEncoding = self.textEncodingName ? CFStringConvertIANACharSetNameToEncoding((CFStringRef)self.textEncodingName) : kCFStringEncodingInvalidId;
     
     if (![condition.acceptableStatusCodes containsObject:[NSNumber numberWithInteger:statusCode]])
     {
