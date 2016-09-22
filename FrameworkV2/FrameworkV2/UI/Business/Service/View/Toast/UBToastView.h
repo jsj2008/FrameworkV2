@@ -45,7 +45,8 @@
 @property (nonatomic) void (^cancelOperation)(void);
 
 /*!
- * @brief 显示超时时间，超过时间自定执行取消操作
+ * @brief 显示超时时间，超过时间自动执行取消操作
+ * @discussion timeout <= 0，超时设置不生效
  */
 @property (nonatomic) NSTimeInterval timeout;
 
