@@ -27,7 +27,7 @@
 /*!
  * @brief 消息文本
  */
-@property (nonatomic) NSAttributedString *attributedMessage;
+@property (nonatomic, copy) NSAttributedString *attributedMessage;
 
 /*!
  * @brief 选项
@@ -37,12 +37,12 @@
 /*!
  * @brief 选项选择回调block
  */
-@property (nonatomic) void (^optionOperation)(NSAttributedString *attributedOption);
+@property (nonatomic, copy) void (^optionOperation)(NSAttributedString *attributedOption);
 
 /*!
  * @brief 取消回调block
  */
-@property (nonatomic) void (^cancelOperation)(void);
+@property (nonatomic, copy) void (^cancelOperation)(void);
 
 /*!
  * @brief 显示超时时间，超过时间自动执行取消操作
