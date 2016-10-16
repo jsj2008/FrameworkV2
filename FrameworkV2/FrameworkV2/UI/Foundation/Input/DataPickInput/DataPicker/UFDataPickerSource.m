@@ -25,7 +25,12 @@
     return nil;
 }
 
-- (NSArray *)titlesAtIndexes:(NSArray *)indexes
+- (NSArray<NSString *> *)titlesAtIndexes:(NSArray<NSNumber *> *)indexes
+{
+    return nil;
+}
+
+- (NSArray<NSNumber *> *)indexesForTitles:(NSArray<NSString *> *)titles
 {
     return nil;
 }
@@ -54,13 +59,18 @@
         {
             index = [self.delegate dataPickerSource:self selectedRowInComponent:i];
         }
-        
+                
         NSArray *array = [[data allValues] firstObject];
         
-        number = [array count];
+        number = array.count;
         
         if (number > 0)
         {
+            if (index > number - 1)
+            {
+                index = number - 1;
+            }
+            
             id object = [array objectAtIndex:index];
             
             if ([object isKindOfClass:[NSDictionary class]])
@@ -132,19 +142,19 @@
     return title;
 }
 
-- (NSArray *)titlesAtIndexes:(NSArray *)indexes
+- (NSArray<NSString *> *)titlesAtIndexes:(NSArray<NSNumber *> *)indexes
 {
     NSMutableArray *titles = [[NSMutableArray alloc] init];
     
     NSDictionary *data = self.data;
     
-    for (int i = 0; i < [indexes count]; i ++)
+    for (int i = 0; i < indexes.count; i ++)
     {
         NSInteger index = [[indexes objectAtIndex:i] integerValue];
         
         NSArray *array = [[data allValues] firstObject];
         
-        if ([array count] > index)
+        if (array.count > index)
         {
             id object = [array objectAtIndex:index];
             
@@ -168,6 +178,69 @@
     }
     
     return titles;
+}
+
+- (NSArray<NSNumber *> *)indexesForTitles:(NSArray<NSString *> *)titles
+{
+    NSMutableArray *indexes = [[NSMutableArray alloc] init];
+    
+    NSDictionary *data = self.data;
+    
+    for (int i = 0; i < titles.count; i ++)
+    {
+        NSString *title = [titles objectAtIndex:i];
+        
+        NSArray *array = [[data allValues] firstObject];
+        
+        BOOL end = NO;
+        
+        NSInteger index = NSNotFound;
+        
+        for (int j = 0; j < array.count; j ++)
+        {
+            id object = [array objectAtIndex:j];
+            
+            if ([object isKindOfClass:[NSString class]] && [(NSString *)object isEqualToString:title])
+            {
+                index = j;
+                
+                end = YES;
+                
+                break;
+            }
+            else if ([object isKindOfClass:[NSDictionary class]])
+            {
+                NSString *key = [[(NSDictionary *)object allKeys] firstObject];
+                
+                if ([key isEqualToString:title])
+                {
+                    index = j;
+                    
+                    data = object;
+                    
+                    break;
+                }
+            }
+        }
+        
+        if (index != NSNotFound)
+        {
+            [indexes addObject:[NSNumber numberWithInteger:index]];
+        }
+        else
+        {
+            indexes = nil;
+            
+            break;
+        }
+        
+        if (end)
+        {
+            break;
+        }
+    }
+    
+    return indexes;
 }
 
 @end
