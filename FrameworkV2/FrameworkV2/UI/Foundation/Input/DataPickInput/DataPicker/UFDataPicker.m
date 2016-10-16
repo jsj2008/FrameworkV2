@@ -87,7 +87,27 @@
 
 - (NSArray<NSNumber *> *)currentIndexes
 {
-    return [self.selectedIndexes copy];
+    NSMutableArray *indexes = [[NSMutableArray alloc] init];
+    
+    for (NSInteger i = 0; i < self.selectedIndexes.count; i ++)
+    {
+        NSInteger index = [[self.selectedIndexes objectAtIndex:i] integerValue];
+        
+        NSInteger numberOfRowsInComponent = [self.dataSource numberOfRowsInComponent:i];
+        
+        if (numberOfRowsInComponent <= 0)
+        {
+            break;
+        }
+        else if (index > numberOfRowsInComponent - 1)
+        {
+            index = numberOfRowsInComponent - 1;
+        }
+        
+        [indexes addObject:[NSNumber numberWithInteger:index]];
+    }
+    
+    return indexes;
 }
 
 @end
