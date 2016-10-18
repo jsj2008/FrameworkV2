@@ -86,7 +86,7 @@
             {
                 __weak typeof(self) weakSelf = self;
                 
-                if (- self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
+                if (self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
                 {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
@@ -104,7 +104,7 @@
         {
             if (self.scrollView.isTracking)
             {
-                if (- self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
+                if (self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
                 {
                     if (self.status != UFScrollLoadingViewStatus_Prepare)
                     {
