@@ -10,14 +10,4 @@
 
 @implementation UBTextFieldInput
 
-- (instancetype)initWithTextField:(UITextField *)textField
-{
-    if (self = [super init])
-    {
-        _textField = textField;
-    }
-    
-    return self;
-}
-
 @end

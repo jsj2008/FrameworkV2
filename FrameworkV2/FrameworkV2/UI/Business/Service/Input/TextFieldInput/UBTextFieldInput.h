@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UBTextFieldInputDelegate;
+/*!
+ * @brief TextField数据输入的完成回调
+ */
+typedef void(^UBTextFieldInputCompletion)(void);
 
 /*********************************************************
  
@@ -26,41 +29,13 @@
 @interface UBTextFieldInput : NSObject
 
 /*!
- * @brief 初始化
- * @param textField 文本输入框
- * @result 初始化对象
- */
-- (instancetype)initWithTextField:(UITextField *)textField;
-
-/*!
  * @brief 文本输入框
  */
-@property (nonatomic, readonly) UITextField *textField;
+@property (nonatomic, weak) UITextField *textField;
 
 /*!
- * @brief 消息代理
+ * @brief 输入数据的完成回调
  */
-@property (nonatomic, weak) id<UBTextFieldInputDelegate> delegate;
-
-@end
-
-
-/*********************************************************
- 
-    @protocol
-        UBTextFieldInputDelegate
- 
-    @abstract
-        TextField数据输入器的消息协议
- 
- *********************************************************/
-
-@protocol UBTextFieldInputDelegate <NSObject>
-
-/*!
- * @brief 输入器更新输入内容
- * @param input 输入器
- */
-- (void)textFieldInputDidUpdateInput:(UBTextFieldInput *)input;
+@property (nonatomic, copy) UBTextFieldInputCompletion completion;
 
 @end

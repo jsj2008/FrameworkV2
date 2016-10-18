@@ -56,6 +56,14 @@
  */
 - (NSArray<NSString *> *)titlesAtIndexes:(NSArray<NSNumber *> *)indexes;
 
+/*!
+ * @brief 指定文本对应的行索引
+ * @discussion 当同一文本对应多个行索引时，返回第一个行索引
+ * @param titles 文本
+ * @result 行索引
+ */
+- (NSArray<NSNumber *> *)indexesForTitles:(NSArray<NSString *> *)titles;
+
 @end
 
 
