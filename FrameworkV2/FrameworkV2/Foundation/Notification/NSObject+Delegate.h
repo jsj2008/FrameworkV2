@@ -38,7 +38,6 @@
 
 /*!
  * @brief 操作delegate
- * @discussion
  * @param operation delegate操作
  */
 - (void)operateDelegate:(void (^)(id delegate))operation;

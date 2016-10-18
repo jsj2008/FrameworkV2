@@ -9,20 +9,14 @@
 #import "UFDataPicker.h"
 
 @interface UFDataPicker () <UFDataPickerSourceDelegate>
-{
-    UFDataPickerSource *_dataSource;
-    
-    UIPickerView *_pickerView;
-}
+
+// 由于UIPickerView在连续调用selectedRowInComponent:时会发生row始终等于0的情况（原因未知，连续调用起初能获取正确的row，随后会一直等于0），因此使用selectedIndexes来准确记录选择的row数组
+@property (nonatomic) NSMutableArray<NSNumber *> *selectedIndexes;
 
 @end
 
 
 @implementation UFDataPicker
-
-@synthesize dataSource = _dataSource;
-
-@synthesize pickerView = _pickerView;
 
 - (instancetype)initWithDataSource:(UFDataPickerSource *)dataSource
 {
@@ -37,6 +31,13 @@
         _dataSource = dataSource;
         
         _dataSource.delegate = self;
+        
+        self.selectedIndexes = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < [dataSource numberOfComponents]; i ++)
+        {
+            [self.selectedIndexes addObject:[NSNumber numberWithInteger:0]];
+        }
     }
     
     return self;
@@ -59,6 +60,8 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    [self.selectedIndexes replaceObjectAtIndex:component withObject:[NSNumber numberWithInteger:row]];
+    
     if (component < [self.dataSource numberOfComponents] - 1)
     {
         [pickerView reloadComponent:component + 1];
@@ -67,10 +70,10 @@
 
 - (NSInteger)dataPickerSource:(UFDataPickerSource *)source selectedRowInComponent:(NSInteger)component
 {
-    return [self.pickerView selectedRowInComponent:component];
+    return [[self.selectedIndexes objectAtIndex:component] integerValue];
 }
 
-- (void)setIndexes:(NSArray *)indexes animated:(BOOL)animated
+- (void)setIndexes:(NSArray<NSNumber *> *)indexes animated:(BOOL)animated
 {
     for (int i = 0; i < [indexes count]; i ++)
     {
@@ -78,20 +81,33 @@
         
         [self.pickerView selectRow:[index integerValue] inComponent:i animated:animated];
     }
+    
+    [self.selectedIndexes setArray:indexes];
 }
 
-- (NSArray *)currentIndexes
+- (NSArray<NSNumber *> *)currentIndexes
 {
     NSMutableArray *indexes = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < [self.pickerView numberOfComponents]; i ++)
+    for (NSInteger i = 0; i < self.selectedIndexes.count; i ++)
     {
-        NSInteger row = [self.pickerView selectedRowInComponent:i];
+        NSInteger index = [[self.selectedIndexes objectAtIndex:i] integerValue];
         
-        [indexes addObject:[NSNumber numberWithInteger:row]];
+        NSInteger numberOfRowsInComponent = [self.dataSource numberOfRowsInComponent:i];
+        
+        if (numberOfRowsInComponent <= 0)
+        {
+            break;
+        }
+        else if (index > numberOfRowsInComponent - 1)
+        {
+            index = numberOfRowsInComponent - 1;
+        }
+        
+        [indexes addObject:[NSNumber numberWithInteger:index]];
     }
     
-    return ([indexes count] > 0) ? indexes : nil;
+    return indexes;
 }
 
 @end

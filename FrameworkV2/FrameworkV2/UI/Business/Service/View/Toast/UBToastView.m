@@ -85,7 +85,7 @@
 
 - (void)setAttributedMessage:(NSAttributedString *)attributedMessage
 {
-    _attributedMessage = attributedMessage;
+    _attributedMessage = [attributedMessage copy];
     
     self.messageLabel.attributedText = attributedMessage;
     

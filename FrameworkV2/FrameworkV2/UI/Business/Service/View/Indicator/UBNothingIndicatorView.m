@@ -22,17 +22,6 @@ static const char kUIViewPropertyKey_NothingIndicatorView[] = "nothingIndicatorV
 - (void)setNothingIndicatorView:(UBNothingIndicatorView *)nothingIndicatorView
 {
     objc_setAssociatedObject(self, kUIViewPropertyKey_NothingIndicatorView, nothingIndicatorView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    if (nothingIndicatorView)
-    {
-        nothingIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:
-                                                 [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:0],
-                                                 [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:0],
-                                                 [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0],
-                                                 [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0], nil]];
-    }
 }
 
 - (UBNothingIndicatorView *)nothingIndicatorView
@@ -47,7 +36,17 @@ static const char kUIViewPropertyKey_NothingIndicatorView[] = "nothingIndicatorV
         self.nothingIndicatorView = [[UBNothingIndicatorView alloc] init];
     }
     
-    [self addSubview:self.nothingIndicatorView];
+    UBNothingIndicatorView *nothingIndicatorView = self.nothingIndicatorView;
+    
+    [self addSubview:nothingIndicatorView];
+    
+    nothingIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:
+                                             [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1 constant:0],
+                                             [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1 constant:0],
+                                             [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0],
+                                             [NSLayoutConstraint constraintWithItem:nothingIndicatorView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0], nil]];
 }
 
 - (void)hideNothingIndicator

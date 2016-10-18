@@ -126,14 +126,7 @@
 		D40179B01D2114BF00C0899E /* UBPicturePickerActionSheetScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178A71D2114BF00C0899E /* UBPicturePickerActionSheetScene.m */; };
 		D40179B11D2114BF00C0899E /* UBImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178AC1D2114BF00C0899E /* UBImageLoader.m */; };
 		D40179B21D2114BF00C0899E /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178AE1D2114BF00C0899E /* UIImageView+URL.m */; };
-		D40179B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m */; };
-		D40179B41D2114BF00C0899E /* UBAgeRangeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178B51D2114BF00C0899E /* UBAgeRangeInput.m */; };
-		D40179B51D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178B71D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.m */; };
-		D40179B61D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40178B81D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.xib */; };
-		D40179B71D2114BF00C0899E /* UBTextFieldDataPickerInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BB1D2114BF00C0899E /* UBTextFieldDataPickerInput.m */; };
-		D40179B81D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */; };
 		D40179B91D2114BF00C0899E /* UBTextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */; };
-		D40179BA1D2114BF00C0899E /* UBTextFieldKeyboardInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */; };
 		D40179BD1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178CA1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m */; };
 		D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178CD1D2114BF00C0899E /* UIColor+Hex.m */; };
 		D40179BF1D2114BF00C0899E /* UINavigationController+PushPopExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D40178D01D2114BF00C0899E /* UINavigationController+PushPopExtension.m */; };
@@ -179,19 +172,27 @@
 		D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE361D2263FA00B6B596 /* TaskOperation.m */; };
 		D426BE421D2263FA00B6B596 /* SyncTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */; };
 		D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */; };
+		D435F27F1D8FF0B600BCFE2B /* UBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D435F27A1D8FF0B600BCFE2B /* UBActivityIndicatorView.m */; };
+		D435F2801D8FF0B600BCFE2B /* UBNothingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D435F27C1D8FF0B600BCFE2B /* UBNothingIndicatorView.m */; };
+		D435F2811D8FF0B600BCFE2B /* UBProgressIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D435F27E1D8FF0B600BCFE2B /* UBProgressIndicatorView.m */; };
 		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
 		D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48571D742B0E00EB6F86 /* LoginManager.m */; };
+		D46CDD491DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */; };
+		D46CDD4C1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */; };
 		D4B867851D81594900629CB5 /* UFScrollLoadMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8677B1D81594900629CB5 /* UFScrollLoadMoreFooterView.m */; };
 		D4B867861D81594900629CB5 /* UIScrollView+LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8677D1D81594900629CB5 /* UIScrollView+LoadMoreFooter.m */; };
 		D4B867871D81594900629CB5 /* UFScrollRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867801D81594900629CB5 /* UFScrollRefreshHeaderView.m */; };
 		D4B867881D81594900629CB5 /* UIScrollView+RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867821D81594900629CB5 /* UIScrollView+RefreshHeader.m */; };
 		D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867841D81594900629CB5 /* UFScrollLoadingView.m */; };
-		D4B99F0D1D757A570018CD03 /* UBActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F0A1D757A570018CD03 /* UBActivityIndicatorView.m */; };
-		D4B99F0E1D757A570018CD03 /* UBProgressIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */; };
-		D4B99F111D7580F10018CD03 /* UBNothingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */; };
+		D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */; };
+		D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */; };
+		D4D5AABA1DB4CE4C00181C33 /* UBTextFieldHeightInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB91DB4CE4C00181C33 /* UBTextFieldHeightInput.m */; };
+		D4D5AABD1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AABC1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
+		D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */; };
+		D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
 		D4FF89C71D3DCF4E00B39D60 /* XXXRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */; };
@@ -431,22 +432,8 @@
 		D40178AC1D2114BF00C0899E /* UBImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBImageLoader.m; sourceTree = "<group>"; };
 		D40178AD1D2114BF00C0899E /* UIImageView+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+URL.h"; sourceTree = "<group>"; };
 		D40178AE1D2114BF00C0899E /* UIImageView+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+URL.m"; sourceTree = "<group>"; };
-		D40178B21D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UBAgeRangeInput+XXXDataAccess.h"; sourceTree = "<group>"; };
-		D40178B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UBAgeRangeInput+XXXDataAccess.m"; sourceTree = "<group>"; };
-		D40178B41D2114BF00C0899E /* UBAgeRangeInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBAgeRangeInput.h; sourceTree = "<group>"; };
-		D40178B51D2114BF00C0899E /* UBAgeRangeInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBAgeRangeInput.m; sourceTree = "<group>"; };
-		D40178B61D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBDefaultTextFieldDataPickerInputToolBar.h; sourceTree = "<group>"; };
-		D40178B71D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBDefaultTextFieldDataPickerInputToolBar.m; sourceTree = "<group>"; };
-		D40178B81D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBDefaultTextFieldDataPickerInputToolBar.xib; sourceTree = "<group>"; };
-		D40178B91D2114BF00C0899E /* UBTextFieldInputXXXDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputXXXDataAccess.h; sourceTree = "<group>"; };
-		D40178BA1D2114BF00C0899E /* UBTextFieldDataPickerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldDataPickerInput.h; sourceTree = "<group>"; };
-		D40178BB1D2114BF00C0899E /* UBTextFieldDataPickerInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldDataPickerInput.m; sourceTree = "<group>"; };
-		D40178BC1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldDataPickerInputToolBar.h; sourceTree = "<group>"; };
-		D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldDataPickerInputToolBar.m; sourceTree = "<group>"; };
 		D40178BE1D2114BF00C0899E /* UBTextFieldInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInput.h; sourceTree = "<group>"; };
 		D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInput.m; sourceTree = "<group>"; };
-		D40178C01D2114BF00C0899E /* UBTextFieldKeyboardInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldKeyboardInput.h; sourceTree = "<group>"; };
-		D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldKeyboardInput.m; sourceTree = "<group>"; };
 		D40178C91D2114BF00C0899E /* UFExtendedResponsiveSizeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFExtendedResponsiveSizeButton.h; sourceTree = "<group>"; };
 		D40178CA1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFExtendedResponsiveSizeButton.m; sourceTree = "<group>"; };
 		D40178CC1D2114BF00C0899E /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -534,6 +521,12 @@
 		D426BE391D2263FA00B6B596 /* SyncTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncTaskDispatcher.m; sourceTree = "<group>"; };
 		D426BE3A1D2263FA00B6B596 /* TaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDispatcher.h; sourceTree = "<group>"; };
 		D426BE3B1D2263FA00B6B596 /* TaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDispatcher.m; sourceTree = "<group>"; };
+		D435F2791D8FF0B600BCFE2B /* UBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBActivityIndicatorView.h; sourceTree = "<group>"; };
+		D435F27A1D8FF0B600BCFE2B /* UBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBActivityIndicatorView.m; sourceTree = "<group>"; };
+		D435F27B1D8FF0B600BCFE2B /* UBNothingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBNothingIndicatorView.h; sourceTree = "<group>"; };
+		D435F27C1D8FF0B600BCFE2B /* UBNothingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBNothingIndicatorView.m; sourceTree = "<group>"; };
+		D435F27D1D8FF0B600BCFE2B /* UBProgressIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBProgressIndicatorView.h; sourceTree = "<group>"; };
+		D435F27E1D8FF0B600BCFE2B /* UBProgressIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBProgressIndicatorView.m; sourceTree = "<group>"; };
 		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D44E48441D7401CE00EB6F86 /* LoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTask.h; sourceTree = "<group>"; };
@@ -542,6 +535,10 @@
 		D44E484E1D740E0100EB6F86 /* LogoutTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutTask.m; sourceTree = "<group>"; };
 		D44E48561D742B0E00EB6F86 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		D44E48571D742B0E00EB6F86 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
+		D46CDD471DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldNicknameInput.h; sourceTree = "<group>"; };
+		D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldNicknameInput.m; sourceTree = "<group>"; };
+		D46CDD4A1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldInput.h"; sourceTree = "<group>"; };
+		D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TextFieldInput.m"; sourceTree = "<group>"; };
 		D4B8677A1D81594900629CB5 /* UFScrollLoadMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadMoreFooterView.h; sourceTree = "<group>"; };
 		D4B8677B1D81594900629CB5 /* UFScrollLoadMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadMoreFooterView.m; sourceTree = "<group>"; };
 		D4B8677C1D81594900629CB5 /* UIScrollView+LoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LoadMoreFooter.h"; sourceTree = "<group>"; };
@@ -552,14 +549,19 @@
 		D4B867821D81594900629CB5 /* UIScrollView+RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshHeader.m"; sourceTree = "<group>"; };
 		D4B867831D81594900629CB5 /* UFScrollLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadingView.h; sourceTree = "<group>"; };
 		D4B867841D81594900629CB5 /* UFScrollLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadingView.m; sourceTree = "<group>"; };
-		D4B99F091D757A570018CD03 /* UBActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBActivityIndicatorView.h; sourceTree = "<group>"; };
-		D4B99F0A1D757A570018CD03 /* UBActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBActivityIndicatorView.m; sourceTree = "<group>"; };
-		D4B99F0B1D757A570018CD03 /* UBProgressIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBProgressIndicatorView.h; sourceTree = "<group>"; };
-		D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBProgressIndicatorView.m; sourceTree = "<group>"; };
-		D4B99F0F1D7580F10018CD03 /* UBNothingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBNothingIndicatorView.h; sourceTree = "<group>"; };
-		D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBNothingIndicatorView.m; sourceTree = "<group>"; };
+		D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputToolBar.h; sourceTree = "<group>"; };
+		D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputToolBar.m; sourceTree = "<group>"; };
+		D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBTextFieldInputToolBar.xib; sourceTree = "<group>"; };
+		D4D5AAB81DB4CE4C00181C33 /* UBTextFieldHeightInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldHeightInput.h; sourceTree = "<group>"; };
+		D4D5AAB91DB4CE4C00181C33 /* UBTextFieldHeightInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldHeightInput.m; sourceTree = "<group>"; };
+		D4D5AABB1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldBirthdayInput.h; sourceTree = "<group>"; };
+		D4D5AABC1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldBirthdayInput.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
+		D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UFScene+Scene.h"; sourceTree = "<group>"; };
+		D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UFScene+Scene.m"; sourceTree = "<group>"; };
+		D4F248111D83D56B00D4FD14 /* UIViewController+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Scene.h"; sourceTree = "<group>"; };
+		D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Scene.m"; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
 		D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXJsonSerialization.m; sourceTree = "<group>"; };
 		D4FF89C11D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXRequestResponseJsonContent.h; sourceTree = "<group>"; };
@@ -1724,32 +1726,16 @@
 		D40178B01D2114BF00C0899E /* TextFieldInput */ = {
 			isa = PBXGroup;
 			children = (
+				D46CDD4A1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.h */,
+				D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */,
 				D40178BE1D2114BF00C0899E /* UBTextFieldInput.h */,
 				D40178BF1D2114BF00C0899E /* UBTextFieldInput.m */,
-				D40178C01D2114BF00C0899E /* UBTextFieldKeyboardInput.h */,
-				D40178C11D2114BF00C0899E /* UBTextFieldKeyboardInput.m */,
-				D40178BA1D2114BF00C0899E /* UBTextFieldDataPickerInput.h */,
-				D40178BB1D2114BF00C0899E /* UBTextFieldDataPickerInput.m */,
-				D40178BC1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.h */,
-				D40178BD1D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m */,
-				D40178B11D2114BF00C0899E /* demo */,
+				D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */,
+				D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */,
+				D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */,
+				D4D5AAB71DB4CE2F00181C33 /* Inputs */,
 			);
 			path = TextFieldInput;
-			sourceTree = "<group>";
-		};
-		D40178B11D2114BF00C0899E /* demo */ = {
-			isa = PBXGroup;
-			children = (
-				D40178B21D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.h */,
-				D40178B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m */,
-				D40178B41D2114BF00C0899E /* UBAgeRangeInput.h */,
-				D40178B51D2114BF00C0899E /* UBAgeRangeInput.m */,
-				D40178B61D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.h */,
-				D40178B71D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.m */,
-				D40178B81D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.xib */,
-				D40178B91D2114BF00C0899E /* UBTextFieldInputXXXDataAccess.h */,
-			);
-			path = demo;
 			sourceTree = "<group>";
 		};
 		D40178C71D2114BF00C0899E /* Foundation */ = {
@@ -1962,6 +1948,10 @@
 			children = (
 				D40179131D2114BF00C0899E /* UFScene.h */,
 				D40179141D2114BF00C0899E /* UFScene.m */,
+				D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */,
+				D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */,
+				D4F248111D83D56B00D4FD14 /* UIViewController+Scene.h */,
+				D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -2141,14 +2131,27 @@
 		D4B99F081D757A570018CD03 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
-				D4B99F091D757A570018CD03 /* UBActivityIndicatorView.h */,
-				D4B99F0A1D757A570018CD03 /* UBActivityIndicatorView.m */,
-				D4B99F0B1D757A570018CD03 /* UBProgressIndicatorView.h */,
-				D4B99F0C1D757A570018CD03 /* UBProgressIndicatorView.m */,
-				D4B99F0F1D7580F10018CD03 /* UBNothingIndicatorView.h */,
-				D4B99F101D7580F10018CD03 /* UBNothingIndicatorView.m */,
+				D435F2791D8FF0B600BCFE2B /* UBActivityIndicatorView.h */,
+				D435F27A1D8FF0B600BCFE2B /* UBActivityIndicatorView.m */,
+				D435F27B1D8FF0B600BCFE2B /* UBNothingIndicatorView.h */,
+				D435F27C1D8FF0B600BCFE2B /* UBNothingIndicatorView.m */,
+				D435F27D1D8FF0B600BCFE2B /* UBProgressIndicatorView.h */,
+				D435F27E1D8FF0B600BCFE2B /* UBProgressIndicatorView.m */,
 			);
 			path = Indicator;
+			sourceTree = "<group>";
+		};
+		D4D5AAB71DB4CE2F00181C33 /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5AAB81DB4CE4C00181C33 /* UBTextFieldHeightInput.h */,
+				D4D5AAB91DB4CE4C00181C33 /* UBTextFieldHeightInput.m */,
+				D4D5AABB1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.h */,
+				D4D5AABC1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m */,
+				D46CDD471DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.h */,
+				D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */,
+			);
+			path = Inputs;
 			sourceTree = "<group>";
 		};
 		D4EC6AD71D24F8E700638BAB /* Button */ = {
@@ -2231,7 +2234,7 @@
 		D40177131D21148000C0899E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = WW;
 				TargetAttributes = {
 					D401771A1D21148000C0899E = {
@@ -2262,10 +2265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */,
 				D401772E1D21148100C0899E /* LaunchScreen.storyboard in Resources */,
 				D401772B1D21148100C0899E /* Assets.xcassets in Resources */,
 				D40179AB1D2114BF00C0899E /* UBPictureBrowseViewController.xib in Resources */,
-				D40179B61D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.xib in Resources */,
 				D40179AF1D2114BF00C0899E /* UBListingPicturePickerViewController.xib in Resources */,
 				D40177291D21148100C0899E /* Main.storyboard in Resources */,
 				D40179AD1D2114BF00C0899E /* UBListingPictureCell.xib in Resources */,
@@ -2281,9 +2284,9 @@
 			files = (
 				D40179971D2114BF00C0899E /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
-				D40179B31D2114BF00C0899E /* UBAgeRangeInput+XXXDataAccess.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
+				D435F2811D8FF0B600BCFE2B /* UBProgressIndicatorView.m in Sources */,
 				D40179CD1D2114BF00C0899E /* UFDataPickerInput.m in Sources */,
 				D40179551D2114BF00C0899E /* EPubXML.m in Sources */,
 				D401795C1D2114BF00C0899E /* FileListener.m in Sources */,
@@ -2300,6 +2303,7 @@
 				D40179511D2114BF00C0899E /* EPub2_NCX.m in Sources */,
 				D40177261D21148100C0899E /* ViewController.m in Sources */,
 				D40179B01D2114BF00C0899E /* UBPicturePickerActionSheetScene.m in Sources */,
+				D435F27F1D8FF0B600BCFE2B /* UBActivityIndicatorView.m in Sources */,
 				D40179471D2114BF00C0899E /* DBHandle.m in Sources */,
 				D401794A1D2114BF00C0899E /* DBTable.m in Sources */,
 				D40179461D2114BF00C0899E /* DBError.m in Sources */,
@@ -2309,12 +2313,10 @@
 				D426BE3E1D2263FA00B6B596 /* Task.m in Sources */,
 				D40179D31D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m in Sources */,
 				D40179301D2114BF00C0899E /* HTTPRequestHeader.m in Sources */,
-				D4B99F0E1D757A570018CD03 /* UBProgressIndicatorView.m in Sources */,
 				D40179361D2114BF00C0899E /* HTTPMessageParser.m in Sources */,
 				D40179331D2114BF00C0899E /* HTTPMessageBodyParser.m in Sources */,
 				D401795F1D2114BF00C0899E /* HTTPDownloadConnection.m in Sources */,
 				D40179C21D2114BF00C0899E /* UFEmojiImage.m in Sources */,
-				D4B99F111D7580F10018CD03 /* UBNothingIndicatorView.m in Sources */,
 				D40179381D2114BF00C0899E /* HTTPRequestMessageHeaderParser.m in Sources */,
 				D40179641D2114BF00C0899E /* HTTPSession.m in Sources */,
 				D41417211D767744004594A4 /* NSURL+ImageSize.m in Sources */,
@@ -2324,6 +2326,7 @@
 				D40179CE1D2114BF00C0899E /* UFTextFieldDataPickerInput.m in Sources */,
 				D401796E1D2114BF00C0899E /* NSObject+Delegate.m in Sources */,
 				D40179621D2114BF00C0899E /* HTTPConnectionInputStreamChunk.m in Sources */,
+				D4D5AABD1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m in Sources */,
 				D401797C1D2114BF00C0899E /* NSDictionary+KeyValue.m in Sources */,
 				D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */,
 				D40179701D2114BF00C0899E /* LightLoadingPermanentQueue.m in Sources */,
@@ -2353,14 +2356,13 @@
 				D40179771D2114BF00C0899E /* XMLSprite.m in Sources */,
 				D40179BF1D2114BF00C0899E /* UINavigationController+PushPopExtension.m in Sources */,
 				D40179CA1D2114BF00C0899E /* UIImageView+Gif.m in Sources */,
-				D40179B51D2114BF00C0899E /* UBDefaultTextFieldDataPickerInputToolBar.m in Sources */,
 				D40179A51D2114BF00C0899E /* UBPictureBrowseCell.m in Sources */,
 				D40179AE1D2114BF00C0899E /* UBListingPicturePickerViewController.m in Sources */,
 				D40179411D2114BF00C0899E /* TCPServerConnection.m in Sources */,
 				D40179371D2114BF00C0899E /* HTTPMessageSerializer.m in Sources */,
 				D40179791D2114BF00C0899E /* StateMachine.m in Sources */,
 				D40179C81D2114BF00C0899E /* UIImage+Orientation.m in Sources */,
-				D4B99F0D1D757A570018CD03 /* UBActivityIndicatorView.m in Sources */,
+				D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */,
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
 				D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */,
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
@@ -2372,7 +2374,9 @@
 				D401799B1D2114BF00C0899E /* NetworkManager.m in Sources */,
 				D40179C61D2114BF00C0899E /* UFImageEditMaskView.m in Sources */,
 				D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */,
+				D4D5AABA1DB4CE4C00181C33 /* UBTextFieldHeightInput.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
+				D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
 				D401793B1D2114BF00C0899E /* HTTPResponseMessageSerializer.m in Sources */,
 				D401799A1D2114BF00C0899E /* APPLog+SharedInstance.m in Sources */,
@@ -2387,6 +2391,8 @@
 				D40179731D2114BF00C0899E /* IPRouteTracer.m in Sources */,
 				D40179741D2114BF00C0899E /* JsonSerialize.m in Sources */,
 				D40179981D2114BF00C0899E /* SharedHTTPSessionManager.m in Sources */,
+				D46CDD491DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m in Sources */,
+				D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */,
 				D40179C51D2114BF00C0899E /* UFEmojiView.m in Sources */,
 				D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */,
 				D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */,
@@ -2406,16 +2412,15 @@
 				D40179661D2114BF00C0899E /* HTTPMultipartFormEntity.m in Sources */,
 				D401794E1D2114BF00C0899E /* EPubBookInfomation.m in Sources */,
 				D40179341D2114BF00C0899E /* HTTPMessageBodySerializer.m in Sources */,
+				D46CDD4C1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m in Sources */,
 				D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */,
 				D401797B1D2114BF00C0899E /* NSString+Character.m in Sources */,
 				D40179721D2114BF00C0899E /* IPRouteItem.m in Sources */,
 				D40179531D2114BF00C0899E /* EPub2_OPF.m in Sources */,
 				D401796A1D2114BF00C0899E /* NSHTTPURLResponse+ContentValidation.m in Sources */,
-				D40179B71D2114BF00C0899E /* UBTextFieldDataPickerInput.m in Sources */,
 				D40179C91D2114BF00C0899E /* UFImageViewGifUpdater.m in Sources */,
 				D401797A1D2114BF00C0899E /* IndexingFileStorage.m in Sources */,
 				D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */,
-				D40179BA1D2114BF00C0899E /* UBTextFieldKeyboardInput.m in Sources */,
 				D40179A41D2114BF00C0899E /* UBMainScene.m in Sources */,
 				D40179521D2114BF00C0899E /* EPub2_OCF.m in Sources */,
 				D40179A21D2114BF00C0899E /* ImageStorage.m in Sources */,
@@ -2423,11 +2428,11 @@
 				D4B867861D81594900629CB5 /* UIScrollView+LoadMoreFooter.m in Sources */,
 				D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */,
 				D401798C1D2114BF00C0899E /* HTTPDataRequestTask.m in Sources */,
-				D40179B81D2114BF00C0899E /* UBTextFieldDataPickerInputToolBar.m in Sources */,
 				D40179991D2114BF00C0899E /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
 				D401795D1D2114BF00C0899E /* HTTPDataConnection.m in Sources */,
 				D4B867881D81594900629CB5 /* UIScrollView+RefreshHeader.m in Sources */,
 				D401794F1D2114BF00C0899E /* EpubBookLoadHandle.m in Sources */,
+				D435F2801D8FF0B600BCFE2B /* UBNothingIndicatorView.m in Sources */,
 				D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */,
 				D40179951D2114BF00C0899E /* NSDateFormatter+SharedInstance.m in Sources */,
 				D40179C41D2114BF00C0899E /* UFEmojiText.m in Sources */,
@@ -2440,7 +2445,6 @@
 				D40179D41D2114BF00C0899E /* UITextView+KeyboardAdjust.m in Sources */,
 				D40179751D2114BF00C0899E /* NSCoder+DataedEncoding.m in Sources */,
 				D40179B11D2114BF00C0899E /* UBImageLoader.m in Sources */,
-				D40179B41D2114BF00C0899E /* UBAgeRangeInput.m in Sources */,
 				D40179A81D2114BF00C0899E /* UBPictureBrowseToolBar.m in Sources */,
 				D40179D01D2114BF00C0899E /* UFKeyboardAdjustPoint.m in Sources */,
 				D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */,
@@ -2495,8 +2499,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2539,8 +2545,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
