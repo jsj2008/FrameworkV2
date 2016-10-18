@@ -35,7 +35,7 @@
 /*!
  * @brief 滚动视图
  */
-@property (nonatomic, readonly) UIScrollView *scrollView;
+@property (nonatomic, weak, readonly) UIScrollView *scrollView;
 
 /*!
  * @brief 协议代理
