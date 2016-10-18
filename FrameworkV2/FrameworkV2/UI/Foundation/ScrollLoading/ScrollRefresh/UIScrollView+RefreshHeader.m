@@ -23,13 +23,14 @@ static const char kUIScrollViewPropertyKey_RefreshHeaderView[] = "refreshHeaderV
     else
     {
         [self.refreshHeaderView removeFromSuperview];
-        
+                
         objc_setAssociatedObject(self, kUIScrollViewPropertyKey_RefreshHeaderView, refreshHeaderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-        [self addSubview:refreshHeaderView];
+        if (refreshHeaderView)
+        {
+            [self addSubview:refreshHeaderView];
+        }
     }
-    
-    refreshHeaderView.scrollView = self;
 }
 
 - (UFScrollRefreshHeaderView *)refreshHeaderView

@@ -34,7 +34,7 @@
 /*!
  * @brief 滚动视图
  */
-@property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, readonly) UIScrollView *scrollView;
 
 /*!
  * @brief 协议代理
@@ -58,7 +58,7 @@
 
 /*********************************************************
  
-    @class
+    @protocol
         UFScrollRefreshHeaderViewDelegate
  
     @abstract

@@ -181,10 +181,10 @@
 		D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48571D742B0E00EB6F86 /* LoginManager.m */; };
 		D46CDD491DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */; };
 		D46CDD4C1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */; };
-		D4B867851D81594900629CB5 /* UFScrollLoadMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8677B1D81594900629CB5 /* UFScrollLoadMoreFooterView.m */; };
-		D4B867861D81594900629CB5 /* UIScrollView+LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B8677D1D81594900629CB5 /* UIScrollView+LoadMoreFooter.m */; };
-		D4B867871D81594900629CB5 /* UFScrollRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867801D81594900629CB5 /* UFScrollRefreshHeaderView.m */; };
-		D4B867881D81594900629CB5 /* UIScrollView+RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867821D81594900629CB5 /* UIScrollView+RefreshHeader.m */; };
+		D46CDD571DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD4F1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m */; };
+		D46CDD581DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD511DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m */; };
+		D46CDD591DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD541DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.m */; };
+		D46CDD5A1DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD561DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.m */; };
 		D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867841D81594900629CB5 /* UFScrollLoadingView.m */; };
 		D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */; };
 		D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */; };
@@ -539,14 +539,14 @@
 		D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldNicknameInput.m; sourceTree = "<group>"; };
 		D46CDD4A1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldInput.h"; sourceTree = "<group>"; };
 		D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TextFieldInput.m"; sourceTree = "<group>"; };
-		D4B8677A1D81594900629CB5 /* UFScrollLoadMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadMoreFooterView.h; sourceTree = "<group>"; };
-		D4B8677B1D81594900629CB5 /* UFScrollLoadMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadMoreFooterView.m; sourceTree = "<group>"; };
-		D4B8677C1D81594900629CB5 /* UIScrollView+LoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LoadMoreFooter.h"; sourceTree = "<group>"; };
-		D4B8677D1D81594900629CB5 /* UIScrollView+LoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LoadMoreFooter.m"; sourceTree = "<group>"; };
-		D4B8677F1D81594900629CB5 /* UFScrollRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollRefreshHeaderView.h; sourceTree = "<group>"; };
-		D4B867801D81594900629CB5 /* UFScrollRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollRefreshHeaderView.m; sourceTree = "<group>"; };
-		D4B867811D81594900629CB5 /* UIScrollView+RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshHeader.h"; sourceTree = "<group>"; };
-		D4B867821D81594900629CB5 /* UIScrollView+RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshHeader.m"; sourceTree = "<group>"; };
+		D46CDD4E1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadMoreFooterView.h; sourceTree = "<group>"; };
+		D46CDD4F1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadMoreFooterView.m; sourceTree = "<group>"; };
+		D46CDD501DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+LoadMoreFooter.h"; sourceTree = "<group>"; };
+		D46CDD511DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+LoadMoreFooter.m"; sourceTree = "<group>"; };
+		D46CDD531DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollRefreshHeaderView.h; sourceTree = "<group>"; };
+		D46CDD541DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollRefreshHeaderView.m; sourceTree = "<group>"; };
+		D46CDD551DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+RefreshHeader.h"; sourceTree = "<group>"; };
+		D46CDD561DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+RefreshHeader.m"; sourceTree = "<group>"; };
 		D4B867831D81594900629CB5 /* UFScrollLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadingView.h; sourceTree = "<group>"; };
 		D4B867841D81594900629CB5 /* UFScrollLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadingView.m; sourceTree = "<group>"; };
 		D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputToolBar.h; sourceTree = "<group>"; };
@@ -2095,37 +2095,37 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		D46CDD4D1DB6112E00BFC5A4 /* ScrollLoadMore */ = {
+			isa = PBXGroup;
+			children = (
+				D46CDD4E1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.h */,
+				D46CDD4F1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m */,
+				D46CDD501DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.h */,
+				D46CDD511DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m */,
+			);
+			path = ScrollLoadMore;
+			sourceTree = "<group>";
+		};
+		D46CDD521DB6112E00BFC5A4 /* ScrollRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D46CDD531DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.h */,
+				D46CDD541DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.m */,
+				D46CDD551DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.h */,
+				D46CDD561DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.m */,
+			);
+			path = ScrollRefresh;
+			sourceTree = "<group>";
+		};
 		D4B867781D81594900629CB5 /* ScrollLoading */ = {
 			isa = PBXGroup;
 			children = (
 				D4B867831D81594900629CB5 /* UFScrollLoadingView.h */,
 				D4B867841D81594900629CB5 /* UFScrollLoadingView.m */,
-				D4B8677E1D81594900629CB5 /* ScrollRefresh */,
-				D4B867791D81594900629CB5 /* ScrollLoadMore */,
+				D46CDD521DB6112E00BFC5A4 /* ScrollRefresh */,
+				D46CDD4D1DB6112E00BFC5A4 /* ScrollLoadMore */,
 			);
 			path = ScrollLoading;
-			sourceTree = "<group>";
-		};
-		D4B867791D81594900629CB5 /* ScrollLoadMore */ = {
-			isa = PBXGroup;
-			children = (
-				D4B8677A1D81594900629CB5 /* UFScrollLoadMoreFooterView.h */,
-				D4B8677B1D81594900629CB5 /* UFScrollLoadMoreFooterView.m */,
-				D4B8677C1D81594900629CB5 /* UIScrollView+LoadMoreFooter.h */,
-				D4B8677D1D81594900629CB5 /* UIScrollView+LoadMoreFooter.m */,
-			);
-			path = ScrollLoadMore;
-			sourceTree = "<group>";
-		};
-		D4B8677E1D81594900629CB5 /* ScrollRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				D4B8677F1D81594900629CB5 /* UFScrollRefreshHeaderView.h */,
-				D4B867801D81594900629CB5 /* UFScrollRefreshHeaderView.m */,
-				D4B867811D81594900629CB5 /* UIScrollView+RefreshHeader.h */,
-				D4B867821D81594900629CB5 /* UIScrollView+RefreshHeader.m */,
-			);
-			path = ScrollRefresh;
 			sourceTree = "<group>";
 		};
 		D4B99F081D757A570018CD03 /* Indicator */ = {
@@ -2291,6 +2291,7 @@
 				D40179551D2114BF00C0899E /* EPubXML.m in Sources */,
 				D401795C1D2114BF00C0899E /* FileListener.m in Sources */,
 				D401793F1D2114BF00C0899E /* HTTPServerListener.m in Sources */,
+				D46CDD591DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.m in Sources */,
 				D401795E1D2114BF00C0899E /* HTTPConnectionResumeStorage.m in Sources */,
 				D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */,
 				D401798D1D2114BF00C0899E /* HTTPDownloadRequestTask.m in Sources */,
@@ -2337,6 +2338,7 @@
 				D401796D1D2114BF00C0899E /* NotificationObserver.m in Sources */,
 				D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */,
 				D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */,
+				D46CDD571DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m in Sources */,
 				D40179501D2114BF00C0899E /* EPub.m in Sources */,
 				D40179C01D2114BF00C0899E /* UFAttributedStringEmojiUpdater.m in Sources */,
 				D40179B21D2114BF00C0899E /* UIImageView+URL.m in Sources */,
@@ -2358,6 +2360,7 @@
 				D40179CA1D2114BF00C0899E /* UIImageView+Gif.m in Sources */,
 				D40179A51D2114BF00C0899E /* UBPictureBrowseCell.m in Sources */,
 				D40179AE1D2114BF00C0899E /* UBListingPicturePickerViewController.m in Sources */,
+				D46CDD581DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m in Sources */,
 				D40179411D2114BF00C0899E /* TCPServerConnection.m in Sources */,
 				D40179371D2114BF00C0899E /* HTTPMessageSerializer.m in Sources */,
 				D40179791D2114BF00C0899E /* StateMachine.m in Sources */,
@@ -2385,7 +2388,6 @@
 				D401796C1D2114BF00C0899E /* LogFileHandle.m in Sources */,
 				D40179601D2114BF00C0899E /* HTTPConnection.m in Sources */,
 				D40177231D21148100C0899E /* AppDelegate.m in Sources */,
-				D4B867851D81594900629CB5 /* UFScrollLoadMoreFooterView.m in Sources */,
 				D40179311D2114BF00C0899E /* HTTPResponseHeader.m in Sources */,
 				D40179761D2114BF00C0899E /* XMLUtility.m in Sources */,
 				D40179731D2114BF00C0899E /* IPRouteTracer.m in Sources */,
@@ -2396,9 +2398,9 @@
 				D40179C51D2114BF00C0899E /* UFEmojiView.m in Sources */,
 				D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */,
 				D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */,
+				D46CDD5A1DB6112E00BFC5A4 /* UIScrollView+RefreshHeader.m in Sources */,
 				D426BE3D1D2263FA00B6B596 /* BlockTask.m in Sources */,
 				D40179711D2114BF00C0899E /* NetworkReachability.m in Sources */,
-				D4B867871D81594900629CB5 /* UFScrollRefreshHeaderView.m in Sources */,
 				D40179D21D2114BF00C0899E /* UITextField+KeyboardAdjust.m in Sources */,
 				D426BE401D2263FA00B6B596 /* Task+Operation.m in Sources */,
 				D401794C1D2114BF00C0899E /* DBSQL_Extension.m in Sources */,
@@ -2425,12 +2427,10 @@
 				D40179521D2114BF00C0899E /* EPub2_OCF.m in Sources */,
 				D40179A21D2114BF00C0899E /* ImageStorage.m in Sources */,
 				D401798F1D2114BF00C0899E /* HTTPUploadRequestTask.m in Sources */,
-				D4B867861D81594900629CB5 /* UIScrollView+LoadMoreFooter.m in Sources */,
 				D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */,
 				D401798C1D2114BF00C0899E /* HTTPDataRequestTask.m in Sources */,
 				D40179991D2114BF00C0899E /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
 				D401795D1D2114BF00C0899E /* HTTPDataConnection.m in Sources */,
-				D4B867881D81594900629CB5 /* UIScrollView+RefreshHeader.m in Sources */,
 				D401794F1D2114BF00C0899E /* EpubBookLoadHandle.m in Sources */,
 				D435F2801D8FF0B600BCFE2B /* UBNothingIndicatorView.m in Sources */,
 				D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */,

@@ -26,10 +26,11 @@ static const char kUIScrollViewPropertyKey_LoadMoreFooterView[] = "loadMoreFoote
         
         objc_setAssociatedObject(self, kUIScrollViewPropertyKey_LoadMoreFooterView, loadMoreFooterView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
-        [self addSubview:loadMoreFooterView];
+        if (loadMoreFooterView)
+        {
+            [self addSubview:loadMoreFooterView];
+        }
     }
-    
-    loadMoreFooterView.scrollView = self;
 }
 
 - (UFScrollLoadMoreFooterView *)loadMoreFooterView

@@ -8,20 +8,12 @@
 
 #import "UFScrollLoadMoreFooterView.h"
 
-@interface UFScrollLoadMoreFooterView ()
-{
-    __weak UIScrollView *_scrollView;
-}
-
-@end
-
-
 @implementation UFScrollLoadMoreFooterView
 
-@synthesize scrollView = _scrollView;
-
-- (void)dealloc
+- (void)willMoveToSuperview:(UIView *)newSuperview
 {
+    [super willMoveToSuperview:newSuperview];
+    
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     
     [self.scrollView removeObserver:self forKeyPath:@"contentSize"];
@@ -33,33 +25,35 @@
     [self.scrollView removeObserver:self forKeyPath:@"bounds"];
     
     [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
-}
-
-- (void)setScrollView:(UIScrollView *)scrollView
-{
-    _scrollView = scrollView;
     
-    if (scrollView)
+    if (newSuperview)
     {
-        [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
-        
-        [scrollView addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
-        
-        [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
-        
-        [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
-        
-        [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
-        
-        [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
-        
-        if (scrollView.contentSize.height > 0)
+        if ([newSuperview isKindOfClass:[UIScrollView class]])
         {
-            self.frame = CGRectMake(0, scrollView.contentSize.height + scrollView.contentInset.bottom, scrollView.frame.size.width, scrollView.contentOffset.y + scrollView.frame.size.height - scrollView.contentSize.height - scrollView.contentInset.bottom);
-        }
-        else
-        {
-            self.frame = CGRectZero;
+            UIScrollView *scrollView = (UIScrollView *)newSuperview;
+            
+            [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
+            
+            [scrollView addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
+            
+            [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
+            
+            [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
+            
+            [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+            
+            [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
+            
+            if (scrollView.contentSize.height > 0)
+            {
+                self.frame = CGRectMake(0, scrollView.contentSize.height + scrollView.contentInset.bottom, scrollView.frame.size.width, scrollView.contentOffset.y + scrollView.frame.size.height - scrollView.contentSize.height - scrollView.contentInset.bottom);
+            }
+            else
+            {
+                self.frame = CGRectZero;
+            }
+            
+            _scrollView = scrollView;
         }
     }
 }
