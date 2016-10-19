@@ -1026,9 +1026,9 @@
 		D40177B51D2114BF00C0899E /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				D40177B61D2114BF00C0899E /* HTTPConnection */,
-				D40177CA1D2114BF00C0899E /* HTTPSession */,
 				D40177CD1D2114BF00C0899E /* URLSessionDelegate */,
+				D40177CA1D2114BF00C0899E /* HTTPSession */,
+				D40177B61D2114BF00C0899E /* HTTPConnection */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -1036,12 +1036,12 @@
 		D40177B61D2114BF00C0899E /* HTTPConnection */ = {
 			isa = PBXGroup;
 			children = (
-				D40177B71D2114BF00C0899E /* DataConnection */,
-				D40177BA1D2114BF00C0899E /* DownloadConnection */,
 				D40177BF1D2114BF00C0899E /* HTTPConnection.h */,
 				D40177C01D2114BF00C0899E /* HTTPConnection.m */,
-				D40177C11D2114BF00C0899E /* Stream */,
+				D40177B71D2114BF00C0899E /* DataConnection */,
+				D40177BA1D2114BF00C0899E /* DownloadConnection */,
 				D40177C71D2114BF00C0899E /* UploadConnection */,
+				D40177C11D2114BF00C0899E /* Stream */,
 			);
 			path = HTTPConnection;
 			sourceTree = "<group>";
