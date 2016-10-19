@@ -26,35 +26,36 @@
     
     [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
     
-    if (newSuperview)
+    if (newSuperview && [newSuperview isKindOfClass:[UIScrollView class]])
     {
-        if ([newSuperview isKindOfClass:[UIScrollView class]])
+        UIScrollView *scrollView = (UIScrollView *)newSuperview;
+        
+        [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+        
+        [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
+        
+        if (scrollView.contentSize.height > 0)
         {
-            UIScrollView *scrollView = (UIScrollView *)newSuperview;
-            
-            [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
-            
-            [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
-            
-            if (scrollView.contentSize.height > 0)
-            {
-                self.frame = CGRectMake(0, scrollView.contentSize.height + scrollView.contentInset.bottom, scrollView.frame.size.width, scrollView.contentOffset.y + scrollView.frame.size.height - scrollView.contentSize.height - scrollView.contentInset.bottom);
-            }
-            else
-            {
-                self.frame = CGRectZero;
-            }
-            
-            _scrollView = scrollView;
+            self.frame = CGRectMake(0, scrollView.contentSize.height + scrollView.contentInset.bottom, scrollView.frame.size.width, scrollView.contentOffset.y + scrollView.frame.size.height - scrollView.contentSize.height - scrollView.contentInset.bottom);
         }
+        else
+        {
+            self.frame = CGRectZero;
+        }
+        
+        _scrollView = scrollView;
+    }
+    else
+    {
+        _scrollView = nil;
     }
 }
 

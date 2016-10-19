@@ -24,24 +24,25 @@
     
     [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
     
-    if (newSuperview)
+    if (newSuperview && [newSuperview isKindOfClass:[UIScrollView class]])
     {
-        if ([newSuperview isKindOfClass:[UIScrollView class]])
-        {
-            UIScrollView *scrollView = (UIScrollView *)newSuperview;
-            
-            [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
-            
-            [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
-            
-            [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
-            
-            _scrollView = scrollView;
-        }
+        UIScrollView *scrollView = (UIScrollView *)newSuperview;
+        
+        [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
+        
+        [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+        
+        [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
+        
+        _scrollView = scrollView;
+    }
+    else
+    {
+        _scrollView = nil;
     }
 }
 
