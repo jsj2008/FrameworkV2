@@ -129,7 +129,7 @@
 - (void)URLSessionTask:(NSURLSessionTask *)task needNewBodyStream:(void (^)(NSInputStream *))completionHandler
 {
     HTTPConnectionInputStream *stream = self.streamUsed ? [self.stream copy] : self.stream;
-        
+    
     self.streamUsed = YES;
     
     completionHandler(stream);
