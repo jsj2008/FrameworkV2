@@ -179,7 +179,6 @@
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
 		D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48571D742B0E00EB6F86 /* LoginManager.m */; };
-		D46CDD491DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */; };
 		D46CDD4C1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */; };
 		D46CDD571DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD4F1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m */; };
 		D46CDD581DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D46CDD511DB6112E00BFC5A4 /* UIScrollView+LoadMoreFooter.m */; };
@@ -188,8 +187,12 @@
 		D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867841D81594900629CB5 /* UFScrollLoadingView.m */; };
 		D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */; };
 		D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */; };
-		D4D5AABA1DB4CE4C00181C33 /* UBTextFieldHeightInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB91DB4CE4C00181C33 /* UBTextFieldHeightInput.m */; };
-		D4D5AABD1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AABC1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m */; };
+		D4D7C30C1DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3071DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m */; };
+		D4D7C30D1DB71D7500BAEEC1 /* UBTextFieldHeightInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */; };
+		D4D7C30E1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m */; };
+		D4D7C3141DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3131DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m */; };
+		D4D7C3171DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3161DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m */; };
+		D4D7C3191DB71F3F00BAEEC1 /* scity.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4D7C3181DB71F3F00BAEEC1 /* scity.plist */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
 		D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */; };
 		D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */; };
@@ -535,8 +538,6 @@
 		D44E484E1D740E0100EB6F86 /* LogoutTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutTask.m; sourceTree = "<group>"; };
 		D44E48561D742B0E00EB6F86 /* LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginManager.h; sourceTree = "<group>"; };
 		D44E48571D742B0E00EB6F86 /* LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginManager.m; sourceTree = "<group>"; };
-		D46CDD471DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldNicknameInput.h; sourceTree = "<group>"; };
-		D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldNicknameInput.m; sourceTree = "<group>"; };
 		D46CDD4A1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextFieldInput.h"; sourceTree = "<group>"; };
 		D46CDD4B1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TextFieldInput.m"; sourceTree = "<group>"; };
 		D46CDD4E1DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadMoreFooterView.h; sourceTree = "<group>"; };
@@ -552,10 +553,17 @@
 		D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputToolBar.h; sourceTree = "<group>"; };
 		D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputToolBar.m; sourceTree = "<group>"; };
 		D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UBTextFieldInputToolBar.xib; sourceTree = "<group>"; };
-		D4D5AAB81DB4CE4C00181C33 /* UBTextFieldHeightInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldHeightInput.h; sourceTree = "<group>"; };
-		D4D5AAB91DB4CE4C00181C33 /* UBTextFieldHeightInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldHeightInput.m; sourceTree = "<group>"; };
-		D4D5AABB1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldBirthdayInput.h; sourceTree = "<group>"; };
-		D4D5AABC1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldBirthdayInput.m; sourceTree = "<group>"; };
+		D4D7C3061DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldBirthdayInput.h; sourceTree = "<group>"; };
+		D4D7C3071DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldBirthdayInput.m; sourceTree = "<group>"; };
+		D4D7C3081DB71D7500BAEEC1 /* UBTextFieldHeightInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldHeightInput.h; sourceTree = "<group>"; };
+		D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldHeightInput.m; sourceTree = "<group>"; };
+		D4D7C30A1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldNicknameInput.h; sourceTree = "<group>"; };
+		D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldNicknameInput.m; sourceTree = "<group>"; };
+		D4D7C3121DB71E9A00BAEEC1 /* UBTextFieldInputLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputLocation.h; sourceTree = "<group>"; };
+		D4D7C3131DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputLocation.m; sourceTree = "<group>"; };
+		D4D7C3151DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldPCLocationInput.h; sourceTree = "<group>"; };
+		D4D7C3161DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldPCLocationInput.m; sourceTree = "<group>"; };
+		D4D7C3181DB71F3F00BAEEC1 /* scity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scity.plist; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
 		D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UFScene+Scene.h"; sourceTree = "<group>"; };
@@ -1601,6 +1609,7 @@
 				D401788A1D2114BF00C0899E /* Main */,
 				D401788D1D2114BF00C0899E /* PictureBrowse */,
 				D401789E1D2114BF00C0899E /* PicturePickerActionSheet */,
+				D4D7C3051DB71D7500BAEEC1 /* Inputs */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -1733,7 +1742,6 @@
 				D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */,
 				D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */,
 				D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */,
-				D4D5AAB71DB4CE2F00181C33 /* Inputs */,
 			);
 			path = TextFieldInput;
 			sourceTree = "<group>";
@@ -2141,15 +2149,20 @@
 			path = Indicator;
 			sourceTree = "<group>";
 		};
-		D4D5AAB71DB4CE2F00181C33 /* Inputs */ = {
+		D4D7C3051DB71D7500BAEEC1 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
-				D4D5AAB81DB4CE4C00181C33 /* UBTextFieldHeightInput.h */,
-				D4D5AAB91DB4CE4C00181C33 /* UBTextFieldHeightInput.m */,
-				D4D5AABB1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.h */,
-				D4D5AABC1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m */,
-				D46CDD471DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.h */,
-				D46CDD481DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m */,
+				D4D7C3181DB71F3F00BAEEC1 /* scity.plist */,
+				D4D7C3121DB71E9A00BAEEC1 /* UBTextFieldInputLocation.h */,
+				D4D7C3131DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m */,
+				D4D7C30A1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.h */,
+				D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m */,
+				D4D7C3061DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.h */,
+				D4D7C3071DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m */,
+				D4D7C3081DB71D7500BAEEC1 /* UBTextFieldHeightInput.h */,
+				D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */,
+				D4D7C3151DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.h */,
+				D4D7C3161DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -2266,6 +2279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */,
+				D4D7C3191DB71F3F00BAEEC1 /* scity.plist in Resources */,
 				D401772E1D21148100C0899E /* LaunchScreen.storyboard in Resources */,
 				D401772B1D21148100C0899E /* Assets.xcassets in Resources */,
 				D40179AB1D2114BF00C0899E /* UBPictureBrowseViewController.xib in Resources */,
@@ -2297,10 +2311,12 @@
 				D401798D1D2114BF00C0899E /* HTTPDownloadRequestTask.m in Sources */,
 				D40179A11D2114BF00C0899E /* DBCenter.m in Sources */,
 				D401794D1D2114BF00C0899E /* EPubBookContainerHandle.m in Sources */,
+				D4D7C3171DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m in Sources */,
 				D40179E01D2114BF00C0899E /* UFTextViewPlaceHolder.m in Sources */,
 				D40179911D2114BF00C0899E /* HTTPRequestBody.m in Sources */,
 				D40179581D2114BF00C0899E /* NSData+AES.m in Sources */,
 				D40179351D2114BF00C0899E /* HTTPMessageError.m in Sources */,
+				D4D7C30D1DB71D7500BAEEC1 /* UBTextFieldHeightInput.m in Sources */,
 				D40179511D2114BF00C0899E /* EPub2_NCX.m in Sources */,
 				D40177261D21148100C0899E /* ViewController.m in Sources */,
 				D40179B01D2114BF00C0899E /* UBPicturePickerActionSheetScene.m in Sources */,
@@ -2326,8 +2342,8 @@
 				D415B22C1D7533AA00B09BB3 /* UBToastView.m in Sources */,
 				D40179CE1D2114BF00C0899E /* UFTextFieldDataPickerInput.m in Sources */,
 				D401796E1D2114BF00C0899E /* NSObject+Delegate.m in Sources */,
+				D4D7C30C1DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m in Sources */,
 				D40179621D2114BF00C0899E /* HTTPConnectionInputStreamChunk.m in Sources */,
-				D4D5AABD1DB4D6AB00181C33 /* UBTextFieldBirthdayInput.m in Sources */,
 				D401797C1D2114BF00C0899E /* NSDictionary+KeyValue.m in Sources */,
 				D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */,
 				D40179701D2114BF00C0899E /* LightLoadingPermanentQueue.m in Sources */,
@@ -2346,6 +2362,7 @@
 				D40179591D2114BF00C0899E /* NSData+MD5.m in Sources */,
 				D40179571D2114BF00C0899E /* ZlibDecompressor.m in Sources */,
 				D40179451D2114BF00C0899E /* DBDefine.m in Sources */,
+				D4D7C3141DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m in Sources */,
 				D401795A1D2114BF00C0899E /* NSFileHandle+MD5.m in Sources */,
 				D40179CF1D2114BF00C0899E /* UFKeyboardAdjuster.m in Sources */,
 				D40179631D2114BF00C0899E /* HTTPUploadConnection.m in Sources */,
@@ -2377,12 +2394,12 @@
 				D401799B1D2114BF00C0899E /* NetworkManager.m in Sources */,
 				D40179C61D2114BF00C0899E /* UFImageEditMaskView.m in Sources */,
 				D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */,
-				D4D5AABA1DB4CE4C00181C33 /* UBTextFieldHeightInput.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
 				D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
 				D401793B1D2114BF00C0899E /* HTTPResponseMessageSerializer.m in Sources */,
 				D401799A1D2114BF00C0899E /* APPLog+SharedInstance.m in Sources */,
+				D4D7C30E1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m in Sources */,
 				D401793C1D2114BF00C0899E /* HTTPMessageTrailerParser.m in Sources */,
 				D40179A71D2114BF00C0899E /* UBPictureBrowseAccessoryDownloader.m in Sources */,
 				D401796C1D2114BF00C0899E /* LogFileHandle.m in Sources */,
@@ -2393,7 +2410,6 @@
 				D40179731D2114BF00C0899E /* IPRouteTracer.m in Sources */,
 				D40179741D2114BF00C0899E /* JsonSerialize.m in Sources */,
 				D40179981D2114BF00C0899E /* SharedHTTPSessionManager.m in Sources */,
-				D46CDD491DB5B2CA00BFC5A4 /* UBTextFieldNicknameInput.m in Sources */,
 				D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */,
 				D40179C51D2114BF00C0899E /* UFEmojiView.m in Sources */,
 				D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */,
