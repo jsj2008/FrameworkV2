@@ -190,9 +190,11 @@
 		D4D7C30C1DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3071DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m */; };
 		D4D7C30D1DB71D7500BAEEC1 /* UBTextFieldHeightInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */; };
 		D4D7C30E1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m */; };
-		D4D7C3141DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3131DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m */; };
 		D4D7C3171DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3161DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m */; };
 		D4D7C3191DB71F3F00BAEEC1 /* scity.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4D7C3181DB71F3F00BAEEC1 /* scity.plist */; };
+		D4D7C31F1DB777A000BAEEC1 /* UBTextFieldInputLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C31E1DB777A000BAEEC1 /* UBTextFieldInputLocation.m */; };
+		D4D7C3221DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3211DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m */; };
+		D4D7C3251DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
 		D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */; };
 		D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */; };
@@ -559,11 +561,15 @@
 		D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldHeightInput.m; sourceTree = "<group>"; };
 		D4D7C30A1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldNicknameInput.h; sourceTree = "<group>"; };
 		D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldNicknameInput.m; sourceTree = "<group>"; };
-		D4D7C3121DB71E9A00BAEEC1 /* UBTextFieldInputLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputLocation.h; sourceTree = "<group>"; };
-		D4D7C3131DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputLocation.m; sourceTree = "<group>"; };
 		D4D7C3151DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldPCLocationInput.h; sourceTree = "<group>"; };
 		D4D7C3161DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldPCLocationInput.m; sourceTree = "<group>"; };
 		D4D7C3181DB71F3F00BAEEC1 /* scity.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = scity.plist; sourceTree = "<group>"; };
+		D4D7C31D1DB777A000BAEEC1 /* UBTextFieldInputLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputLocation.h; sourceTree = "<group>"; };
+		D4D7C31E1DB777A000BAEEC1 /* UBTextFieldInputLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputLocation.m; sourceTree = "<group>"; };
+		D4D7C3201DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldHeightRangeInput.h; sourceTree = "<group>"; };
+		D4D7C3211DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldHeightRangeInput.m; sourceTree = "<group>"; };
+		D4D7C3231DB7780200BAEEC1 /* UBTextFieldInputHeightRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputHeightRange.h; sourceTree = "<group>"; };
+		D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputHeightRange.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
 		D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UFScene+Scene.h"; sourceTree = "<group>"; };
@@ -2152,19 +2158,31 @@
 		D4D7C3051DB71D7500BAEEC1 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
-				D4D7C3181DB71F3F00BAEEC1 /* scity.plist */,
-				D4D7C3121DB71E9A00BAEEC1 /* UBTextFieldInputLocation.h */,
-				D4D7C3131DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m */,
 				D4D7C30A1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.h */,
 				D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldNicknameInput.m */,
 				D4D7C3061DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.h */,
 				D4D7C3071DB71D7500BAEEC1 /* UBTextFieldBirthdayInput.m */,
 				D4D7C3081DB71D7500BAEEC1 /* UBTextFieldHeightInput.h */,
 				D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */,
+				D4D7C3201DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.h */,
+				D4D7C3211DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m */,
 				D4D7C3151DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.h */,
 				D4D7C3161DB71F0C00BAEEC1 /* UBTextFieldPCLocationInput.m */,
+				D4D7C3181DB71F3F00BAEEC1 /* scity.plist */,
+				D4D7C31C1DB777A000BAEEC1 /* Data */,
 			);
 			path = Inputs;
+			sourceTree = "<group>";
+		};
+		D4D7C31C1DB777A000BAEEC1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4D7C31D1DB777A000BAEEC1 /* UBTextFieldInputLocation.h */,
+				D4D7C31E1DB777A000BAEEC1 /* UBTextFieldInputLocation.m */,
+				D4D7C3231DB7780200BAEEC1 /* UBTextFieldInputHeightRange.h */,
+				D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		D4EC6AD71D24F8E700638BAB /* Button */ = {
@@ -2300,6 +2318,7 @@
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
+				D4D7C3251DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m in Sources */,
 				D435F2811D8FF0B600BCFE2B /* UBProgressIndicatorView.m in Sources */,
 				D40179CD1D2114BF00C0899E /* UFDataPickerInput.m in Sources */,
 				D40179551D2114BF00C0899E /* EPubXML.m in Sources */,
@@ -2362,7 +2381,7 @@
 				D40179591D2114BF00C0899E /* NSData+MD5.m in Sources */,
 				D40179571D2114BF00C0899E /* ZlibDecompressor.m in Sources */,
 				D40179451D2114BF00C0899E /* DBDefine.m in Sources */,
-				D4D7C3141DB71E9A00BAEEC1 /* UBTextFieldInputLocation.m in Sources */,
+				D4D7C31F1DB777A000BAEEC1 /* UBTextFieldInputLocation.m in Sources */,
 				D401795A1D2114BF00C0899E /* NSFileHandle+MD5.m in Sources */,
 				D40179CF1D2114BF00C0899E /* UFKeyboardAdjuster.m in Sources */,
 				D40179631D2114BF00C0899E /* HTTPUploadConnection.m in Sources */,
@@ -2431,6 +2450,7 @@
 				D401794E1D2114BF00C0899E /* EPubBookInfomation.m in Sources */,
 				D40179341D2114BF00C0899E /* HTTPMessageBodySerializer.m in Sources */,
 				D46CDD4C1DB5B7F100BFC5A4 /* UITextField+TextFieldInput.m in Sources */,
+				D4D7C3221DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m in Sources */,
 				D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */,
 				D401797B1D2114BF00C0899E /* NSString+Character.m in Sources */,
 				D40179721D2114BF00C0899E /* IPRouteItem.m in Sources */,

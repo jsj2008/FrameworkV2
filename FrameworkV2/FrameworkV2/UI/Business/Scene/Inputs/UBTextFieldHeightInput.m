@@ -41,9 +41,9 @@
     
     NSMutableArray *heights = [[NSMutableArray alloc] init];
     
-    for (NSInteger i = self.minHeight; i < self.maxHeight; i ++)
+    for (NSInteger i = self.minHeight; i <= self.maxHeight; i ++)
     {
-        [heights addObject:[NSString stringWithFormat:@"%ldcm", (long)i]];
+        [heights addObject:[NSString stringWithFormat:@"%ld", (long)i]];
     }
     
     self.heights = heights;
