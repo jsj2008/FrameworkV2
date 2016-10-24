@@ -1,41 +1,39 @@
 //
-//  UBTextFieldNicknameInput.m
+//  UBTextFieldTextInput.m
 //  FrameworkV2
 //
 //  Created by ww on 18/10/2016.
 //  Copyright © 2016 WW. All rights reserved.
 //
 
-#import "UBTextFieldNicknameInput.h"
+#import "UBTextFieldTextInput.h"
 
-@interface UBTextFieldNicknameInput ()
+@interface UBTextFieldTextInput ()
 
 - (void)didEndEditing:(NSNotification *)notification;
 
 @end
 
 
-@implementation UBTextFieldNicknameInput
+@implementation UBTextFieldTextInput
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)setTextField:(UITextField *)textField
+- (void)updateInput
 {
-    [super setTextField:textField];
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UITextFieldTextDidEndEditingNotification object:nil];
 }
 
-- (void)setNickname:(NSString *)nickname
+- (void)setText:(NSString *)text
 {
-    _nickname = [nickname copy];
+    _text = [text copy];
     
-    self.textField.text = nickname;
+    self.textField.text = text;
 }
 
 - (void)didEndEditing:(NSNotification *)notification
@@ -45,7 +43,7 @@
         return;
     }
     
-    _nickname = [self.textField.text copy];
+    _text = [self.textField.text copy];
     
     if (self.completion)
     {

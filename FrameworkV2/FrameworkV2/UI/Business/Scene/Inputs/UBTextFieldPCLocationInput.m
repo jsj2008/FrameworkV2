@@ -25,10 +25,8 @@
 
 @implementation UBTextFieldPCLocationInput
 
-- (void)setTextField:(UITextField *)textField
+- (void)updateInput
 {
-    [super setTextField:textField];
-    
     NSString *pcPath = [[NSBundle mainBundle] pathForResource:@"scity" ofType:@"plist"];
     
     self.locations = [[NSArray alloc] initWithContentsOfFile:pcPath];
@@ -41,13 +39,13 @@
     
     self.dataPicker = [[UFDataPicker alloc] initWithDataSource:dataSource];
     
-    textField.inputView = self.dataPicker.pickerView;
+    self.textField.inputView = self.dataPicker.pickerView;
     
     self.toolBar = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([UBTextFieldInputToolBar class]) owner:nil options:nil] firstObject];
     
     self.toolBar.delegate = self;
     
-    textField.inputAccessoryView = self.toolBar;
+    self.textField.inputAccessoryView = self.toolBar;
 }
 
 - (void)setLocation:(UBTextFieldInputPCLocation *)location

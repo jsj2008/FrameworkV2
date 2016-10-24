@@ -10,4 +10,9 @@
 
 @implementation UBTextFieldInput
 
+- (void)updateInput
+{
+    
+}
+
 @end
