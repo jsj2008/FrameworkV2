@@ -40,6 +40,7 @@ typedef void(^UBTextFieldInputCompletion)(void);
 
 /*!
  * @brief 更新输入器
+ * @discussion 子类需重写本方法
  * @discussion 更新输入器将重置输入器，所有之前的数据操作全部失效
  * @discussion 只有更新输入器，输入器才能正常使用，因此在进行数据操作前，务必先更新输入器
  */

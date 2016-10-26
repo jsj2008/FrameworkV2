@@ -2122,6 +2122,7 @@
 		D4D7C3051DB71D7500BAEEC1 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				D4D7C3181DB71F3F00BAEEC1 /* scity.plist */,
 				D4D7C30A1DB71D7500BAEEC1 /* UBTextFieldTextInput.h */,
 				D4D7C30B1DB71D7500BAEEC1 /* UBTextFieldTextInput.m */,
 				D4D7C3061DB71D7500BAEEC1 /* UBTextFieldYMDDateInput.h */,
@@ -2132,7 +2133,6 @@
 				D4D7C3091DB71D7500BAEEC1 /* UBTextFieldHeightInput.m */,
 				D4D7C3201DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.h */,
 				D4D7C3211DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m */,
-				D4D7C3181DB71F3F00BAEEC1 /* scity.plist */,
 				D4D7C31C1DB777A000BAEEC1 /* Data */,
 			);
 			path = Inputs;

@@ -61,7 +61,7 @@
 
 - (NSString *)jsonStringForKey:(NSString *)key
 {
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value && ![value isKindOfClass:[NSString class]])
     {
@@ -75,7 +75,7 @@
 
 - (NSArray *)jsonArrayForKey:(NSString *)key
 {
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value && ![value isKindOfClass:[NSArray class]])
     {
@@ -89,7 +89,7 @@
 
 - (NSDictionary *)jsonDictionaryForKey:(NSString *)key
 {
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value && ![value isKindOfClass:[NSDictionary class]])
     {
@@ -105,7 +105,7 @@
 {
     int result = 0;
     
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value)
     {
@@ -132,7 +132,7 @@
 {
     NSInteger result = 0;
     
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value)
     {
@@ -159,7 +159,7 @@
 {
     long long result = 0;
     
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value)
     {
@@ -186,7 +186,7 @@
 {
     BOOL result = 0;
     
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value)
     {
@@ -213,7 +213,7 @@
 {
     float result = 0;
     
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value)
     {
@@ -240,7 +240,7 @@
 {
     double result = 0;
     
-    id value = [self objectForKey:key];
+    id value = [self jsonObjectForKey:key];
     
     if (value)
     {
