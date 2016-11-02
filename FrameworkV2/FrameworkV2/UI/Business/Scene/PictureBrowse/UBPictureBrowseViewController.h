@@ -38,6 +38,11 @@
 @property (nonatomic) NSArray<NSString *> *toolBarItemIds;
 
 /*!
+ * @brief 浏览器显示的初始图片
+ */
+@property (nonatomic) UBPictureBrowsePicture *startPicture;
+
+/*!
  * @brief 显示指定图片
  * @param picture 显示图片
  * @param animated 是否需要动画
