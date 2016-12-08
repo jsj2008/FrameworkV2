@@ -25,10 +25,8 @@
 
 @implementation UBTextFieldHeightRangeInput
 
-- (void)setTextField:(UITextField *)textField
+- (void)updateInput
 {
-    [super setTextField:textField];
-    
     NSMutableArray *ranges = [[NSMutableArray alloc] init];
     
     for (NSInteger i = self.minHeight; i <= self.maxHeight; i ++)
@@ -57,13 +55,13 @@
     
     self.dataPicker = [[UFDataPicker alloc] initWithDataSource:dataSource];
     
-    textField.inputView = self.dataPicker.pickerView;
+    self.textField.inputView = self.dataPicker.pickerView;
     
     self.toolBar = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([UBTextFieldInputToolBar class]) owner:nil options:nil] firstObject];
     
     self.toolBar.delegate = self;
     
-    textField.inputAccessoryView = self.toolBar;
+    self.textField.inputAccessoryView = self.toolBar;
 }
 
 - (void)setHeightRange:(UBTextFieldInputHeightRange *)heightRange

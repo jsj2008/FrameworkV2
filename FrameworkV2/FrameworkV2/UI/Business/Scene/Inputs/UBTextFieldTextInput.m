@@ -24,6 +24,10 @@
 
 - (void)updateInput
 {
+    self.textField.inputView = nil;
+    
+    self.textField.inputAccessoryView = nil;
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didEndEditing:) name:UITextFieldTextDidEndEditingNotification object:nil];
