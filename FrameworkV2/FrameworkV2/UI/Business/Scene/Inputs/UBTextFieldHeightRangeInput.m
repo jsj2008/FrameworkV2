@@ -51,7 +51,7 @@
     
     dataSource.data = [NSDictionary dictionaryWithObject:ranges forKey:@""];
     
-    dataSource.componentsNumber = 1;
+    dataSource.componentsNumber = 2;
     
     self.dataPicker = [[UFDataPicker alloc] initWithDataSource:dataSource];
     
