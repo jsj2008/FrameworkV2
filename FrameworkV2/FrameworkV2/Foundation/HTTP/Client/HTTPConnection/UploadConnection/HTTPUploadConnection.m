@@ -130,8 +130,6 @@
 {
     HTTPConnectionInputStream *stream = self.streamUsed ? [self.stream copy] : self.stream;
     
-    [stream open];
-    
     self.streamUsed = YES;
     
     completionHandler(stream);

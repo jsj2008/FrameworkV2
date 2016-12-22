@@ -18,6 +18,9 @@
     @abstract
         UI图片加载器
  
+    @discussion
+        加载器在dealloc时会自动停止正在进行的加载操作
+ 
  *********************************************************/
 
 @interface UBImageLoader : NSObject

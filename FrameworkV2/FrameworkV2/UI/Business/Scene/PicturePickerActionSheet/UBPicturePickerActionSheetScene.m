@@ -9,6 +9,7 @@
 #import "UBPicturePickerActionSheetScene.h"
 #import <Photos/Photos.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UIImage+Orientation.h"
 #import "UBListingPicturePickerViewController.h"
 
 @interface UBPicturePickerActionSheetScene () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UBListingPicturePickerViewControllerDelegate>
@@ -345,7 +346,7 @@
 {
     UBPicturePickerPickedImage *pickedImage = [[UBPicturePickerPickedImage alloc] init];
     
-    pickedImage.image = picker.allowsEditing ? [info objectForKey:UIImagePickerControllerEditedImage] : [info objectForKey:UIImagePickerControllerOriginalImage];
+    pickedImage.image = [picker.allowsEditing ? [info objectForKey:UIImagePickerControllerEditedImage] : [info objectForKey:UIImagePickerControllerOriginalImage] imageWithOrientationFixed];
     
     __weak typeof(self) weakSelf = self;
     
@@ -377,7 +378,7 @@
     {
         UBPicturePickerPickedImage *pickedImage = [[UBPicturePickerPickedImage alloc] init];
         
-        pickedImage.image = image;
+        pickedImage.image = [image imageWithOrientationFixed];
         
         [pickedImages addObject:pickedImage];
     }

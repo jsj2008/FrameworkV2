@@ -27,6 +27,7 @@
         5，加载结束，需执行停止加载操作，停止操作结束后自动执行重置操作，重置操作结束后发送scrollLoadMoreViewDidStopLoadingMore:通知
         6，控制器初始状态为重置状态
         7，加载视图大小自动调节，将填充滚动视图内容区域（包括inset）尾后的空白区域，若滚动视图内容区域大小为0，加载视图将会设置为0
+        8，加载视图被添加到父视图上时，会自动进行UIScrollView的处理，禁止进行外界干涉
  
  *********************************************************/
 
@@ -35,7 +36,7 @@
 /*!
  * @brief 滚动视图
  */
-@property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, weak, readonly) UIScrollView *scrollView;
 
 /*!
  * @brief 协议代理
@@ -55,7 +56,7 @@
 
 /*********************************************************
  
-    @class
+    @protocol
         UFScrollLoadMoreFooterViewDelegate
  
     @abstract

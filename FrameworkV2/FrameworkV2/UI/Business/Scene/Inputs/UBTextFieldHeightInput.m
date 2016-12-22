@@ -35,15 +35,13 @@
     return self;
 }
 
-- (void)setTextField:(UITextField *)textField
+- (void)updateInput
 {
-    [super setTextField:textField];
-    
     NSMutableArray *heights = [[NSMutableArray alloc] init];
     
-    for (NSInteger i = self.minHeight; i < self.maxHeight; i ++)
+    for (NSInteger i = self.minHeight; i <= self.maxHeight; i ++)
     {
-        [heights addObject:[NSString stringWithFormat:@"%ldcm", (long)i]];
+        [heights addObject:[NSString stringWithFormat:@"%ld", (long)i]];
     }
     
     self.heights = heights;
@@ -56,13 +54,13 @@
     
     self.dataPicker = [[UFDataPicker alloc] initWithDataSource:dataSource];
     
-    textField.inputView = self.dataPicker.pickerView;
+    self.textField.inputView = self.dataPicker.pickerView;
     
     self.toolBar = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([UBTextFieldInputToolBar class]) owner:nil options:nil] firstObject];
     
     self.toolBar.delegate = self;
     
-    textField.inputAccessoryView = self.toolBar;
+    self.textField.inputAccessoryView = self.toolBar;
 }
 
 - (void)setHeight:(NSNumber *)height

@@ -8,46 +8,41 @@
 
 #import "UFScrollRefreshHeaderView.h"
 
-@interface UFScrollRefreshHeaderView ()
-{
-    __weak UIScrollView *_scrollView;
-}
-
-@end
-
-
 @implementation UFScrollRefreshHeaderView
 
-@synthesize scrollView = _scrollView;
-
-- (void)dealloc
+- (void)willMoveToSuperview:(UIView *)newSuperview
 {
-    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [super willMoveToSuperview:newSuperview];
     
-    [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
+    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     
     [self.scrollView removeObserver:self forKeyPath:@"contentInset"];
     
     [self.scrollView removeObserver:self forKeyPath:@"frame"];
     
     [self.scrollView removeObserver:self forKeyPath:@"bounds"];
-}
-
-- (void)setScrollView:(UIScrollView *)scrollView
-{
-    _scrollView = scrollView;
     
-    if (scrollView)
+    [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
+    
+    if (newSuperview && [newSuperview isKindOfClass:[UIScrollView class]])
     {
-        [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
+        UIScrollView *scrollView = (UIScrollView *)newSuperview;
         
-        [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
+        [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
         
         [scrollView addObserver:self forKeyPath:@"contentInset" options:0 context:nil];
         
         [scrollView addObserver:self forKeyPath:@"frame" options:0 context:nil];
         
         [scrollView addObserver:self forKeyPath:@"bounds" options:0 context:nil];
+        
+        [scrollView.panGestureRecognizer addObserver:self forKeyPath:@"state" options:0 context:nil];
+        
+        _scrollView = scrollView;
+    }
+    else
+    {
+        _scrollView = nil;
     }
 }
 

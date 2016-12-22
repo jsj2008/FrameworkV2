@@ -1,5 +1,5 @@
 //
-//  UBTextFieldNicknameInput.h
+//  UBTextFieldTextInput.h
 //  FrameworkV2
 //
 //  Created by ww on 18/10/2016.
@@ -8,8 +8,8 @@
 
 #import "UBTextFieldInput.h"
 
-@interface UBTextFieldNicknameInput : UBTextFieldInput
+@interface UBTextFieldTextInput : UBTextFieldInput
 
-@property (nonatomic, copy) NSString *nickname;
+@property (nonatomic, copy) NSString *text;
 
 @end

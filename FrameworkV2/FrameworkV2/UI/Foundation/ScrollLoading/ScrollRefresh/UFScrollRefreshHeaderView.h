@@ -26,6 +26,7 @@
         4，加载结束，需执行停止加载操作，停止操作结束后将自动滚动收回加载视图，收回后自动执行重置操作，重置操作结束后发送scrollRefreshViewDidStopRefreshing:通知
         5，控制器初始状态为重置状态
         6，控制器提供模拟刷新操作，即滚动视图自动滚动到加载视图内容完全可见时触发加载
+        7，加载视图被添加到父视图上时，会自动进行UIScrollView的处理，禁止进行外界干涉
  
  *********************************************************/
 
@@ -34,7 +35,7 @@
 /*!
  * @brief 滚动视图
  */
-@property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, weak, readonly) UIScrollView *scrollView;
 
 /*!
  * @brief 协议代理
@@ -58,7 +59,7 @@
 
 /*********************************************************
  
-    @class
+    @protocol
         UFScrollRefreshHeaderViewDelegate
  
     @abstract

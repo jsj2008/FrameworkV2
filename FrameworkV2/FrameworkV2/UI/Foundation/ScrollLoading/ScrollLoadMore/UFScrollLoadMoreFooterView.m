@@ -8,20 +8,12 @@
 
 #import "UFScrollLoadMoreFooterView.h"
 
-@interface UFScrollLoadMoreFooterView ()
-{
-    __weak UIScrollView *_scrollView;
-}
-
-@end
-
-
 @implementation UFScrollLoadMoreFooterView
 
-@synthesize scrollView = _scrollView;
-
-- (void)dealloc
+- (void)willMoveToSuperview:(UIView *)newSuperview
 {
+    [super willMoveToSuperview:newSuperview];
+    
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
     
     [self.scrollView removeObserver:self forKeyPath:@"contentSize"];
@@ -33,14 +25,11 @@
     [self.scrollView removeObserver:self forKeyPath:@"bounds"];
     
     [self.scrollView.panGestureRecognizer removeObserver:self forKeyPath:@"state"];
-}
-
-- (void)setScrollView:(UIScrollView *)scrollView
-{
-    _scrollView = scrollView;
     
-    if (scrollView)
+    if (newSuperview && [newSuperview isKindOfClass:[UIScrollView class]])
     {
+        UIScrollView *scrollView = (UIScrollView *)newSuperview;
+        
         [scrollView addObserver:self forKeyPath:@"contentOffset" options:0 context:nil];
         
         [scrollView addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
@@ -61,6 +50,12 @@
         {
             self.frame = CGRectZero;
         }
+        
+        _scrollView = scrollView;
+    }
+    else
+    {
+        _scrollView = nil;
     }
 }
 
@@ -92,7 +87,7 @@
             {
                 __weak typeof(self) weakSelf = self;
                 
-                if (- self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
+                if (self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
                 {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         
@@ -110,7 +105,7 @@
         {
             if (self.scrollView.isTracking)
             {
-                if (- self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
+                if (self.scrollView.contentOffset.y > self.scrollView.contentInset.top)
                 {
                     if (self.status != UFScrollLoadingViewStatus_Prepare)
                     {
