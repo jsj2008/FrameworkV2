@@ -7,6 +7,7 @@
 //
 
 #import "UFAttributedStringEmojiUpdater.h"
+#import "UFEmojiUpdater.h"
 
 @interface UFAttributedStringEmojiUpdater ()
 
@@ -34,6 +35,18 @@
     [self.displayLink invalidate];
 }
 
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        self.enableAutoUpdate = YES;
+        
+        self.upateImageType = UFEmojiUpdateImageType_FrameFixed;
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithAttributedString:(NSAttributedString *)attributedString
 {
     if (self = [super init])
@@ -41,6 +54,8 @@
         self.originalAttributedString = attributedString;
         
         self.enableAutoUpdate = YES;
+        
+        self.upateImageType = UFEmojiUpdateImageType_FrameFixed;
     }
     
     return self;
@@ -53,15 +68,20 @@
 
 - (void)startUpdating
 {
-    self.emojiRanges = [[NSMutableArray alloc] init];
-    
-    self.emojiUpdaters = [[NSMutableDictionary alloc] init];
-    
     NSError *error = nil;
     
     NSRegularExpression *regularExpression = [[NSRegularExpression alloc] initWithPattern:self.pattern options:NSRegularExpressionCaseInsensitive error:&error];
     
-    NSArray *emojiMatches = [regularExpression matchesInString:self.originalAttributedString.string options:0 range:NSMakeRange(0, [self.originalAttributedString length])];
+    if (error)
+    {
+        return;
+    }
+    
+    self.emojiRanges = [[NSMutableArray alloc] init];
+    
+    self.emojiUpdaters = [[NSMutableDictionary alloc] init];
+    
+    NSArray *emojiMatches = [regularExpression matchesInString:self.originalAttributedString.string options:0 range:NSMakeRange(0, self.originalAttributedString.length)];
     
     for (NSTextCheckingResult *match in emojiMatches)
     {
@@ -75,7 +95,31 @@
             
             [self.emojiRanges addObject:rangeValue];
             
-            UFEmojiUpdater *updater = [[UFEmojiUpdater alloc] initWithEmoji:emoji];
+            UFEmojiUpdater *updater = nil;
+            
+            switch (self.upateImageType)
+            {
+                case UFEmojiUpdateImageType_FrameFixed:
+                {
+                    updater = [[UFEmojiFramingUpdater alloc] initWithEmoji:emoji];
+                    
+                    break;
+                }
+                    
+                case UFEmojiUpdateImageType_DurationFixed:
+                {
+                    updater = [[UFEmojiDurationingUpdater alloc] initWithEmoji:emoji];
+                    
+                    break;
+                }
+                    
+                default:
+                {
+                    updater = [[UFEmojiFramingUpdater alloc] initWithEmoji:emoji];
+                    
+                    break;
+                }
+            }
             
             if (!self.updatable)
             {
@@ -180,100 +224,6 @@
 - (NSAttributedString *)currentUsableEmojiedAttributedString
 {
     return [self.emojiedAttributedString copy];
-}
-
-@end
-
-
-@interface UFEmojiUpdater ()
-{
-    UFEmoji *_emoji;
-}
-
-@property (nonatomic) NSTimeInterval elapsedDuration;
-
-@property (nonatomic) NSMutableArray *sourceDurations;
-
-@property (nonatomic) UIImage *image;
-
-@end
-
-
-@implementation UFEmojiUpdater
-
-@synthesize emoji = _emoji;
-
-- (instancetype)initWithEmoji:(UFEmoji *)emoji
-{
-    if (self = [super init])
-    {
-        _emoji = [emoji copy];
-        
-        self.elapsedDuration = 0;
-        
-        self.sourceDurations = [[NSMutableArray alloc] init];
-        
-        NSTimeInterval duration = 0;
-        
-        if (!emoji.image && emoji.imagePath)
-        {
-            emoji.image = [emoji imageWithPath:emoji.imagePath];
-        }
-        
-        for (UFEmojiImageSource *source in emoji.image.imageSources)
-        {
-            duration += source.duration;
-            
-            [self.sourceDurations addObject:[NSNumber numberWithDouble:duration]];
-        }
-    }
-    
-    return self;
-}
-
-- (BOOL)updatable
-{
-    return self.emoji.image.updatable;
-}
-
-- (UIImage *)currentImage
-{
-    return self.image;
-}
-
-- (void)updateWithDuration:(NSTimeInterval)duration
-{
-    UIImage *image = nil;
-    
-    if (self.updatable)
-    {
-        self.elapsedDuration += duration;
-        
-        NSTimeInterval loopDuration = [[self.sourceDurations lastObject] doubleValue];
-        
-        if (loopDuration > 0)
-        {
-            NSTimeInterval durationInLoop = self.elapsedDuration - ((NSInteger)(self.elapsedDuration / loopDuration)) * loopDuration;
-            
-            NSInteger index = [self.sourceDurations indexOfObject:[NSNumber numberWithDouble:durationInLoop] inSortedRange:NSMakeRange(0, [self.sourceDurations count]) options:NSBinarySearchingInsertionIndex usingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-                
-                return [obj1 compare:obj2];
-            }];
-            
-            if (index < 0)
-            {
-                index = 0;
-            }
-            else if (index > [self.sourceDurations count] - 1)
-            {
-                index = [self.sourceDurations count] - 1;
-            }
-            
-            image = ((UFEmojiImageSource *)[self.emoji.image.imageSources objectAtIndex:index]).image;
-        }
-    }
-    
-    self.image = image;
 }
 
 @end

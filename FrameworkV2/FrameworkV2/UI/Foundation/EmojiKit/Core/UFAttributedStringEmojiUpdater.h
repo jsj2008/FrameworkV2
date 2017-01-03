@@ -9,7 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "UFEmojiSet.h"
 
+/*********************************************************
+ 
+    @enum
+        UFEmojiUpdateImageType
+ 
+    @abstract
+        表情图片更新类型
+ 
+ *********************************************************/
+
+typedef NS_ENUM(NSUInteger, UFEmojiUpdateImageType)
+{
+    UFEmojiUpdateImageType_FrameFixed = 0,      // 按帧刷新
+    UFEmojiUpdateImageType_DurationFixed        // 按图片时间刷新
+};
+
+
 @protocol UFAttributedStringEmojiUpdaterDelegate;
+
 
 /*********************************************************
  
@@ -22,11 +40,6 @@
  *********************************************************/
 
 @interface UFAttributedStringEmojiUpdater : NSObject
-
-/*!
- * @brief 代理对象
- */
-@property (nonatomic, weak) id<UFAttributedStringEmojiUpdaterDelegate> delegate;
 
 /*!
  * @brief 初始化表情更新器
@@ -55,8 +68,20 @@
 /*!
  * @brief 允许自动更新
  * @discussion 若允许，更新器内部根据表情数据自动更新表情显示效果（适用于动态表情）；若不允许，更新器只会显示表情当前的图片数据
+ * @discussion 默认YES
  */
 @property (nonatomic, getter=isAutoUpdateEnabled) BOOL enableAutoUpdate;
+
+/*!
+ * @brief 刷新图片方式
+ * @discussion 默认UFEmojiUpdateImageType_FrameFixed
+ */
+@property (nonatomic) UFEmojiUpdateImageType upateImageType;
+
+/*!
+ * @brief 代理对象
+ */
+@property (nonatomic, weak) id<UFAttributedStringEmojiUpdaterDelegate> delegate;
 
 /*!
  * @brief 用户数据字典，透传数据
@@ -66,6 +91,7 @@
 /*!
  * @brief 启动表情更新
  * @discussion 未启动表情，只显示表情的编码，不会显示图片数据
+ * @discussion 启动后会立即执行一次表情数据的刷新
  */
 - (void)startUpdating;
 
@@ -111,48 +137,5 @@
  * @param emojiedAttributedString 表情字符串
  */
 - (void)attributedStringEmojiUpdater:(UFAttributedStringEmojiUpdater *)updater didUpdateEmojiedAttributedString:(NSAttributedString *)emojiedAttributedString;
-
-@end
-
-
-/*********************************************************
- 
-    @class
-        UFEmojiUpdater
- 
-    @abstract
-        表情对象更新器
- 
- *********************************************************/
-
-@interface UFEmojiUpdater : NSObject
-
-/*!
- * @brief 初始化表情对象更新器
- * @param emoji 表情对象
- * @result 表情对象更新器
- */
-- (instancetype)initWithEmoji:(UFEmoji *)emoji;
-
-/*!
- * @brief 表情对象
- */
-@property (nonatomic, copy, readonly) UFEmoji *emoji;
-
-/*!
- * @brief 表情对象是否可更新
- */
-@property (nonatomic, readonly) BOOL updatable;
-
-/*!
- * @brief 表情对象当前图片
- * @result 当前图片
- */
-- (UIImage *)currentImage;
-
-/*!
- * @brief 刷新当前表情对象
- */
-- (void)updateWithDuration:(NSTimeInterval)duration;
 
 @end

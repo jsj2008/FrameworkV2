@@ -47,31 +47,3 @@
 }
 
 @end
-
-
-@implementation UFEmoji (Cache)
-
-- (void)cleanCache
-{
-    if (self.imagePath)
-    {
-        self.image = nil;
-    }
-}
-
-- (NSUInteger)cacheSize
-{
-    NSUInteger size = 0;
-    
-    if (self.image && self.imagePath)
-    {
-        for (UFEmojiImageSource *source in self.image.imageSources)
-        {
-            size += source.image.size.width * source.image.size.height * source.image.scale;
-        }
-    }
-    
-    return size;
-}
-
-@end

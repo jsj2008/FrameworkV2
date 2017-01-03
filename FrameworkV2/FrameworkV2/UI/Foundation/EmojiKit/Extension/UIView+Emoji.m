@@ -1,12 +1,12 @@
 //
-//  UFEmojiView.m
+//  UIView+Emoji.m
 //  Test
 //
 //  Created by ww on 15/12/23.
 //  Copyright © 2015年 ww. All rights reserved.
 //
 
-#import "UFEmojiView.h"
+#import "UIView+Emoji.h"
 #import "UFAttributedStringEmojiUpdater.h"
 #import <objc/runtime.h>
 

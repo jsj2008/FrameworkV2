@@ -1,5 +1,5 @@
 //
-//  UFEmojiView.h
+//  UIView+Emoji.h
 //  Test
 //
 //  Created by ww on 15/12/23.
