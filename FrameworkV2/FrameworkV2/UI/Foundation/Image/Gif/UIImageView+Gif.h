@@ -10,6 +10,23 @@
 
 /*********************************************************
  
+    @enum
+        UFEmojiUpdateImageType
+ 
+    @abstract
+        表情图片更新类型
+ 
+ *********************************************************/
+
+typedef NS_ENUM(NSUInteger, UFGifImageUpdateType)
+{
+    UFGifImageUpdateType_ByFrame = 0,      // 按帧刷新
+    UFGifImageUpdateType_ByImageDuration   // 按图片时间刷新，计算量较大
+};
+
+
+/*********************************************************
+ 
     @category
         UIImageView (Gif)
  
@@ -24,6 +41,12 @@
  * @brief gif数据
  */
 @property (nonatomic) NSData *gifData;
+
+/*!
+ * @brief 图片更新方式
+ * @discussion 默认UFGifImageUpdateType_ByFrame
+ */
+@property (nonatomic) UFGifImageUpdateType gifUpdateType;
 
 /*!
  * @brief 启动gif更新

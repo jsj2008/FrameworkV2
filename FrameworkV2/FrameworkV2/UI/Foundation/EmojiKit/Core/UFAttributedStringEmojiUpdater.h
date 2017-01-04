@@ -21,8 +21,8 @@
 
 typedef NS_ENUM(NSUInteger, UFEmojiUpdateImageType)
 {
-    UFEmojiUpdateImageType_FrameFixed = 0,      // 按帧刷新
-    UFEmojiUpdateImageType_DurationFixed        // 按图片时间刷新
+    UFEmojiUpdateImageType_ByFrame = 0,      // 按帧刷新
+    UFEmojiUpdateImageType_ByImageDuration   // 按图片时间刷新，计算量较大
 };
 
 
@@ -74,7 +74,7 @@ typedef NS_ENUM(NSUInteger, UFEmojiUpdateImageType)
 
 /*!
  * @brief 刷新图片方式
- * @discussion 默认UFEmojiUpdateImageType_FrameFixed
+ * @discussion 默认UFEmojiUpdateImageType_ByFrame
  */
 @property (nonatomic) UFEmojiUpdateImageType upateImageType;
 

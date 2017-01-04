@@ -16,9 +16,14 @@
     @abstract
         gif图片更新器
  
+    @discussion
+        UFImageViewGifUpdater是抽象类
+ 
  *********************************************************/
 
 @interface UFImageViewGifUpdater : NSObject
+
+- (instancetype)initWithGifData:(NSData *)gifData;
 
 /*!
  * @brief 图片视图对象
@@ -28,7 +33,7 @@
 /*!
  * @brief gif数据
  */
-@property (nonatomic) NSData *gifData;
+@property (nonatomic, readonly) NSData *gifData;
 
 /*!
  * @brief 启动gif更新
@@ -49,6 +54,42 @@
  * @brief 继续gif更新
  */
 - (void)resumeUpdating;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UFImageViewGifUpdater
+ 
+    @abstract
+        按帧刷新的gif图片更新器
+ 
+    @discussion
+        更新器每次更新图片都取图片的下一帧，忽略更新时间间隔
+ 
+ *********************************************************/
+
+@interface UFImageViewFramingGifUpdater : UFImageViewGifUpdater
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UFImageViewDurationingGifUpdater
+ 
+    @abstract
+        按图片时间刷新图片的gif图片更新器
+ 
+    @discussion
+        更新器每次更新图片都会根据每帧图片的显示时间计算当前应当显示的图片
+ 
+ *********************************************************/
+
+@interface UFImageViewDurationingGifUpdater : UFImageViewGifUpdater
 
 @end
 

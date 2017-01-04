@@ -16,8 +16,6 @@ static const char kUIViewPropertyKey_EmojiPattern[] = "emojiPattern";
 
 static const char kUIViewPropertyKey_EmojiUpdaters[] = "emojiUpdaters";
 
-static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
-
 
 @implementation UIView (Emoji)
 
@@ -41,12 +39,12 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     objc_setAssociatedObject(self, kUIViewPropertyKey_EmojiPattern, emojiPattern, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (NSDictionary *)emojiUpdaters
+- (NSMutableDictionary *)emojiUpdaters
 {
     return objc_getAssociatedObject(self, kUIViewPropertyKey_EmojiUpdaters);
 }
 
-- (void)setEmojiUpdaters:(NSDictionary *)emojiUpdaters
+- (void)setEmojiUpdaters:(NSMutableDictionary *)emojiUpdaters
 {
     objc_setAssociatedObject(self, kUIViewPropertyKey_EmojiUpdaters, emojiUpdaters, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -71,14 +69,14 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     
     emojiUpdater.delegate = self;
     
-    [self setEmojiUpdaters:[NSDictionary dictionaryWithObject:emojiUpdater forKey:kUIViewDefaultEmojiUpdaterName]];
+    [self setEmojiUpdaters:[NSMutableDictionary dictionaryWithObject:emojiUpdater forKey:@"default"]];
     
     [emojiUpdater startUpdating];
 }
 
 - (void)closeEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     self.attributedText = emojiUpdater.attributedString;
     
@@ -91,7 +89,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 {
     if (hide)
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
         
         self.attributedText = emojiUpdater.attributedString;
         
@@ -99,7 +97,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     }
     else
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
         
         emojiUpdater.delegate = self;
     }
@@ -107,7 +105,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 - (void)pauseEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     emojiUpdater.delegate = nil;
     
@@ -116,7 +114,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 - (void)resumeEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     emojiUpdater.delegate = self;
     
@@ -133,9 +131,9 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 @implementation UIButton (Emoji)
 
-- (void)setEmojiedAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state
+- (void)showEmojiForState:(UIControlState)state
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:title];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:[self attributedTitleForState:state]];
     
     emojiUpdater.pattern = self.emojiPattern;
     
@@ -145,7 +143,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     
     emojiUpdater.delegate = self;
     
-    [self setEmojiUpdaters:[NSDictionary dictionaryWithObject:emojiUpdater forKey:[NSNumber numberWithUnsignedInteger:state]]];
+    [self setEmojiUpdaters:[NSMutableDictionary dictionaryWithObject:emojiUpdater forKey:[NSNumber numberWithUnsignedInteger:state]]];
     
     [emojiUpdater startUpdating];
 }
@@ -158,14 +156,14 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     
     [emojiUpdater stopUpdating];
     
-    [self setEmojiUpdaters:nil];
+    [[self emojiUpdaters] removeObjectForKey:[NSNumber numberWithUnsignedInteger:state]];
 }
 
 - (void)hideEmoji:(BOOL)hide forState:(UIControlState)state
 {
     if (hide)
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:[NSNumber numberWithUnsignedInteger:state]];
         
         [self setAttributedTitle:emojiUpdater.attributedString forState:state];
         
@@ -173,7 +171,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     }
     else
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:[NSNumber numberWithUnsignedInteger:state]];
         
         emojiUpdater.delegate = self;
     }
@@ -217,14 +215,14 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     
     emojiUpdater.delegate = self;
     
-    [self setEmojiUpdaters:[NSDictionary dictionaryWithObject:emojiUpdater forKey:kUIViewDefaultEmojiUpdaterName]];
+    [self setEmojiUpdaters:[NSMutableDictionary dictionaryWithObject:emojiUpdater forKey:@"default"]];
     
     [emojiUpdater startUpdating];
 }
 
 - (void)closeEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     self.attributedText = emojiUpdater.attributedString;
     
@@ -237,7 +235,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 {
     if (hide)
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
         
         self.attributedText = emojiUpdater.attributedString;
         
@@ -245,7 +243,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     }
     else
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
         
         emojiUpdater.delegate = self;
     }
@@ -253,7 +251,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 - (void)pauseEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     emojiUpdater.delegate = nil;
     
@@ -262,7 +260,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 - (void)resumeEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     emojiUpdater.delegate = self;
     
@@ -289,14 +287,14 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     
     emojiUpdater.delegate = self;
     
-    [self setEmojiUpdaters:[NSDictionary dictionaryWithObject:emojiUpdater forKey:kUIViewDefaultEmojiUpdaterName]];
+    [self setEmojiUpdaters:[NSMutableDictionary dictionaryWithObject:emojiUpdater forKey:@"default"]];
     
     [emojiUpdater startUpdating];
 }
 
 - (void)closeEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     self.attributedText = emojiUpdater.attributedString;
     
@@ -309,7 +307,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 {
     if (hide)
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
         
         self.attributedText = emojiUpdater.attributedString;
         
@@ -317,7 +315,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
     }
     else
     {
-        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+        UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
         
         emojiUpdater.delegate = self;
     }
@@ -325,7 +323,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 - (void)pauseEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     emojiUpdater.delegate = nil;
     
@@ -334,7 +332,7 @@ static NSString * const kUIViewDefaultEmojiUpdaterName = @"default";
 
 - (void)resumeEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:kUIViewDefaultEmojiUpdaterName];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[self emojiUpdaters] objectForKey:@"default"];
     
     emojiUpdater.delegate = self;
     

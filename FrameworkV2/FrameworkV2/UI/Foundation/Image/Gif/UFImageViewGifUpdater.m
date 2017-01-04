@@ -11,13 +11,9 @@
 
 @interface UFImageViewGifUpdater ()
 
-@property (nonatomic) NSArray *imageSources;
+@property (nonatomic) NSArray<UFImageViewGifImageSource *> *imageSources;
 
 @property (nonatomic) CADisplayLink *displayLink;
-
-@property (nonatomic) NSTimeInterval elapsedDuration;
-
-@property (nonatomic) NSMutableArray *sourceDurations;
 
 - (void)update;
 
@@ -31,62 +27,65 @@
     [self.displayLink invalidate];
 }
 
-- (void)startUpdating
+- (instancetype)initWithGifData:(NSData *)gifData
 {
-    NSMutableArray *sources = [[NSMutableArray alloc] init];
-    
-    NSMutableArray *sourceDurations = [[NSMutableArray alloc] init];
-    
-    NSTimeInterval duration = 0;
-    
-    CGImageSourceRef gifSource = CGImageSourceCreateWithData((CFDataRef)self.gifData, NULL);
-    
-    size_t sourceCount = CGImageSourceGetCount(gifSource);
-    
-    for (size_t i = 0; i < sourceCount; i ++)
+    if (self = [super init])
     {
-        UFImageViewGifImageSource *source = [[UFImageViewGifImageSource alloc] init];
+        _gifData = gifData;
         
-        CGImageRef image = CGImageSourceCreateImageAtIndex(gifSource, i, NULL);
+        NSMutableArray *sources = [[NSMutableArray alloc] init];
         
-        source.image = [UIImage imageWithCGImage:image];
+        CGImageSourceRef gifSource = CGImageSourceCreateWithData((CFDataRef)self.gifData, NULL);
         
-        NSDictionary *frameProperties = CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(gifSource, i, NULL));
+        size_t sourceCount = CGImageSourceGetCount(gifSource);
         
-        NSDictionary *gifProperties = [frameProperties objectForKey:(NSString *)kCGImagePropertyGIFDictionary];
-        
-        NSNumber *delayTime = [gifProperties objectForKey:(NSString *)kCGImagePropertyGIFUnclampedDelayTime];
-        
-        if (!delayTime)
+        for (size_t i = 0; i < sourceCount; i ++)
         {
-            delayTime = [gifProperties objectForKey:(NSString *)kCGImagePropertyGIFDelayTime];
+            UFImageViewGifImageSource *source = [[UFImageViewGifImageSource alloc] init];
+            
+            CGImageRef image = CGImageSourceCreateImageAtIndex(gifSource, i, NULL);
+            
+            source.image = [UIImage imageWithCGImage:image];
+            
+            NSDictionary *frameProperties = CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(gifSource, i, NULL));
+            
+            NSDictionary *gifProperties = [frameProperties objectForKey:(NSString *)kCGImagePropertyGIFDictionary];
+            
+            NSNumber *delayTime = [gifProperties objectForKey:(NSString *)kCGImagePropertyGIFUnclampedDelayTime];
+            
+            if (!delayTime)
+            {
+                delayTime = [gifProperties objectForKey:(NSString *)kCGImagePropertyGIFDelayTime];
+            }
+            
+            source.duration = [delayTime doubleValue];
+            
+            if (source.image)
+            {
+                [sources addObject:source];
+            }
         }
         
-        source.duration = [delayTime doubleValue];
-        
-        if (source.image)
-        {
-            [sources addObject:source];
-            
-            duration += [delayTime doubleValue];
-            
-            [sourceDurations addObject:[NSNumber numberWithDouble:duration]];
-        }
+        self.imageSources = sources;
     }
     
-    self.imageSources = sources;
-    
-    self.sourceDurations = sourceDurations;
-    
+    return self;
+}
+
+- (void)startUpdating
+{
     [self.displayLink invalidate];
     
-    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
+    self.displayLink = nil;
     
-    self.displayLink.frameInterval = 1;
-    
-    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-    
-    self.elapsedDuration = 0;
+    if (self.imageSources.count > 0)
+    {
+        self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
+        
+        self.displayLink.frameInterval = 1;
+        
+        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    }
     
     [self update];
 }
@@ -106,6 +105,77 @@
 - (void)resumeUpdating
 {
     self.displayLink.paused = NO;
+}
+
+- (void)update
+{
+    
+}
+
+@end
+
+
+@interface UFImageViewFramingGifUpdater ()
+
+@property (nonatomic) NSUInteger sourceIndex;
+
+@end
+
+
+@implementation UFImageViewFramingGifUpdater
+
+- (void)update
+{
+    if (self.imageSources.count > 0)
+    {
+        if (self.sourceIndex > self.imageSources.count - 1)
+        {
+            self.sourceIndex = 0;
+        }
+        
+        self.imageView.image = ((UFImageViewGifImageSource *)[self.imageSources objectAtIndex:self.sourceIndex]).image;
+        
+        self.sourceIndex ++;
+    }
+}
+
+@end
+
+
+@interface UFImageViewDurationingGifUpdater ()
+
+@property (nonatomic) NSTimeInterval elapsedDuration;
+
+@property (nonatomic) NSMutableArray *sourceDurations;
+
+@end
+
+
+@implementation UFImageViewDurationingGifUpdater
+
+- (instancetype)initWithGifData:(NSData *)gifData
+{
+    if (self = [super initWithGifData:gifData])
+    {
+        NSMutableArray *sourceDurations = [[NSMutableArray alloc] init];
+        
+        NSTimeInterval duration = 0;
+        
+        for (int i = 0; i < self.imageSources.count; i ++)
+        {
+            UFImageViewGifImageSource *source = [self.imageSources objectAtIndex:i];
+            
+            duration += source.duration;
+            
+            [sourceDurations addObject:[NSNumber numberWithDouble:duration]];
+        }
+        
+        self.sourceDurations = sourceDurations;
+        
+        self.elapsedDuration = 0;
+    }
+    
+    return self;
 }
 
 - (void)update
@@ -136,7 +206,7 @@
         
         image = ((UFImageViewGifImageSource *)[self.imageSources objectAtIndex:index]).image;
     }
-
+    
     self.imageView.image = image;
 }
 

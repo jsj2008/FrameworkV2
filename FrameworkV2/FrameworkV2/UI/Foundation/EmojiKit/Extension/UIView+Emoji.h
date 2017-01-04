@@ -95,11 +95,11 @@
 
 /*!
  * @brief 显示表情
- * @param title 文本
  * @param state 按钮状态
  * @discussion 若之前已显示表情，将中断之前表情，显示新表情
+ * @discussion 在显示表情前，必须为指定状态正确设置attributedTitle
  */
-- (void)setEmojiedAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state;
+- (void)showEmojiForState:(UIControlState)state;
 
 /*!
  * @brief 关闭表情

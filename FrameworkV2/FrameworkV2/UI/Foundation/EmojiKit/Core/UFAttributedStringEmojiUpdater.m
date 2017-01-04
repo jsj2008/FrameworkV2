@@ -41,7 +41,7 @@
     {
         self.enableAutoUpdate = YES;
         
-        self.upateImageType = UFEmojiUpdateImageType_FrameFixed;
+        self.upateImageType = UFEmojiUpdateImageType_ByFrame;
     }
     
     return self;
@@ -55,7 +55,7 @@
         
         self.enableAutoUpdate = YES;
         
-        self.upateImageType = UFEmojiUpdateImageType_FrameFixed;
+        self.upateImageType = UFEmojiUpdateImageType_ByFrame;
     }
     
     return self;
@@ -99,14 +99,14 @@
             
             switch (self.upateImageType)
             {
-                case UFEmojiUpdateImageType_FrameFixed:
+                case UFEmojiUpdateImageType_ByFrame:
                 {
                     updater = [[UFEmojiFramingUpdater alloc] initWithEmoji:emoji];
                     
                     break;
                 }
                     
-                case UFEmojiUpdateImageType_DurationFixed:
+                case UFEmojiUpdateImageType_ByImageDuration:
                 {
                     updater = [[UFEmojiDurationingUpdater alloc] initWithEmoji:emoji];
                     
@@ -130,7 +130,11 @@
         }
     }
     
-    if (self.updatable && self.isAutoUpdateEnabled)
+    [self.displayLink invalidate];
+    
+    self.displayLink = nil;
+    
+    if (self.updatable && self.isAutoUpdateEnabled && self.emojiUpdaters.count > 0)
     {
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
         

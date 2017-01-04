@@ -10,14 +10,11 @@
 #import "UFImageViewGifUpdater.h"
 #import <objc/runtime.h>
 
-@interface UIImageView (Gif_Internal)
-
-@property (nonatomic) UFImageViewGifUpdater *gifUpdater;
-
-@end
-
-
 static const char kUIImageViewPropertyKey_GifData[] = "gifData";
+
+static const char kUIImageViewPropertyKey_GifUpdateType[] = "gifUpdateType";
+
+static const char kUIImageViewPropertyKey_GifUpdater[] = "gifUpdater";
 
 
 @implementation UIImageView (Gif)
@@ -32,44 +29,15 @@ static const char kUIImageViewPropertyKey_GifData[] = "gifData";
     return objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifData);
 }
 
-- (void)startGifAnimating
+- (void)setGifUpdateType:(UFGifImageUpdateType)gifUpdateType
 {
-    if (!self.gifUpdater)
-    {
-        self.gifUpdater = [[UFImageViewGifUpdater alloc] init];
-        
-        self.gifUpdater.imageView = self;
-        
-        self.gifUpdater.gifData = self.gifData;
-    }
-    
-    [self.gifUpdater startUpdating];
+    objc_setAssociatedObject(self, kUIImageViewPropertyKey_GifUpdateType, [NSNumber numberWithUnsignedInteger:gifUpdateType], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)stopGifAnimating
+- (UFGifImageUpdateType)gifUpdateType
 {
-    [self.gifUpdater stopUpdating];
-    
-    self.gifUpdater = nil;
+    return [objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifUpdateType) unsignedIntegerValue];
 }
-
-- (void)pauseGifAnimating
-{
-    [self.gifUpdater pauseUpdating];
-}
-
-- (void)resumeGifAnimating
-{
-    [self.gifUpdater resumeUpdating];
-}
-
-@end
-
-
-static const char kUIImageViewPropertyKey_GifUpdater[] = "gifUpdater";
-
-
-@implementation UIImageView (Gif_Internal)
 
 - (void)setGifUpdater:(UFImageViewGifUpdater *)gifUpdater
 {
@@ -79,6 +47,67 @@ static const char kUIImageViewPropertyKey_GifUpdater[] = "gifUpdater";
 - (UFImageViewGifUpdater *)gifUpdater
 {
     return objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifUpdater);
+}
+
+- (void)startGifAnimating
+{
+    UFImageViewGifUpdater *updater = objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifUpdater);
+    
+    [updater stopUpdating];
+    
+    switch (self.gifUpdateType)
+    {
+        case UFGifImageUpdateType_ByFrame:
+        {
+            updater = [[UFImageViewFramingGifUpdater alloc] initWithGifData:self.gifData];
+            
+            updater.imageView = self;
+            
+            break;
+        }
+        case UFGifImageUpdateType_ByImageDuration:
+        {
+            updater = [[UFImageViewDurationingGifUpdater alloc] initWithGifData:self.gifData];
+            
+            updater.imageView = self;
+            
+            break;
+        }
+            
+        default:
+        {
+            updater = [[UFImageViewFramingGifUpdater alloc] initWithGifData:self.gifData];
+            
+            updater.imageView = self;
+            
+            break;
+        }
+    }
+    
+    objc_setAssociatedObject(self, kUIImageViewPropertyKey_GifUpdater, updater, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [updater startUpdating];
+}
+
+- (void)stopGifAnimating
+{
+    UFImageViewGifUpdater *updater = objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifUpdater);
+    
+    [updater stopUpdating];
+}
+
+- (void)pauseGifAnimating
+{
+    UFImageViewGifUpdater *updater = objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifUpdater);
+    
+    [updater pauseUpdating];
+}
+
+- (void)resumeGifAnimating
+{
+    UFImageViewGifUpdater *updater = objc_getAssociatedObject(self, kUIImageViewPropertyKey_GifUpdater);
+    
+    [updater resumeUpdating];
 }
 
 @end
