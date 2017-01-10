@@ -163,6 +163,14 @@
 		D42AACDF1E090266002B173B /* UIImageView+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D42AACDB1E090266002B173B /* UIImageView+URL.m */; };
 		D42AACE21E09039E002B173B /* UIButton+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = D42AACE11E09039E002B173B /* UIButton+URL.m */; };
 		D42AACE51E090EE7002B173B /* UBViewImageURLLoadingConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D42AACE41E090EE7002B173B /* UBViewImageURLLoadingConfiguration.m */; };
+		D434ED301E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED201E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.m */; };
+		D434ED311E24F5F500BEA92E /* UFEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED221E24F5F500BEA92E /* UFEmoji.m */; };
+		D434ED321E24F5F500BEA92E /* UFEmojiCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED241E24F5F500BEA92E /* UFEmojiCache.m */; };
+		D434ED331E24F5F500BEA92E /* UFEmojiImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED261E24F5F500BEA92E /* UFEmojiImage.m */; };
+		D434ED341E24F5F500BEA92E /* UFEmojiImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED281E24F5F500BEA92E /* UFEmojiImageFrame.m */; };
+		D434ED351E24F5F500BEA92E /* UFEmojiImageFrameStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED2A1E24F5F500BEA92E /* UFEmojiImageFrameStream.m */; };
+		D434ED361E24F5F500BEA92E /* UFEmojiImageUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED2C1E24F5F500BEA92E /* UFEmojiImageUpdater.m */; };
+		D434ED371E24F5F500BEA92E /* UIView+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED2F1E24F5F500BEA92E /* UIView+Emoji.m */; };
 		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
@@ -182,13 +190,6 @@
 		D47663F01DC9E3650002D06C /* UIView+ProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D47663E51DC9E3650002D06C /* UIView+ProgressIndicator.m */; };
 		D47663F11DC9E3650002D06C /* UBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47663E81DC9E3650002D06C /* UBToastView.m */; };
 		D47663F21DC9E3650002D06C /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D47663EA1DC9E3650002D06C /* UIView+Toast.m */; };
-		D49496F61E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D49496EA1E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.m */; };
-		D49496F71E1B7DB30060E6A2 /* UFEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D49496EC1E1B7DB30060E6A2 /* UFEmoji.m */; };
-		D49496F81E1B7DB30060E6A2 /* UFEmojiImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D49496EE1E1B7DB30060E6A2 /* UFEmojiImage.m */; };
-		D49496F91E1B7DB30060E6A2 /* UFEmojiSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D49496F01E1B7DB30060E6A2 /* UFEmojiSet.m */; };
-		D49496FB1E1B7DB30060E6A2 /* UIView+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D49496F51E1B7DB30060E6A2 /* UIView+Emoji.m */; };
-		D49496FE1E1B7E8E0060E6A2 /* UFEmojiUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D49496FD1E1B7E8E0060E6A2 /* UFEmojiUpdater.m */; };
-		D49497051E1B9D750060E6A2 /* NSAttributedString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D49497041E1B9D750060E6A2 /* NSAttributedString+Emoji.m */; };
 		D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867841D81594900629CB5 /* UFScrollLoadingView.m */; };
 		D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */; };
 		D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */; };
@@ -512,6 +513,22 @@
 		D42AACE11E09039E002B173B /* UIButton+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+URL.m"; sourceTree = "<group>"; };
 		D42AACE31E090EE7002B173B /* UBViewImageURLLoadingConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBViewImageURLLoadingConfiguration.h; sourceTree = "<group>"; };
 		D42AACE41E090EE7002B173B /* UBViewImageURLLoadingConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBViewImageURLLoadingConfiguration.m; sourceTree = "<group>"; };
+		D434ED1F1E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFAttributedStringEmojiUpdater.h; sourceTree = "<group>"; };
+		D434ED201E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFAttributedStringEmojiUpdater.m; sourceTree = "<group>"; };
+		D434ED211E24F5F500BEA92E /* UFEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmoji.h; sourceTree = "<group>"; };
+		D434ED221E24F5F500BEA92E /* UFEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmoji.m; sourceTree = "<group>"; };
+		D434ED231E24F5F500BEA92E /* UFEmojiCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiCache.h; sourceTree = "<group>"; };
+		D434ED241E24F5F500BEA92E /* UFEmojiCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiCache.m; sourceTree = "<group>"; };
+		D434ED251E24F5F500BEA92E /* UFEmojiImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiImage.h; sourceTree = "<group>"; };
+		D434ED261E24F5F500BEA92E /* UFEmojiImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImage.m; sourceTree = "<group>"; };
+		D434ED271E24F5F500BEA92E /* UFEmojiImageFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiImageFrame.h; sourceTree = "<group>"; };
+		D434ED281E24F5F500BEA92E /* UFEmojiImageFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImageFrame.m; sourceTree = "<group>"; };
+		D434ED291E24F5F500BEA92E /* UFEmojiImageFrameStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiImageFrameStream.h; sourceTree = "<group>"; };
+		D434ED2A1E24F5F500BEA92E /* UFEmojiImageFrameStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImageFrameStream.m; sourceTree = "<group>"; };
+		D434ED2B1E24F5F500BEA92E /* UFEmojiImageUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiImageUpdater.h; sourceTree = "<group>"; };
+		D434ED2C1E24F5F500BEA92E /* UFEmojiImageUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImageUpdater.m; sourceTree = "<group>"; };
+		D434ED2E1E24F5F500BEA92E /* UIView+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Emoji.h"; sourceTree = "<group>"; };
+		D434ED2F1E24F5F500BEA92E /* UIView+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Emoji.m"; sourceTree = "<group>"; };
 		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D44E48441D7401CE00EB6F86 /* LoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTask.h; sourceTree = "<group>"; };
@@ -550,20 +567,6 @@
 		D47663E81DC9E3650002D06C /* UBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBToastView.m; sourceTree = "<group>"; };
 		D47663E91DC9E3650002D06C /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		D47663EA1DC9E3650002D06C /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		D49496E91E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFAttributedStringEmojiUpdater.h; sourceTree = "<group>"; };
-		D49496EA1E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFAttributedStringEmojiUpdater.m; sourceTree = "<group>"; };
-		D49496EB1E1B7DB30060E6A2 /* UFEmoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmoji.h; sourceTree = "<group>"; };
-		D49496EC1E1B7DB30060E6A2 /* UFEmoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmoji.m; sourceTree = "<group>"; };
-		D49496ED1E1B7DB30060E6A2 /* UFEmojiImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiImage.h; sourceTree = "<group>"; };
-		D49496EE1E1B7DB30060E6A2 /* UFEmojiImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImage.m; sourceTree = "<group>"; };
-		D49496EF1E1B7DB30060E6A2 /* UFEmojiSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiSet.h; sourceTree = "<group>"; };
-		D49496F01E1B7DB30060E6A2 /* UFEmojiSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiSet.m; sourceTree = "<group>"; };
-		D49496F41E1B7DB30060E6A2 /* UIView+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Emoji.h"; sourceTree = "<group>"; };
-		D49496F51E1B7DB30060E6A2 /* UIView+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Emoji.m"; sourceTree = "<group>"; };
-		D49496FC1E1B7E8E0060E6A2 /* UFEmojiUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFEmojiUpdater.h; sourceTree = "<group>"; };
-		D49496FD1E1B7E8E0060E6A2 /* UFEmojiUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiUpdater.m; sourceTree = "<group>"; };
-		D49497031E1B9D750060E6A2 /* NSAttributedString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Emoji.h"; sourceTree = "<group>"; };
-		D49497041E1B9D750060E6A2 /* NSAttributedString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Emoji.m"; sourceTree = "<group>"; };
 		D4B867831D81594900629CB5 /* UFScrollLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadingView.h; sourceTree = "<group>"; };
 		D4B867841D81594900629CB5 /* UFScrollLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadingView.m; sourceTree = "<group>"; };
 		D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputToolBar.h; sourceTree = "<group>"; };
@@ -1768,7 +1771,6 @@
 				D40178C81D2114BF00C0899E /* Button */,
 				D40178CB1D2114BF00C0899E /* Color */,
 				D40178CE1D2114BF00C0899E /* Controller */,
-				D40178D11D2114BF00C0899E /* EmojiKit */,
 				D40178DE1D2114BF00C0899E /* Image */,
 				D40178EC1D2114BF00C0899E /* Input */,
 				D40178FB1D2114BF00C0899E /* Keyboard */,
@@ -1776,6 +1778,7 @@
 				D40179251D2114BF00C0899E /* TextView */,
 				D401792B1D2114BF00C0899E /* Window */,
 				D4B867781D81594900629CB5 /* ScrollLoading */,
+				D434ED1B1E24F5F500BEA92E /* EmojiKit */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1805,15 +1808,6 @@
 				D40178D01D2114BF00C0899E /* UINavigationController+PushPopExtension.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D40178D11D2114BF00C0899E /* EmojiKit */ = {
-			isa = PBXGroup;
-			children = (
-				D49496E81E1B7DB30060E6A2 /* Core */,
-				D49496F11E1B7DB30060E6A2 /* Extension */,
-			);
-			path = EmojiKit;
 			sourceTree = "<group>";
 		};
 		D40178DE1D2114BF00C0899E /* Image */ = {
@@ -2078,6 +2072,45 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D434ED1B1E24F5F500BEA92E /* EmojiKit */ = {
+			isa = PBXGroup;
+			children = (
+				D434ED1C1E24F5F500BEA92E /* Core */,
+				D434ED2D1E24F5F500BEA92E /* Extension */,
+			);
+			path = EmojiKit;
+			sourceTree = "<group>";
+		};
+		D434ED1C1E24F5F500BEA92E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D434ED211E24F5F500BEA92E /* UFEmoji.h */,
+				D434ED221E24F5F500BEA92E /* UFEmoji.m */,
+				D434ED1F1E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.h */,
+				D434ED201E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.m */,
+				D434ED2B1E24F5F500BEA92E /* UFEmojiImageUpdater.h */,
+				D434ED2C1E24F5F500BEA92E /* UFEmojiImageUpdater.m */,
+				D434ED231E24F5F500BEA92E /* UFEmojiCache.h */,
+				D434ED241E24F5F500BEA92E /* UFEmojiCache.m */,
+				D434ED251E24F5F500BEA92E /* UFEmojiImage.h */,
+				D434ED261E24F5F500BEA92E /* UFEmojiImage.m */,
+				D434ED271E24F5F500BEA92E /* UFEmojiImageFrame.h */,
+				D434ED281E24F5F500BEA92E /* UFEmojiImageFrame.m */,
+				D434ED291E24F5F500BEA92E /* UFEmojiImageFrameStream.h */,
+				D434ED2A1E24F5F500BEA92E /* UFEmojiImageFrameStream.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D434ED2D1E24F5F500BEA92E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D434ED2E1E24F5F500BEA92E /* UIView+Emoji.h */,
+				D434ED2F1E24F5F500BEA92E /* UIView+Emoji.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D44E48431D73DFF800EB6F86 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -2161,34 +2194,6 @@
 				D47663EA1DC9E3650002D06C /* UIView+Toast.m */,
 			);
 			path = Toast;
-			sourceTree = "<group>";
-		};
-		D49496E81E1B7DB30060E6A2 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				D49496EB1E1B7DB30060E6A2 /* UFEmoji.h */,
-				D49496EC1E1B7DB30060E6A2 /* UFEmoji.m */,
-				D49496ED1E1B7DB30060E6A2 /* UFEmojiImage.h */,
-				D49496EE1E1B7DB30060E6A2 /* UFEmojiImage.m */,
-				D49496EF1E1B7DB30060E6A2 /* UFEmojiSet.h */,
-				D49496F01E1B7DB30060E6A2 /* UFEmojiSet.m */,
-				D49496E91E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.h */,
-				D49496EA1E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.m */,
-				D49496FC1E1B7E8E0060E6A2 /* UFEmojiUpdater.h */,
-				D49496FD1E1B7E8E0060E6A2 /* UFEmojiUpdater.m */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		D49496F11E1B7DB30060E6A2 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D49496F41E1B7DB30060E6A2 /* UIView+Emoji.h */,
-				D49496F51E1B7DB30060E6A2 /* UIView+Emoji.m */,
-				D49497031E1B9D750060E6A2 /* NSAttributedString+Emoji.h */,
-				D49497041E1B9D750060E6A2 /* NSAttributedString+Emoji.m */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		D4B867781D81594900629CB5 /* ScrollLoading */ = {
@@ -2386,9 +2391,9 @@
 				D4D7C30D1DB71D7500BAEEC1 /* UBTextFieldHeightInput.m in Sources */,
 				D47663EB1DC9E3650002D06C /* UBActivityIndicatorView.m in Sources */,
 				D40179511D2114BF00C0899E /* EPub2_NCX.m in Sources */,
+				D434ED321E24F5F500BEA92E /* UFEmojiCache.m in Sources */,
 				D40177261D21148100C0899E /* ViewController.m in Sources */,
 				D40179B01D2114BF00C0899E /* UBPicturePickerActionSheetScene.m in Sources */,
-				D49496F91E1B7DB30060E6A2 /* UFEmojiSet.m in Sources */,
 				D40179471D2114BF00C0899E /* DBHandle.m in Sources */,
 				D401794A1D2114BF00C0899E /* DBTable.m in Sources */,
 				D40179461D2114BF00C0899E /* DBError.m in Sources */,
@@ -2412,24 +2417,22 @@
 				D40179621D2114BF00C0899E /* HTTPConnectionInputStreamChunk.m in Sources */,
 				D401797C1D2114BF00C0899E /* NSDictionary+KeyValue.m in Sources */,
 				D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */,
-				D49496F71E1B7DB30060E6A2 /* UFEmoji.m in Sources */,
+				D434ED311E24F5F500BEA92E /* UFEmoji.m in Sources */,
 				D40179701D2114BF00C0899E /* LightLoadingPermanentQueue.m in Sources */,
 				D401796F1D2114BF00C0899E /* NSObject+ThreadOperation.m in Sources */,
 				D40179441D2114BF00C0899E /* TCPServerListener.m in Sources */,
 				D401795B1D2114BF00C0899E /* NSString+URLEncode.m in Sources */,
 				D401796D1D2114BF00C0899E /* NotificationObserver.m in Sources */,
 				D44E48581D742B0E00EB6F86 /* LoginManager.m in Sources */,
-				D49496F61E1B7DB30060E6A2 /* UFAttributedStringEmojiUpdater.m in Sources */,
+				D434ED301E24F5F500BEA92E /* UFAttributedStringEmojiUpdater.m in Sources */,
 				D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */,
-				D49496F81E1B7DB30060E6A2 /* UFEmojiImage.m in Sources */,
 				D46CDD571DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m in Sources */,
 				D40179501D2114BF00C0899E /* EPub.m in Sources */,
 				D40179391D2114BF00C0899E /* HTTPRequestMessageParser.m in Sources */,
 				D40179591D2114BF00C0899E /* NSData+MD5.m in Sources */,
-				D49497051E1B9D750060E6A2 /* NSAttributedString+Emoji.m in Sources */,
 				D40179571D2114BF00C0899E /* ZlibDecompressor.m in Sources */,
+				D434ED341E24F5F500BEA92E /* UFEmojiImageFrame.m in Sources */,
 				D40179451D2114BF00C0899E /* DBDefine.m in Sources */,
-				D49496FB1E1B7DB30060E6A2 /* UIView+Emoji.m in Sources */,
 				D4D7C31F1DB777A000BAEEC1 /* UBTextFieldInputLocation.m in Sources */,
 				D401795A1D2114BF00C0899E /* NSFileHandle+MD5.m in Sources */,
 				D40179CF1D2114BF00C0899E /* UFKeyboardAdjuster.m in Sources */,
@@ -2453,6 +2456,7 @@
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
 				D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */,
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
+				D434ED371E24F5F500BEA92E /* UIView+Emoji.m in Sources */,
 				D40179401D2114BF00C0899E /* NSObject+HTTPServerNotification.m in Sources */,
 				D401796B1D2114BF00C0899E /* APPLog.m in Sources */,
 				D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */,
@@ -2462,6 +2466,7 @@
 				D40179C61D2114BF00C0899E /* UFImageEditMaskView.m in Sources */,
 				D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */,
 				D47663EE1DC9E3650002D06C /* UIView+ActivityIndicator.m in Sources */,
+				D434ED361E24F5F500BEA92E /* UFEmojiImageUpdater.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
 				D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
@@ -2511,7 +2516,6 @@
 				D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */,
 				D42AACDD1E090266002B173B /* UBImageDownloadManager.m in Sources */,
 				D47663F21DC9E3650002D06C /* UIView+Toast.m in Sources */,
-				D49496FE1E1B7E8E0060E6A2 /* UFEmojiUpdater.m in Sources */,
 				D40179A41D2114BF00C0899E /* UBMainScene.m in Sources */,
 				D40179521D2114BF00C0899E /* EPub2_OCF.m in Sources */,
 				D40179A21D2114BF00C0899E /* ImageStorage.m in Sources */,
@@ -2524,11 +2528,13 @@
 				D401794F1D2114BF00C0899E /* EpubBookLoadHandle.m in Sources */,
 				D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */,
 				D40179951D2114BF00C0899E /* NSDateFormatter+SharedInstance.m in Sources */,
+				D434ED351E24F5F500BEA92E /* UFEmojiImageFrameStream.m in Sources */,
 				D47663F01DC9E3650002D06C /* UIView+ProgressIndicator.m in Sources */,
 				D401793A1D2114BF00C0899E /* HTTPResponseMessageHeaderSerializer.m in Sources */,
 				D40179691D2114BF00C0899E /* HTTPMultipartFormEntity+HTTPConnectionInputStreamChunk.m in Sources */,
 				D426BE421D2263FA00B6B596 /* SyncTaskDispatcher.m in Sources */,
 				D401799C1D2114BF00C0899E /* ServiceTask.m in Sources */,
+				D434ED331E24F5F500BEA92E /* UFEmojiImage.m in Sources */,
 				D40179781D2114BF00C0899E /* XMLSpriteSerialize.m in Sources */,
 				D401797D1D2114BF00C0899E /* NSString+KeyValue.m in Sources */,
 				D40179D41D2114BF00C0899E /* UITextView+KeyboardAdjust.m in Sources */,

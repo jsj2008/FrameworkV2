@@ -2,26 +2,22 @@
 //  UFAttributedStringEmojiUpdater.m
 //  Test
 //
-//  Created by ww on 15/12/24.
-//  Copyright © 2015年 ww. All rights reserved.
+//  Created by ww on 06/01/2017.
+//  Copyright © 2017 WW. All rights reserved.
 //
 
 #import "UFAttributedStringEmojiUpdater.h"
-#import "UFEmojiUpdater.h"
+#import "UFEmojiImageUpdater.h"
 
 @interface UFAttributedStringEmojiUpdater ()
 
-@property (nonatomic, copy) NSAttributedString *originalAttributedString;
-
-@property (nonatomic) NSMutableDictionary<NSValue *, UFEmojiUpdater *> *emojiUpdaters;
-
-@property (nonatomic) NSMutableArray *emojiRanges;
+@property (nonatomic) NSDictionary<NSValue *, UFEmojiImageUpdater *> *imageUpdaters;
 
 @property (nonatomic) CADisplayLink *displayLink;
 
-@property (nonatomic) NSAttributedString *emojiedAttributedString;
+@property (nonatomic) NSAttributedString *currentAttributedString;
 
-@property (nonatomic) BOOL updatable;
+@property (nonatomic) BOOL imageUpdatable;
 
 - (void)update;
 
@@ -40,107 +36,97 @@
     if (self = [super init])
     {
         self.enableAutoUpdate = YES;
-        
-        self.upateImageType = UFEmojiUpdateImageType_ByFrame;
     }
     
     return self;
 }
 
-- (instancetype)initWithAttributedString:(NSAttributedString *)attributedString
+- (instancetype)initWithAttributedString:(NSAttributedString *)attributedString emojies:(NSDictionary<NSString *,UFEmoji *> *)emojies
 {
     if (self = [super init])
     {
-        self.originalAttributedString = attributedString;
+        _attributedString = [attributedString copy];
+        
+        _emojies = emojies;
         
         self.enableAutoUpdate = YES;
-        
-        self.upateImageType = UFEmojiUpdateImageType_ByFrame;
     }
     
     return self;
-}
-
-- (NSAttributedString *)attributedString
-{
-    return [self.originalAttributedString copy];
 }
 
 - (void)startUpdating
 {
-    NSError *error = nil;
+    NSMutableDictionary<NSValue *, UFEmojiImageUpdater *> *imageUpdaters = [[NSMutableDictionary alloc] init];
     
-    NSRegularExpression *regularExpression = [[NSRegularExpression alloc] initWithPattern:self.pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    __block BOOL imageUpdatable = NO;
     
-    if (error)
-    {
-        return;
-    }
+    __weak typeof(self) weakSelf = self;
     
-    self.emojiRanges = [[NSMutableArray alloc] init];
+    NSArray *allEmojiCodes = [self.emojies allKeys];
     
-    self.emojiUpdaters = [[NSMutableDictionary alloc] init];
-    
-    NSArray *emojiMatches = [regularExpression matchesInString:self.originalAttributedString.string options:0 range:NSMakeRange(0, self.originalAttributedString.length)];
-    
-    for (NSTextCheckingResult *match in emojiMatches)
-    {
-        NSString *emojiKey = [self.originalAttributedString.string substringWithRange:match.range];
+    [self.attributedString.string enumerateSubstringsInRange:NSMakeRange(0, self.attributedString.string.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString * _Nullable substring, NSRange substringRange, NSRange enclosingRange, BOOL * _Nonnull stop) {
         
-        UFEmoji *emoji = [self.emojiSet emojiForKey:emojiKey];
-        
-        if (emoji)
+        if ([allEmojiCodes containsObject:substring])
         {
-            NSValue *rangeValue = [NSValue valueWithRange:match.range];
+            UFEmoji *emoji = [weakSelf.emojies objectForKey:substring];
             
-            [self.emojiRanges addObject:rangeValue];
+            UFCachedEmojiImage *cachedImage = [weakSelf.emojiCache cachedEmojiImageForEmoji:emoji];
             
-            UFEmojiUpdater *updater = nil;
-            
-            switch (self.upateImageType)
+            if (!cachedImage && emoji)
             {
-                case UFEmojiUpdateImageType_ByFrame:
+                UFEmojiImageFrameStream *frameStream = [[UFEmojiImageFrameStream alloc] initWithImage:emoji.image];
+                
+                cachedImage = [[UFCachedEmojiImage alloc] init];
+                
+                cachedImage.frameStream = frameStream;
+                
+                [weakSelf.emojiCache setCachedEmojiImage:cachedImage forEmoji:emoji];
+            }
+            
+            switch (weakSelf.imageUpdateType)
+            {
+                case UFAttributedStringEmojiImageUpdateByFrame:
                 {
-                    updater = [[UFEmojiFramingUpdater alloc] initWithEmoji:emoji];
+                    UFEmojiImageByFrameUpdater *updater = [[UFEmojiImageByFrameUpdater alloc] initWithEmojiImageFrameStream:cachedImage.frameStream];
+                    
+                    [imageUpdaters setObject:updater forKey:[NSValue valueWithRange:substringRange]];
+                    
+                    imageUpdatable = imageUpdatable ? YES : [updater imageUpdatable];
                     
                     break;
                 }
                     
-                case UFEmojiUpdateImageType_ByImageDuration:
+                case UFAttributedStringEmojiImageUpdateByDuration:
                 {
-                    updater = [[UFEmojiDurationingUpdater alloc] initWithEmoji:emoji];
+                    UFEmojiImageByDurationUpdater *updater = [[UFEmojiImageByDurationUpdater alloc] initWithEmojiImageFrameStream:cachedImage.frameStream];
+                    
+                    [imageUpdaters setObject:updater forKey:[NSValue valueWithRange:substringRange]];
+                    
+                    imageUpdatable = imageUpdatable ? YES : [updater imageUpdatable];
                     
                     break;
                 }
                     
                 default:
-                {
-                    updater = [[UFEmojiFramingUpdater alloc] initWithEmoji:emoji];
-                    
                     break;
-                }
             }
-            
-            if (!self.updatable)
-            {
-                self.updatable = updater.updatable;
-            }
-            
-            [self.emojiUpdaters setObject:updater forKey:rangeValue];
         }
-    }
+    }];
+    
+    self.imageUpdaters = imageUpdaters;
+    
+    self.imageUpdatable = imageUpdatable;
     
     [self.displayLink invalidate];
     
-    self.displayLink = nil;
-    
-    if (self.updatable && self.isAutoUpdateEnabled && self.emojiUpdaters.count > 0)
+    if (self.enableAutoUpdate && self.imageUpdatable)
     {
         self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
         
-        self.displayLink.frameInterval = 1;
+        self.displayLink.frameInterval = self.updateFrameInterval;
         
-        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     }
     
     [self update];
@@ -148,11 +134,7 @@
 
 - (void)stopUpdating
 {
-    self.delegate = nil;
-    
-    self.enableAutoUpdate = NO;
-    
-    self.updatable = NO;
+    self.imageUpdatable = NO;
     
     [self.displayLink invalidate];
     
@@ -166,29 +148,28 @@
 
 - (void)resumeUpdating
 {
-    if (self.updatable && self.isAutoUpdateEnabled)
-    {
-        self.displayLink.paused = NO;
-    }
+    self.displayLink.paused = NO;
 }
 
 - (void)update
 {
-    NSMutableAttributedString *emojiedAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.originalAttributedString];
+    NSMutableAttributedString *emojiedAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedString];
     
     CGFloat screenScale = [UIScreen mainScreen].scale;
     
-    for (NSInteger i = [self.emojiRanges count] - 1; i >= 0; i --)
+    NSArray *emojiRanges = [self.imageUpdaters allKeys];
+    
+    for (NSInteger i = emojiRanges.count - 1; i >= 0; i --)
     {
-        NSValue *rangeValue = [self.emojiRanges objectAtIndex:i];
+        NSValue *rangeValue = [emojiRanges objectAtIndex:i];
         
         NSRange range = [rangeValue rangeValue];
         
-        UFEmojiUpdater *updater = [self.emojiUpdaters objectForKey:rangeValue];
+        UFEmojiImageUpdater *updater = [self.imageUpdaters objectForKey:rangeValue];
         
-        [updater updateWithDuration:self.displayLink.duration * self.displayLink.frameInterval];
+        [updater advanceByDuration:self.displayLink.duration];
         
-        UIImage *emojiImage = [updater currentImage];
+        UIImage *emojiImage = [updater currentStaticImage];
         
         if (emojiImage)
         {
@@ -211,15 +192,11 @@
             
             [emojiedAttributedString replaceCharactersInRange:range withAttributedString:[NSAttributedString attributedStringWithAttachment:textAttachment]];
         }
-        else if (updater.emoji.name)
-        {
-            [emojiedAttributedString replaceCharactersInRange:range withAttributedString:[[NSAttributedString alloc] initWithString:updater.emoji.name attributes:[emojiedAttributedString attributesAtIndex:range.location effectiveRange:NULL]]];
-        }
     }
     
-    self.emojiedAttributedString = emojiedAttributedString;
+    self.currentAttributedString = emojiedAttributedString;
     
-    if (self.isAutoUpdateEnabled && self.delegate && [self.delegate respondsToSelector:@selector(attributedStringEmojiUpdater:didUpdateEmojiedAttributedString:)])
+    if (self.delegate && [self.delegate respondsToSelector:@selector(attributedStringEmojiUpdater:didUpdateEmojiedAttributedString:)])
     {
         [self.delegate attributedStringEmojiUpdater:self didUpdateEmojiedAttributedString:emojiedAttributedString];
     }
@@ -227,7 +204,7 @@
 
 - (NSAttributedString *)currentUsableEmojiedAttributedString
 {
-    return [self.emojiedAttributedString copy];
+    return [self.currentAttributedString copy];
 }
 
 @end

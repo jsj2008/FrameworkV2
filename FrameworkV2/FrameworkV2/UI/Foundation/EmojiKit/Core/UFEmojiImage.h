@@ -2,13 +2,13 @@
 //  UFEmojiImage.h
 //  Test
 //
-//  Created by ww on 15/12/24.
-//  Copyright © 2015年 ww. All rights reserved.
+//  Created by ww on 06/01/2017.
+//  Copyright © 2017 WW. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class UFEmojiImageSource;
+@class UFEmojiImageFragment;
 
 
 /*********************************************************
@@ -19,61 +19,18 @@
     @abstract
         表情图片
  
+    @discussion
+        UFEmojiImage是抽象类
+ 
  *********************************************************/
 
 @interface UFEmojiImage : NSObject
 
 /*!
- * @brief 表情图片资源
+ * @brief 生成图片片段
+ * @result 图片片段
  */
-@property (nonatomic, readonly) NSArray<UFEmojiImageSource *> *imageSources;
-
-/*!
- * @brief 表情图片是否可更新
- * @discussion 若图片可更新，表情系统将自动刷新表情，适用于gif等动态图片；png等静态图片默认不可更新
- */
-@property (nonatomic) BOOL updatable;
-
-/*!
- * @brief 根据bundle内图片名字创建表情图片
- * @discussion 内部会调用[UIImage imageNamed:name]方法创建图片
- * @discussion 创建的表情图片默认是不可更新的
- * @param name 图片名字
- * @result 表情图片
- */
-+ (UFEmojiImage *)emojiImageNamed:(NSString *)name;
-
-/*!
- * @brief 根据数据块创建表情图片
- * @discussion 创建的表情图片默认是不可更新的
- * @param data 数据块
- * @result 表情图片
- */
-+ (UFEmojiImage *)emojiImageWithData:(NSData *)data;
-
-/*!
- * @brief 根据gif数据块创建表情图片
- * @discussion 创建的表情图片默认是可更新的
- * @param gifData gif数据块
- * @result 表情图片
- */
-+ (UFEmojiImage *)emojiImageWithGifData:(NSData *)gifData;
-
-/*!
- * @brief 根据图片文件路径创建表情图片
- * @discussion 创建的表情图片默认是不可更新的
- * @param name 图片文件路径
- * @result 表情图片
- */
-+ (UFEmojiImage *)emojiImageWithPath:(NSString *)path;
-
-/*!
- * @brief 根据gif图片文件路径创建表情图片
- * @discussion 创建的表情图片默认是可更新的
- * @param name 图片文件路径
- * @result 表情图片
- */
-+ (UFEmojiImage *)emojiImageWithGifPath:(NSString *)gifPath;
+- (NSArray<UFEmojiImageFragment *> *)imageFragments;
 
 @end
 
@@ -81,23 +38,112 @@
 /*********************************************************
  
     @class
-        UFEmojiImage
+        UFEmojiStaticUIImage
  
     @abstract
-        表情图片资源
+        静态表情图片
  
  *********************************************************/
 
-@interface UFEmojiImageSource : NSObject
+@interface UFEmojiStaticUIImage : UFEmojiImage
 
 /*!
- * @brief 图片数据
+ * @brief UI图片对象
  */
 @property (nonatomic) UIImage *image;
 
 /*!
- * @brief 图片持续时间
- * @discussion 在动态表情中用于控制图片切换
+ * @brief 图片显示时间
+ */
+@property (nonatomic) NSTimeInterval duration;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UFEmojiStaticFileImage
+ 
+    @abstract
+        静态文件表情图片
+ 
+ *********************************************************/
+
+@interface UFEmojiStaticFileImage : UFEmojiImage
+
+/*!
+ * @brief 图片文件路径
+ */
+@property (nonatomic, copy) NSString *imageFilePath;
+
+/*!
+ * @brief 图片显示时间
+ */
+@property (nonatomic) NSTimeInterval duration;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UFEmojiGIFImage
+ 
+    @abstract
+        GIF文件表情图片
+ 
+ *********************************************************/
+
+@interface UFEmojiGIFImage : UFEmojiImage
+
+/*!
+ * @brief GIF图片文件路径
+ */
+@property (nonatomic, copy) NSString *GIFPath;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UFEmojiGroupedImage
+ 
+    @abstract
+        组合型表情图片
+ 
+ *********************************************************/
+
+@interface UFEmojiGroupedImage : UFEmojiImage
+
+/*!
+ * @brief GIF图片文件路径
+ */
+@property (nonatomic) NSArray<UFEmojiImage *> *groupedImages;
+
+@end
+
+
+/*********************************************************
+ 
+    @class
+        UFEmojiImageFragment
+ 
+    @abstract
+        表情图片片段
+ 
+ *********************************************************/
+
+@interface UFEmojiImageFragment : NSObject
+
+/*!
+ * @brief UI图片
+ */
+@property (nonatomic) UIImage *image;
+
+/*!
+ * @brief 图片显示时间
  */
 @property (nonatomic) NSTimeInterval duration;
 

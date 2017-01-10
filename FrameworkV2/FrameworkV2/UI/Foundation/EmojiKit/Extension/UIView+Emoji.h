@@ -7,8 +7,69 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UFEmojiSet.h"
+#import "UFEmoji.h"
 #import "UFAttributedStringEmojiUpdater.h"
+#import "UFEmojiCache.h"
+
+/*********************************************************
+ 
+    @enum
+        UFViewEmojiImageUpdateType
+ 
+    @abstract
+        表情图片更新类型
+ 
+ *********************************************************/
+
+typedef NS_ENUM(NSUInteger, UFViewEmojiImageUpdateType)
+{
+    UFViewEmojiImageUpdateByDuration = 0,
+    UFViewEmojiImageUpdateByFrame    = 1
+};
+
+
+/*********************************************************
+ 
+    @class
+        UFViewEmojiConfiguration
+ 
+    @abstract
+        UIView的表情配置
+ 
+ *********************************************************/
+
+@interface UFViewEmojiConfiguration : NSObject
+
+/*!
+ * @brief 表情集，键为表情code
+ */
+@property (nonatomic) NSDictionary<NSString *, UFEmoji *> *emojiSet;
+
+/*!
+ * @brief 表情缓存
+ * @discussion 使用表情缓存可以加速表情图片的刷新，避免每次都重新加载表情数据
+ */
+@property (nonatomic) UFEmojiCache *emojiCache;
+
+/*!
+ * @brief 允许自动更新
+ * @discussion 若允许，更新器内部根据表情数据自动更新表情显示效果（适用于动态表情）；若不允许，更新器只会显示表情当前的图片数据
+ * @discussion 默认YES
+ */
+@property (nonatomic, getter=isAutoUpdateEnabled) BOOL enableAutoUpdate;
+
+/*!
+ * @brief 表情数据刷新时间间隔
+ */
+@property (nonatomic) NSUInteger updateFrameInterval;
+
+/*!
+ * @brief 表情图片刷新方式
+ */
+@property (nonatomic) UFViewEmojiImageUpdateType imageUpdateType;
+
+@end
+
 
 /*********************************************************
  
@@ -23,14 +84,9 @@
 @interface UIView (Emoji) <UFAttributedStringEmojiUpdaterDelegate>
 
 /*!
- * @brief 适配表情集
+ * @brief 表情配置
  */
-@property (nonatomic) UFEmojiSet *emojiSet;
-
-/*!
- * @brief 正则适配表达式
- */
-@property (nonatomic, copy) NSString *emojiPattern;
+@property (nonatomic) UFViewEmojiConfiguration *emojiConfiguration;
 
 @end
 
@@ -229,21 +285,31 @@
  
  UFEmoji *emoji = [[UFEmoji alloc] init];
  
- emoji.name = @"hello";
+ emoji.code = @"a";
  
- emoji.image = [UFEmojiImage emojiImageWithGifPath:[[NSBundle mainBundle] pathForResource:@"bird1" ofType:@"gif"]];
+ UFEmojiGIFImage *image = [[UFEmojiGIFImage alloc] init];
  
- UFEmojiSet *set = [[UFEmojiSet alloc] initWithEmojiDictionary:[NSDictionary dictionaryWithObject:emoji forKey:@"[b]"]];
+ image.GIFPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"gif"];
  
- [UFEmojiDataCenter sharedInstance].emojiSet = set;
+ emoji.image = image;
  
- [UFEmojiDataCenter sharedInstance].emojiPattern = @".[b].";
+ UFViewEmojiConfiguration *configuration = [[UFViewEmojiConfiguration alloc] init];
+ 
+ configuration.emojiSet = [NSDictionary dictionaryWithObjectsAndKeys:emoji, emoji.code, nil];
+ 
+ configuration.emojiCache = [[UFEmojiCache alloc] init];
+ 
+ configuration.enableAutoUpdate = NO;
+ 
+ configuration.updateFrameInterval = 20;
+ 
+ configuration.imageUpdateType = UFViewEmojiImageUpdateByFrame;
  
  UILabel *label = [[UILabel alloc] init];
  
- label.text = @"123[b]456";
+ label.emojiConfiguration = configuration;
  
- label.font = [UIFont systemFontOfSize:30];
+ label.text = @"12a34b";
  
  [label showEmoji];
  

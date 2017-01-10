@@ -10,33 +10,36 @@
 #import "UFAttributedStringEmojiUpdater.h"
 #import <objc/runtime.h>
 
-static const char kUIViewPropertyKey_EmojiSet[] = "emojiSet";
+@implementation UFViewEmojiConfiguration
 
-static const char kUIViewPropertyKey_EmojiPattern[] = "emojiPattern";
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        self.enableAutoUpdate = YES;
+    }
+    
+    return self;
+}
+
+@end
+
+
+static const char kUIViewPropertyKey_EmojiConfiguration[] = "emojiConfiguration";
 
 static const char kUIViewPropertyKey_EmojiUpdaters[] = "emojiUpdaters";
 
 
 @implementation UIView (Emoji)
 
-- (UFEmojiSet *)emojiSet
+- (UFViewEmojiConfiguration *)emojiConfiguration
 {
-    return objc_getAssociatedObject(self, kUIViewPropertyKey_EmojiSet);
+    return objc_getAssociatedObject(self, kUIViewPropertyKey_EmojiConfiguration);
 }
 
-- (void)setEmojiSet:(UFEmojiSet *)emojiSet
+- (void)setEmojiConfiguration:(UFViewEmojiConfiguration *)emojiConfiguration
 {
-    objc_setAssociatedObject(self, kUIViewPropertyKey_EmojiSet, emojiSet, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString *)emojiPattern
-{
-    return objc_getAssociatedObject(self, kUIViewPropertyKey_EmojiPattern);
-}
-
-- (void)setEmojiPattern:(NSString *)emojiPattern
-{
-    objc_setAssociatedObject(self, kUIViewPropertyKey_EmojiPattern, emojiPattern, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, kUIViewPropertyKey_EmojiConfiguration, emojiConfiguration, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSMutableDictionary *)emojiUpdaters
@@ -61,11 +64,15 @@ static const char kUIViewPropertyKey_EmojiUpdaters[] = "emojiUpdaters";
 
 - (void)showEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:self.attributedText];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:self.attributedText emojies:self.emojiConfiguration.emojiSet];
     
-    emojiUpdater.pattern = self.emojiPattern;
+    emojiUpdater.emojiCache = self.emojiConfiguration.emojiCache;
     
-    emojiUpdater.emojiSet = self.emojiSet;
+    emojiUpdater.enableAutoUpdate = self.emojiConfiguration.enableAutoUpdate;
+    
+    emojiUpdater.updateFrameInterval = self.emojiConfiguration.updateFrameInterval;
+    
+    emojiUpdater.imageUpdateType = (int)self.emojiConfiguration.imageUpdateType;
     
     emojiUpdater.delegate = self;
     
@@ -133,15 +140,19 @@ static const char kUIViewPropertyKey_EmojiUpdaters[] = "emojiUpdaters";
 
 - (void)showEmojiForState:(UIControlState)state
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:[self attributedTitleForState:state]];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:[self attributedTitleForState:state] emojies:self.emojiConfiguration.emojiSet];
     
-    emojiUpdater.pattern = self.emojiPattern;
+    emojiUpdater.emojiCache = self.emojiConfiguration.emojiCache;
     
-    emojiUpdater.emojiSet = self.emojiSet;
+    emojiUpdater.enableAutoUpdate = self.emojiConfiguration.enableAutoUpdate;
     
-    emojiUpdater.userInfo = [NSDictionary dictionaryWithObject:[NSNumber numberWithUnsignedInteger:state] forKey:@"state"];
+    emojiUpdater.updateFrameInterval = self.emojiConfiguration.updateFrameInterval;
+    
+    emojiUpdater.imageUpdateType = (int)self.emojiConfiguration.imageUpdateType;
     
     emojiUpdater.delegate = self;
+    
+    emojiUpdater.userInfo = [NSDictionary dictionaryWithObject:[NSNumber numberWithUnsignedInteger:state] forKey:@"state"];
     
     [self setEmojiUpdaters:[NSMutableDictionary dictionaryWithObject:emojiUpdater forKey:[NSNumber numberWithUnsignedInteger:state]]];
     
@@ -207,11 +218,15 @@ static const char kUIViewPropertyKey_EmojiUpdaters[] = "emojiUpdaters";
 
 - (void)showEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:self.attributedText];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:self.attributedText emojies:self.emojiConfiguration.emojiSet];
     
-    emojiUpdater.pattern = self.emojiPattern;
+    emojiUpdater.emojiCache = self.emojiConfiguration.emojiCache;
     
-    emojiUpdater.emojiSet = self.emojiSet;
+    emojiUpdater.enableAutoUpdate = self.emojiConfiguration.enableAutoUpdate;
+    
+    emojiUpdater.updateFrameInterval = self.emojiConfiguration.updateFrameInterval;
+    
+    emojiUpdater.imageUpdateType = (int)self.emojiConfiguration.imageUpdateType;
     
     emojiUpdater.delegate = self;
     
@@ -279,11 +294,15 @@ static const char kUIViewPropertyKey_EmojiUpdaters[] = "emojiUpdaters";
 
 - (void)showEmoji
 {
-    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:self.attributedText];
+    UFAttributedStringEmojiUpdater *emojiUpdater = [[UFAttributedStringEmojiUpdater alloc] initWithAttributedString:self.attributedText emojies:self.emojiConfiguration.emojiSet];
     
-    emojiUpdater.pattern = self.emojiPattern;
+    emojiUpdater.emojiCache = self.emojiConfiguration.emojiCache;
     
-    emojiUpdater.emojiSet = self.emojiSet;
+    emojiUpdater.enableAutoUpdate = self.emojiConfiguration.enableAutoUpdate;
+    
+    emojiUpdater.updateFrameInterval = self.emojiConfiguration.updateFrameInterval;
+    
+    emojiUpdater.imageUpdateType = (int)self.emojiConfiguration.imageUpdateType;
     
     emojiUpdater.delegate = self;
     
