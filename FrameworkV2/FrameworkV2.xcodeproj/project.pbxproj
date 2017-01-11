@@ -139,7 +139,7 @@
 		D40179D21D2114BF00C0899E /* UITextField+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179051D2114BF00C0899E /* UITextField+KeyboardAdjust.m */; };
 		D40179D31D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179081D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m */; };
 		D40179D41D2114BF00C0899E /* UITextView+KeyboardAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = D401790A1D2114BF00C0899E /* UITextView+KeyboardAdjust.m */; };
-		D40179D81D2114BF00C0899E /* UFScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179141D2114BF00C0899E /* UFScene.m */; };
+		D40179D81D2114BF00C0899E /* UFViewScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179141D2114BF00C0899E /* UFViewScene.m */; };
 		D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179281D2114BF00C0899E /* UFPlaceHolderTextView.m */; };
 		D40179E01D2114BF00C0899E /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D401792A1D2114BF00C0899E /* UFTextViewPlaceHolder.m */; };
 		D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D401792E1D2114BF00C0899E /* UFButtonWindow.m */; };
@@ -171,6 +171,7 @@
 		D434ED351E24F5F500BEA92E /* UFEmojiImageFrameStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED2A1E24F5F500BEA92E /* UFEmojiImageFrameStream.m */; };
 		D434ED361E24F5F500BEA92E /* UFEmojiImageUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED2C1E24F5F500BEA92E /* UFEmojiImageUpdater.m */; };
 		D434ED371E24F5F500BEA92E /* UIView+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = D434ED2F1E24F5F500BEA92E /* UIView+Emoji.m */; };
+		D43E9BDC1E25C5580051B7E2 /* NSObject+ViewScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D43E9BDB1E25C5580051B7E2 /* NSObject+ViewScene.m */; };
 		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
@@ -202,8 +203,6 @@
 		D4D7C3221DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3211DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m */; };
 		D4D7C3251DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
-		D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */; };
-		D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
 		D4FF89C71D3DCF4E00B39D60 /* XXXRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */; };
@@ -469,8 +468,8 @@
 		D40179081D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewKeyboardAdjustAssistant.m; sourceTree = "<group>"; };
 		D40179091D2114BF00C0899E /* UITextView+KeyboardAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+KeyboardAdjust.h"; sourceTree = "<group>"; };
 		D401790A1D2114BF00C0899E /* UITextView+KeyboardAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+KeyboardAdjust.m"; sourceTree = "<group>"; };
-		D40179131D2114BF00C0899E /* UFScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScene.h; sourceTree = "<group>"; };
-		D40179141D2114BF00C0899E /* UFScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScene.m; sourceTree = "<group>"; };
+		D40179131D2114BF00C0899E /* UFViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFViewScene.h; sourceTree = "<group>"; };
+		D40179141D2114BF00C0899E /* UFViewScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFViewScene.m; sourceTree = "<group>"; };
 		D40179271D2114BF00C0899E /* UFPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFPlaceHolderTextView.h; sourceTree = "<group>"; };
 		D40179281D2114BF00C0899E /* UFPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFPlaceHolderTextView.m; sourceTree = "<group>"; };
 		D40179291D2114BF00C0899E /* UFTextViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFTextViewPlaceHolder.h; sourceTree = "<group>"; };
@@ -529,6 +528,8 @@
 		D434ED2C1E24F5F500BEA92E /* UFEmojiImageUpdater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFEmojiImageUpdater.m; sourceTree = "<group>"; };
 		D434ED2E1E24F5F500BEA92E /* UIView+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Emoji.h"; sourceTree = "<group>"; };
 		D434ED2F1E24F5F500BEA92E /* UIView+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Emoji.m"; sourceTree = "<group>"; };
+		D43E9BDA1E25C5580051B7E2 /* NSObject+ViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewScene.h"; sourceTree = "<group>"; };
+		D43E9BDB1E25C5580051B7E2 /* NSObject+ViewScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewScene.m"; sourceTree = "<group>"; };
 		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D44E48441D7401CE00EB6F86 /* LoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTask.h; sourceTree = "<group>"; };
@@ -589,10 +590,6 @@
 		D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputHeightRange.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
-		D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UFScene+Scene.h"; sourceTree = "<group>"; };
-		D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UFScene+Scene.m"; sourceTree = "<group>"; };
-		D4F248111D83D56B00D4FD14 /* UIViewController+Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Scene.h"; sourceTree = "<group>"; };
-		D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Scene.m"; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
 		D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXJsonSerialization.m; sourceTree = "<group>"; };
 		D4FF89C11D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXRequestResponseJsonContent.h; sourceTree = "<group>"; };
@@ -1914,12 +1911,10 @@
 		D40179121D2114BF00C0899E /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				D40179131D2114BF00C0899E /* UFScene.h */,
-				D40179141D2114BF00C0899E /* UFScene.m */,
-				D4F2480F1D83D56B00D4FD14 /* UFScene+Scene.h */,
-				D4F248101D83D56B00D4FD14 /* UFScene+Scene.m */,
-				D4F248111D83D56B00D4FD14 /* UIViewController+Scene.h */,
-				D4F248121D83D56B00D4FD14 /* UIViewController+Scene.m */,
+				D40179131D2114BF00C0899E /* UFViewScene.h */,
+				D40179141D2114BF00C0899E /* UFViewScene.m */,
+				D43E9BDA1E25C5580051B7E2 /* NSObject+ViewScene.h */,
+				D43E9BDB1E25C5580051B7E2 /* NSObject+ViewScene.m */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -2399,7 +2394,7 @@
 				D40179461D2114BF00C0899E /* DBError.m in Sources */,
 				D40179541D2114BF00C0899E /* EPub2_Package.m in Sources */,
 				D40179421D2114BF00C0899E /* TCPServerError.m in Sources */,
-				D40179D81D2114BF00C0899E /* UFScene.m in Sources */,
+				D40179D81D2114BF00C0899E /* UFViewScene.m in Sources */,
 				D426BE3E1D2263FA00B6B596 /* Task.m in Sources */,
 				D42AACDC1E090266002B173B /* UBImageLoader.m in Sources */,
 				D40179D31D2114BF00C0899E /* UFTextViewKeyboardAdjustAssistant.m in Sources */,
@@ -2452,7 +2447,6 @@
 				D40179371D2114BF00C0899E /* HTTPMessageSerializer.m in Sources */,
 				D40179791D2114BF00C0899E /* StateMachine.m in Sources */,
 				D40179C81D2114BF00C0899E /* UIImage+Orientation.m in Sources */,
-				D4F248131D83D56B00D4FD14 /* UFScene+Scene.m in Sources */,
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
 				D426BE431D2263FA00B6B596 /* TaskDispatcher.m in Sources */,
 				D40179611D2114BF00C0899E /* HTTPConnectionInputStream.m in Sources */,
@@ -2468,7 +2462,6 @@
 				D47663EE1DC9E3650002D06C /* UIView+ActivityIndicator.m in Sources */,
 				D434ED361E24F5F500BEA92E /* UFEmojiImageUpdater.m in Sources */,
 				D40179C71D2114BF00C0899E /* UFImageEditView.m in Sources */,
-				D4F248141D83D56B00D4FD14 /* UIViewController+Scene.m in Sources */,
 				D40179921D2114BF00C0899E /* HTTPRequestResponseContent.m in Sources */,
 				D401793B1D2114BF00C0899E /* HTTPResponseMessageSerializer.m in Sources */,
 				D401799A1D2114BF00C0899E /* APPLog+SharedInstance.m in Sources */,
@@ -2544,6 +2537,7 @@
 				D40179D01D2114BF00C0899E /* UFKeyboardAdjustPoint.m in Sources */,
 				D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */,
 				D40179431D2114BF00C0899E /* TCPServerIPAddress.m in Sources */,
+				D43E9BDC1E25C5580051B7E2 /* NSObject+ViewScene.m in Sources */,
 				D40179BD1D2114BF00C0899E /* UFExtendedResponsiveSizeButton.m in Sources */,
 				D401793E1D2114BF00C0899E /* HTTPServerError.m in Sources */,
 				D40179321D2114BF00C0899E /* HTTPTrailer.m in Sources */,

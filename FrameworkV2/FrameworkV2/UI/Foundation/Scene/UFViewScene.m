@@ -1,16 +1,14 @@
 //
-//  UFScene.m
+//  UFViewScene.m
 //  MarryYou
 //
 //  Created by ww on 15/11/12.
 //  Copyright © 2015年 MiaoTo. All rights reserved.
 //
 
-#import "UFScene.h"
+#import "UFViewScene.h"
 
-@implementation UFScene
-
-@synthesize navigationController = _navigationController;
+@implementation UFViewScene
 
 - (instancetype)initWithNavigationController:(UINavigationController *)navigationController
 {

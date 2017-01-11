@@ -1,5 +1,5 @@
 //
-//  UFScene.h
+//  UFViewScene.h
 //  MarryYou
 //
 //  Created by ww on 15/11/12.
@@ -11,7 +11,7 @@
 /*********************************************************
  
     @class
-        UFScene
+        UFViewScene
  
     @abstract
         场景，特定的页面和逻辑组成的UI业务场景，调度controller间的跳转
@@ -21,7 +21,7 @@
  
  *********************************************************/
 
-@interface UFScene : NSObject
+@interface UFViewScene : NSObject
 
 /*!
  * @brief 初始化场景

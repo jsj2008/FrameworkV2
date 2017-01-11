@@ -6,7 +6,7 @@
 //  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "UFScene.h"
+#import "UFViewScene.h"
 
 /*********************************************************
  
@@ -18,6 +18,6 @@
  
  *********************************************************/
 
-@interface UBMainScene : UFScene
+@interface UBMainScene : UFViewScene
 
 @end

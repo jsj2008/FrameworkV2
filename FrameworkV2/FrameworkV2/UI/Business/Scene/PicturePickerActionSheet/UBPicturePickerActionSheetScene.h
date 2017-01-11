@@ -6,7 +6,7 @@
 //  Copyright © 2016年 WW. All rights reserved.
 //
 
-#import "UFScene.h"
+#import "UFViewScene.h"
 
 @class UBPicturePickerAction, UBPicturePickerPickedImage;
 
@@ -23,7 +23,7 @@
  
  *********************************************************/
 
-@interface UBPicturePickerActionSheetScene : UFScene
+@interface UBPicturePickerActionSheetScene : UFViewScene
 
 /*!
  * @brief 消息代理
