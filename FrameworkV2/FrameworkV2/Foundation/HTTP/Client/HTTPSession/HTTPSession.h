@@ -111,9 +111,9 @@
 @interface HTTPSessionCredential : NSObject
 
 /*!
- * @brief 特定认证挑战的证书
+ * @brief 特定的认证挑战的证书
  * @param challenge 挑战
- * @result 证书
+ * @result 证书，若为nil，表征拒绝认证
  */
 - (NSURLCredential *)credentialForChallenge:(NSURLAuthenticationChallenge *)challenge;
 

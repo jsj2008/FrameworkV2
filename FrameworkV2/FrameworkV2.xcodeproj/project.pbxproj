@@ -55,8 +55,6 @@
 		D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177A21D2114BF00C0899E /* ZlibCompressor.m */; };
 		D40179571D2114BF00C0899E /* ZlibDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177A41D2114BF00C0899E /* ZlibDecompressor.m */; };
 		D40179581D2114BF00C0899E /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177A81D2114BF00C0899E /* NSData+AES.m */; };
-		D40179591D2114BF00C0899E /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177AB1D2114BF00C0899E /* NSData+MD5.m */; };
-		D401795A1D2114BF00C0899E /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177AD1D2114BF00C0899E /* NSFileHandle+MD5.m */; };
 		D401795B1D2114BF00C0899E /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177B01D2114BF00C0899E /* NSString+URLEncode.m */; };
 		D401795C1D2114BF00C0899E /* FileListener.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177B31D2114BF00C0899E /* FileListener.m */; };
 		D401795D1D2114BF00C0899E /* HTTPDataConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D40177B91D2114BF00C0899E /* HTTPDataConnection.m */; };
@@ -204,6 +202,10 @@
 		D4D7C3221DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3211DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m */; };
 		D4D7C3251DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */; };
 		D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */; };
+		D4F18AF01E345FA100C1417E /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F18AED1E345FA100C1417E /* NSData+MD5.m */; };
+		D4F18AF11E345FA100C1417E /* NSFileHandle+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F18AEF1E345FA100C1417E /* NSFileHandle+MD5.m */; };
+		D4F18AF81E349BA500C1417E /* NSString+HexEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F18AF71E349BA500C1417E /* NSString+HexEncode.m */; };
+		D4F18B051E34A8F800C1417E /* NSData+_3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F18B041E34A8F800C1417E /* NSData+_3DES.m */; };
 		D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */; };
 		D4FF89C31D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C21D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.m */; };
 		D4FF89C71D3DCF4E00B39D60 /* XXXRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF89C61D3DCF4E00B39D60 /* XXXRequestError.m */; };
@@ -304,10 +306,6 @@
 		D40177A41D2114BF00C0899E /* ZlibDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZlibDecompressor.m; sourceTree = "<group>"; };
 		D40177A71D2114BF00C0899E /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
 		D40177A81D2114BF00C0899E /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
-		D40177AA1D2114BF00C0899E /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
-		D40177AB1D2114BF00C0899E /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
-		D40177AC1D2114BF00C0899E /* NSFileHandle+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+MD5.h"; sourceTree = "<group>"; };
-		D40177AD1D2114BF00C0899E /* NSFileHandle+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+MD5.m"; sourceTree = "<group>"; };
 		D40177AF1D2114BF00C0899E /* NSString+URLEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncode.h"; sourceTree = "<group>"; };
 		D40177B01D2114BF00C0899E /* NSString+URLEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncode.m"; sourceTree = "<group>"; };
 		D40177B21D2114BF00C0899E /* FileListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileListener.h; sourceTree = "<group>"; };
@@ -593,6 +591,14 @@
 		D4D7C3241DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBTextFieldInputHeightRange.m; sourceTree = "<group>"; };
 		D4EC6ADE1D24FBB100638BAB /* UFInputButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFInputButton.h; sourceTree = "<group>"; };
 		D4EC6ADF1D24FBB100638BAB /* UFInputButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFInputButton.m; sourceTree = "<group>"; };
+		D4F18AEC1E345FA100C1417E /* NSData+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		D4F18AED1E345FA100C1417E /* NSData+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		D4F18AEE1E345FA100C1417E /* NSFileHandle+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileHandle+MD5.h"; sourceTree = "<group>"; };
+		D4F18AEF1E345FA100C1417E /* NSFileHandle+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileHandle+MD5.m"; sourceTree = "<group>"; };
+		D4F18AF61E349BA500C1417E /* NSString+HexEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexEncode.h"; sourceTree = "<group>"; };
+		D4F18AF71E349BA500C1417E /* NSString+HexEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexEncode.m"; sourceTree = "<group>"; };
+		D4F18B031E34A8F800C1417E /* NSData+_3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+_3DES.h"; sourceTree = "<group>"; };
+		D4F18B041E34A8F800C1417E /* NSData+_3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+_3DES.m"; sourceTree = "<group>"; };
 		D4FF89BD1D3DC57100B39D60 /* XXXJsonSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXJsonSerialization.h; sourceTree = "<group>"; };
 		D4FF89BE1D3DC57100B39D60 /* XXXJsonSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXXJsonSerialization.m; sourceTree = "<group>"; };
 		D4FF89C11D3DC5BF00B39D60 /* XXXRequestResponseJsonContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXXRequestResponseJsonContent.h; sourceTree = "<group>"; };
@@ -980,9 +986,11 @@
 		D401779F1D2114BF00C0899E /* Encode */ = {
 			isa = PBXGroup;
 			children = (
+				D4F18AF21E34604400C1417E /* NumberSystem */,
 				D40177A01D2114BF00C0899E /* Compress */,
 				D40177A51D2114BF00C0899E /* Crypto */,
 				D40177AE1D2114BF00C0899E /* URL */,
+				D4F18AEB1E345FA100C1417E /* MD5 */,
 			);
 			path = Encode;
 			sourceTree = "<group>";
@@ -1001,8 +1009,8 @@
 		D40177A51D2114BF00C0899E /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				D4F18AF91E34A5FF00C1417E /* 3DES */,
 				D40177A61D2114BF00C0899E /* AES */,
-				D40177A91D2114BF00C0899E /* MD5 */,
 			);
 			path = Crypto;
 			sourceTree = "<group>";
@@ -1014,17 +1022,6 @@
 				D40177A81D2114BF00C0899E /* NSData+AES.m */,
 			);
 			path = AES;
-			sourceTree = "<group>";
-		};
-		D40177A91D2114BF00C0899E /* MD5 */ = {
-			isa = PBXGroup;
-			children = (
-				D40177AA1D2114BF00C0899E /* NSData+MD5.h */,
-				D40177AB1D2114BF00C0899E /* NSData+MD5.m */,
-				D40177AC1D2114BF00C0899E /* NSFileHandle+MD5.h */,
-				D40177AD1D2114BF00C0899E /* NSFileHandle+MD5.m */,
-			);
-			path = MD5;
 			sourceTree = "<group>";
 		};
 		D40177AE1D2114BF00C0899E /* URL */ = {
@@ -2246,6 +2243,35 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		D4F18AEB1E345FA100C1417E /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				D4F18AEC1E345FA100C1417E /* NSData+MD5.h */,
+				D4F18AED1E345FA100C1417E /* NSData+MD5.m */,
+				D4F18AEE1E345FA100C1417E /* NSFileHandle+MD5.h */,
+				D4F18AEF1E345FA100C1417E /* NSFileHandle+MD5.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
+		D4F18AF21E34604400C1417E /* NumberSystem */ = {
+			isa = PBXGroup;
+			children = (
+				D4F18AF61E349BA500C1417E /* NSString+HexEncode.h */,
+				D4F18AF71E349BA500C1417E /* NSString+HexEncode.m */,
+			);
+			path = NumberSystem;
+			sourceTree = "<group>";
+		};
+		D4F18AF91E34A5FF00C1417E /* 3DES */ = {
+			isa = PBXGroup;
+			children = (
+				D4F18B031E34A8F800C1417E /* NSData+_3DES.h */,
+				D4F18B041E34A8F800C1417E /* NSData+_3DES.m */,
+			);
+			path = 3DES;
+			sourceTree = "<group>";
+		};
 		D4FF89BA1D3DC57100B39D60 /* XXXRequestKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -2370,6 +2396,7 @@
 				D40179971D2114BF00C0899E /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
+				D4F18AF81E349BA500C1417E /* NSString+HexEncode.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
 				D4D7C3251DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m in Sources */,
 				D47663ED1DC9E3650002D06C /* UBProgressIndicatorView.m in Sources */,
@@ -2430,12 +2457,10 @@
 				D46CDD571DB6112E00BFC5A4 /* UFScrollLoadMoreFooterView.m in Sources */,
 				D40179501D2114BF00C0899E /* EPub.m in Sources */,
 				D40179391D2114BF00C0899E /* HTTPRequestMessageParser.m in Sources */,
-				D40179591D2114BF00C0899E /* NSData+MD5.m in Sources */,
 				D40179571D2114BF00C0899E /* ZlibDecompressor.m in Sources */,
 				D434ED341E24F5F500BEA92E /* UFEmojiImageFrame.m in Sources */,
 				D40179451D2114BF00C0899E /* DBDefine.m in Sources */,
 				D4D7C31F1DB777A000BAEEC1 /* UBTextFieldInputLocation.m in Sources */,
-				D401795A1D2114BF00C0899E /* NSFileHandle+MD5.m in Sources */,
 				D40179CF1D2114BF00C0899E /* UFKeyboardAdjuster.m in Sources */,
 				D40179631D2114BF00C0899E /* HTTPUploadConnection.m in Sources */,
 				D40179481D2114BF00C0899E /* DBMachine.m in Sources */,
@@ -2492,6 +2517,7 @@
 				D40179D21D2114BF00C0899E /* UITextField+KeyboardAdjust.m in Sources */,
 				D426BE401D2263FA00B6B596 /* Task+Operation.m in Sources */,
 				D401794C1D2114BF00C0899E /* DBSQL_Extension.m in Sources */,
+				D4F18AF11E345FA100C1417E /* NSFileHandle+MD5.m in Sources */,
 				D40179D11D2114BF00C0899E /* UIView+KeyboardAdjust.m in Sources */,
 				D4FF89BF1D3DC57100B39D60 /* XXXJsonSerialization.m in Sources */,
 				D4EC6AE01D24FBB100638BAB /* UFInputButton.m in Sources */,
@@ -2515,6 +2541,7 @@
 				D42AACDD1E090266002B173B /* UBImageDownloadManager.m in Sources */,
 				D47663F21DC9E3650002D06C /* UIView+Toast.m in Sources */,
 				D40179A41D2114BF00C0899E /* UBMainScene.m in Sources */,
+				D4F18B051E34A8F800C1417E /* NSData+_3DES.m in Sources */,
 				D40179521D2114BF00C0899E /* EPub2_OCF.m in Sources */,
 				D40179A21D2114BF00C0899E /* ImageStorage.m in Sources */,
 				D401798F1D2114BF00C0899E /* HTTPUploadRequestTask.m in Sources */,
@@ -2523,6 +2550,7 @@
 				D40179991D2114BF00C0899E /* LightLoadingPermanentQueue+SharedInstance.m in Sources */,
 				D401795D1D2114BF00C0899E /* HTTPDataConnection.m in Sources */,
 				D47663EC1DC9E3650002D06C /* UBNothingIndicatorView.m in Sources */,
+				D4F18AF01E345FA100C1417E /* NSData+MD5.m in Sources */,
 				D401794F1D2114BF00C0899E /* EpubBookLoadHandle.m in Sources */,
 				D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */,
 				D40179951D2114BF00C0899E /* NSDateFormatter+SharedInstance.m in Sources */,

@@ -85,11 +85,15 @@
     if (self.credential)
     {
         credential = [self.credential credentialForChallenge:challenge];
-    }
-    
-    if (credential)
-    {
-        disposition = NSURLSessionAuthChallengeUseCredential;
+        
+        if (credential)
+        {
+            disposition = NSURLSessionAuthChallengeUseCredential;
+        }
+        else
+        {
+            disposition = NSURLSessionAuthChallengeRejectProtectionSpace;
+        }
     }
     else if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
     {

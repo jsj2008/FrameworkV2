@@ -10,7 +10,7 @@
 
 @implementation NSData (AES)
 
-- (NSData *)dataByAddingAES128CryptingByOperation:(CCOperation)operation withKey:(NSData *)key iv:(NSData *)iv
+- (NSData *)dataByAddingAES128EncodingByOperation:(CCOperation)operation withOptions:(CCOptions)options key:(NSData *)key iv:(NSData *)iv
 {
     // 'key' should be 16 bytes for AES128
     char keyPtr[kCCKeySizeAES128 + 1]; // room for terminator (unused)
@@ -44,7 +44,7 @@
         [iv getBytes:ivPtr length:[iv length]];
         
         cryptStatus = CCCrypt(operation, kCCAlgorithmAES128,
-                              kCCOptionECBMode|kCCOptionPKCS7Padding,
+                              options,
                               keyPtr, kCCKeySizeAES128,
                               ivPtr /* initialization vector (optional) */,
                               [self bytes], dataLength, /* input */
@@ -54,7 +54,7 @@
     else
     {
         cryptStatus = CCCrypt(operation, kCCAlgorithmAES128,
-                              kCCOptionECBMode|kCCOptionPKCS7Padding,
+                              options,
                               keyPtr, kCCKeySizeAES128,
                               NULL /* initialization vector (optional) */,
                               [self bytes], dataLength, /* input */
@@ -75,7 +75,7 @@
     return cryptedData;
 }
 
-- (NSData *)dataByAddingAES256CryptingByOperation:(CCOperation)operation withKey:(NSData *)key iv:(NSData *)iv
+- (NSData *)dataByAddingAES256EncodingByOperation:(CCOperation)operation withOptions:(CCOptions)options key:(NSData *)key iv:(NSData *)iv
 {
     // 'key' should be 16 bytes for AES128
     char keyPtr[kCCKeySizeAES256 + 1]; // room for terminator (unused)
@@ -109,7 +109,7 @@
         [iv getBytes:ivPtr length:[iv length]];
         
         cryptStatus = CCCrypt(operation, kCCAlgorithmAES128,
-                              kCCOptionECBMode|kCCOptionPKCS7Padding,
+                              options,
                               keyPtr, kCCKeySizeAES256,
                               ivPtr /* initialization vector (optional) */,
                               [self bytes], dataLength, /* input */
@@ -119,7 +119,7 @@
     else
     {
         cryptStatus = CCCrypt(operation, kCCAlgorithmAES128,
-                              kCCOptionECBMode|kCCOptionPKCS7Padding,
+                              options,
                               keyPtr, kCCKeySizeAES256,
                               NULL /* initialization vector (optional) */,
                               [self bytes], dataLength, /* input */
