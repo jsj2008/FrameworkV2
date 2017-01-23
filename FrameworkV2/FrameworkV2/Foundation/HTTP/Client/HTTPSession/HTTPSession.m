@@ -99,10 +99,9 @@
     }
     else if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
     {
-//        credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+        // 如果服务端用的是付费的公信机构颁发的证书，标准的HTTPS，NSURLSession会自动处理HTTPS的认证过程，不需要再外部干预。为确保万无一失，这里仍然强制信任服务端证书
         
-        // 如果服务端用的是付费的公信机构颁发的证书，标准的HTTPS，NSURLSession会自动处理HTTPS的认证过程，不需要再外部干预
-        credential = nil;
+        credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
         
         disposition = NSURLSessionAuthChallengeUseCredential;
     }
