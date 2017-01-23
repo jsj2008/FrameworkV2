@@ -66,11 +66,13 @@
 
 - (void)URLSession:(NSURLSession *)session didBecomeInvalidWithError:(nullable NSError *)error;
 {
+    __weak typeof(self) weakSelf = self;
+    
     [self operate:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(HTTPSession:didBecomeInvalidWithError:)])
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(HTTPSession:didBecomeInvalidWithError:)])
         {
-            [self.delegate HTTPSession:self didBecomeInvalidWithError:error];
+            [weakSelf.delegate HTTPSession:weakSelf didBecomeInvalidWithError:error];
         }
         
     } onThread:self.delegateThread];
@@ -114,16 +116,21 @@
         disposition = NSURLSessionAuthChallengeRejectProtectionSpace;
     }
     
-    completionHandler(disposition, credential);
+    if (completionHandler)
+    {
+        completionHandler(disposition, credential);
+    }
 }
 
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session
 {
+    __weak typeof(self) weakSelf = self;
+    
     [self operate:^{
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(HTTPSessionDidFinishEventsForBackgroundSession:)])
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(HTTPSessionDidFinishEventsForBackgroundSession:)])
         {
-            [self.delegate HTTPSessionDidFinishEventsForBackgroundSession:self];
+            [weakSelf.delegate HTTPSessionDidFinishEventsForBackgroundSession:weakSelf];
         }
         
     } onThread:self.delegateThread];

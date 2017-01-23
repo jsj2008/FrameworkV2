@@ -86,15 +86,24 @@
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(HTTPDataConnection:willCacheResponse:)])
     {
-        completionHandler([self.delegate HTTPDataConnection:self willCacheResponse:proposedResponse]);
+        if (completionHandler)
+        {
+            completionHandler([self.delegate HTTPDataConnection:self willCacheResponse:proposedResponse]);
+        }
     }
     else if ([[dataTask.currentRequest.HTTPMethod lowercaseString] isEqualToString:@"get"])
     {
-        completionHandler(proposedResponse);
+        if (completionHandler)
+        {
+            completionHandler(proposedResponse);
+        }
     }
     else
     {
-        completionHandler(nil);
+        if (completionHandler)
+        {
+            completionHandler(nil);
+        }
     }
 }
 
@@ -112,7 +121,10 @@
         disposition = NSURLSessionResponseCancel;
     }
     
-    completionHandler(disposition);
+    if (completionHandler)
+    {
+        completionHandler(disposition);
+    }
 }
 
 - (void)URLSessionDataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data

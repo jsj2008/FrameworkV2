@@ -56,7 +56,10 @@
 
 - (void)URLSessionTask:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest *))completionHandler
 {
-    completionHandler(request);
+    if (completionHandler)
+    {
+        completionHandler(request);
+    }
 }
 
 - (void)URLSessionTask:(NSURLSessionTask *)task didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * credential))completionHandler
@@ -72,12 +75,18 @@
         disposition = NSURLSessionAuthChallengeUseCredential;
     }
     
-    completionHandler(disposition, credential);
+    if (completionHandler)
+    {
+        completionHandler(disposition, credential);
+    }
 }
 
 - (void)URLSessionTask:(NSURLSessionTask *)task needNewBodyStream:(void (^)(NSInputStream * bodyStream))completionHandler
 {
-    completionHandler(nil);
+    if (completionHandler)
+    {
+        completionHandler(nil);
+    }
 }
 
 - (void)URLSessionTask:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend

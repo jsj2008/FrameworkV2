@@ -132,7 +132,10 @@
     
     self.streamUsed = YES;
     
-    completionHandler(stream);
+    if (completionHandler)
+    {
+        completionHandler(stream);
+    }
 }
 
 - (void)URLSessionTask:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
@@ -145,12 +148,18 @@
 
 - (void)URLSessionDataTask:(NSURLSessionDataTask *)dataTask willCacheResponse:(NSCachedURLResponse *)proposedResponse completionHandler:(void (^)(NSCachedURLResponse *))completionHandler
 {
-    completionHandler(nil);
+    if (completionHandler)
+    {
+        completionHandler(nil);
+    }
 }
 
 - (void)URLSessionDataTask:(NSURLSessionDataTask *)dataTask didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler
 {
-    completionHandler(NSURLSessionResponseAllow);
+    if (completionHandler)
+    {
+        completionHandler(NSURLSessionResponseAllow);
+    }
 }
 
 - (void)URLSessionDataTask:(NSURLSessionDataTask *)dataTask didReceiveData:(NSData *)data
