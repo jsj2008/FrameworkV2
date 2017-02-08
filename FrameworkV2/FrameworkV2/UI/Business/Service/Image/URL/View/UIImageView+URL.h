@@ -36,8 +36,9 @@
  * @brief 启动图片URL加载
  * @discussion 若已有URL图片正在加载，将会取消正在进行的加载操作并进行新的加载
  * @discussion 若URLLoadingConfiguration已配置，可重复启动加载
+ * @param immediately 是否立即启动加载，YES将立即启动加载，NO将在下个循环启动加载，以合并当前循环中的多次加载操作，避免图片重复加载和取消操作
  */
-- (void)startURLLoading;
+- (void)startURLLoadingImmediately:(BOOL)immediately;
 
 /*!
  * @brief 取消图片URL加载
@@ -56,6 +57,9 @@
  
     @abstract
         UIImageView加载URL图片的快捷方式扩展，是对UIImageView (URL)的封装
+ 
+    @discussion
+        类别中的setImageXXX方法都默认不立即启动加载
  
  *********************************************************/
 

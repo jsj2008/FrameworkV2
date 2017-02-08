@@ -1431,10 +1431,10 @@
 		D401784C1D2114BF00C0899E /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				D401784D1D2114BF00C0899E /* HTTPRequestBody+MIME.h */,
-				D401784E1D2114BF00C0899E /* HTTPRequestBody+MIME.m */,
 				D401784F1D2114BF00C0899E /* HTTPRequestBody.h */,
 				D40178501D2114BF00C0899E /* HTTPRequestBody.m */,
+				D401784D1D2114BF00C0899E /* HTTPRequestBody+MIME.h */,
+				D401784E1D2114BF00C0899E /* HTTPRequestBody+MIME.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";

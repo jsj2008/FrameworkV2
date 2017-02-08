@@ -13,6 +13,8 @@ static const char kUIImageViewPropertyKey_URLLoadingConfiguration[] = "URLLoadin
 
 static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
 
+static const char kUIImageViewPropertyKey_ShouldStartURLLoading[] = "ShouldStartURLLoading";
+
 
 @implementation UIImageView (URL)
 
@@ -30,6 +32,11 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
 {
     UBViewImageURLLoadingConfiguration *configuration = self.URLLoadingConfiguration;
     
+    if (!configuration)
+    {
+        return;
+    }
+    
     UBImageLoader *loader = [[UBImageLoader alloc] initWithURL:configuration.URL];
     
     loader.enableLocalImage = configuration.enableLocalImage;
@@ -46,9 +53,51 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
     }
 }
 
+- (void)startURLLoadingImmediately:(BOOL)immediately
+{
+    if (immediately)
+    {
+        [self startURLLoading];
+        
+        objc_setAssociatedObject(self, kUIImageViewPropertyKey_ShouldStartURLLoading, [NSNumber numberWithBool:NO], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    else
+    {
+        BOOL shouldStart = [objc_getAssociatedObject(self, kUIImageViewPropertyKey_ShouldStartURLLoading) boolValue];
+        
+        if (!shouldStart)
+        {
+            objc_setAssociatedObject(self, kUIImageViewPropertyKey_ShouldStartURLLoading, [NSNumber numberWithBool:YES], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            
+            __weak typeof(self) weakSelf = self;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                BOOL shouldStart = [objc_getAssociatedObject(self, kUIImageViewPropertyKey_ShouldStartURLLoading) boolValue];
+                
+                if (shouldStart)
+                {
+                    [weakSelf startURLLoading];
+                }
+                
+                objc_setAssociatedObject(weakSelf, kUIImageViewPropertyKey_ShouldStartURLLoading, [NSNumber numberWithBool:NO], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            });
+        }
+    }
+    
+}
+
 - (void)cancelURLLoading
 {
+    UBImageLoader *loader = objc_getAssociatedObject(self, kUIImageViewPropertyKey_URLImageLoader);
+    
+    [loader cancel];
+    
+    loader.delegate = nil;
+    
     objc_setAssociatedObject(self, kUIImageViewPropertyKey_URLImageLoader, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    objc_setAssociatedObject(self, kUIImageViewPropertyKey_ShouldStartURLLoading, [NSNumber numberWithBool:NO], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)imageLoader:(UBImageLoader *)imageLoader didFinishWithError:(NSError *)error imageData:(NSData *)data
@@ -98,7 +147,7 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
     
     self.URLLoadingConfiguration = configuration;
     
-    [self startURLLoading];
+    [self startURLLoadingImmediately:NO];
 }
 
 - (void)setImageWithURL:(NSURL *)URL placeHolderImage:(UIImage *)placeHolderImage completion:(UBViewImageURLLoadingCompletion)completion
@@ -117,7 +166,7 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
     
     self.URLLoadingConfiguration = configuration;
     
-    [self startURLLoading];
+    [self startURLLoadingImmediately:NO];
 }
 
 - (void)setImageWithURL:(NSURL *)URL placeHolderImage:(UIImage *)placeHolderImage failureImage:(UIImage *)failureImage completion:(UBViewImageURLLoadingCompletion)completion
@@ -140,7 +189,7 @@ static const char kUIImageViewPropertyKey_URLImageLoader[] = "URLImageLoader";
     
     self.URLLoadingConfiguration = configuration;
     
-    [self startURLLoading];
+    [self startURLLoadingImmediately:NO];
 }
 
 @end

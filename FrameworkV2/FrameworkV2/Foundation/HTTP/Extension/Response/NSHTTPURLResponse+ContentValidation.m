@@ -23,7 +23,7 @@
     {
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         
-        [userInfo setObject:[NSString stringWithFormat:@"unacceptable response status code: %ld(%@), url : %@", (long)self.statusCode, [NSHTTPURLResponse localizedStringForStatusCode:self.statusCode], self.URL] forKey:NSLocalizedDescriptionKey];
+        [userInfo setObject:[NSString stringWithFormat:@"unacceptable response status code: %ld(%@), url: %@", (long)self.statusCode, [NSHTTPURLResponse localizedStringForStatusCode:self.statusCode], self.URL] forKey:NSLocalizedDescriptionKey];
         
         [userInfo setObject:self.URL ? self.URL : [NSURL URLWithString:@""] forKey:NSURLErrorFailingURLErrorKey];
         
@@ -33,7 +33,7 @@
     {
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         
-        [userInfo setObject:[NSString stringWithFormat:@"unacceptable response content MIME type: %@, url : %@", self.MIMEType, self.URL] forKey:NSLocalizedDescriptionKey];
+        [userInfo setObject:[NSString stringWithFormat:@"unacceptable response content MIME type: %@, url: %@", self.MIMEType, self.URL] forKey:NSLocalizedDescriptionKey];
         
         [userInfo setObject:self.URL ? self.URL : [NSURL URLWithString:@""] forKey:NSURLErrorFailingURLErrorKey];
         
@@ -43,7 +43,7 @@
     {
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         
-        [userInfo setObject:[NSString stringWithFormat:@"unacceptable response content encoding: %@, url : %@", self.textEncodingName, self.URL] forKey:NSLocalizedDescriptionKey];
+        [userInfo setObject:[NSString stringWithFormat:@"unacceptable response content encoding: %@, url: %@", self.textEncodingName, self.URL] forKey:NSLocalizedDescriptionKey];
         
         [userInfo setObject:self.URL ? self.URL : [NSURL URLWithString:@""] forKey:NSURLErrorFailingURLErrorKey];
         
