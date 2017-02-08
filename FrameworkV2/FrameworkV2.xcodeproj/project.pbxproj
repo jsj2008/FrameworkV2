@@ -139,10 +139,6 @@
 		D40179DF1D2114BF00C0899E /* UFPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D40179281D2114BF00C0899E /* UFPlaceHolderTextView.m */; };
 		D40179E01D2114BF00C0899E /* UFTextViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = D401792A1D2114BF00C0899E /* UFTextViewPlaceHolder.m */; };
 		D40179E11D2114BF00C0899E /* UFButtonWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D401792E1D2114BF00C0899E /* UFButtonWindow.m */; };
-		D40179E31D2114E100C0899E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E21D2114E100C0899E /* libxml2.tbd */; };
-		D40179E51D2114EE00C0899E /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */; };
-		D40179E71D2114FE00C0899E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E61D2114FE00C0899E /* libsqlite3.tbd */; };
-		D40179E91D21150600C0899E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D40179E81D21150600C0899E /* Photos.framework */; };
 		D424A1681D2B856C00ED449A /* UBPictureBrowsePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */; };
 		D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D424A16A1D2B860400ED449A /* UBPictureBrowseToolBarItem.m */; };
 		D426BE3C1D2263FA00B6B596 /* DispatchableTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D426BE291D2263FA00B6B596 /* DispatchableTask.m */; };
@@ -171,6 +167,10 @@
 		D434F3471E2776FD00DD8932 /* UFImageAnimationUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = D434F3431E2776FD00DD8932 /* UFImageAnimationUpdater.m */; };
 		D434F3481E2776FD00DD8932 /* UIImageView+AnimationImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D434F3451E2776FD00DD8932 /* UIImageView+AnimationImage.m */; };
 		D43E9BDC1E25C5580051B7E2 /* NSObject+ViewScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D43E9BDB1E25C5580051B7E2 /* NSObject+ViewScene.m */; };
+		D4426B941E4AD40B00F39964 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4426B931E4AD40B00F39964 /* libsqlite3.tbd */; };
+		D4426B961E4AD41800F39964 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4426B951E4AD41800F39964 /* libxml2.2.tbd */; };
+		D4426B981E4AD42500F39964 /* libz.1.2.8.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D4426B971E4AD42500F39964 /* libz.1.2.8.tbd */; };
+		D4426B9B1E4AD45700F39964 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4426B991E4AD45700F39964 /* Photos.framework */; };
 		D44E48421D73D5FC00EB6F86 /* ImageDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */; };
 		D44E48461D7401CE00EB6F86 /* LoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E48451D7401CE00EB6F86 /* LoginTask.m */; };
 		D44E484F1D740E0100EB6F86 /* LogoutTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D44E484E1D740E0100EB6F86 /* LogoutTask.m */; };
@@ -471,10 +471,6 @@
 		D401792A1D2114BF00C0899E /* UFTextViewPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFTextViewPlaceHolder.m; sourceTree = "<group>"; };
 		D401792D1D2114BF00C0899E /* UFButtonWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFButtonWindow.h; sourceTree = "<group>"; };
 		D401792E1D2114BF00C0899E /* UFButtonWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFButtonWindow.m; sourceTree = "<group>"; };
-		D40179E21D2114E100C0899E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
-		D40179E61D2114FE00C0899E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D40179E81D21150600C0899E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		D424A1661D2B856C00ED449A /* UBPictureBrowsePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowsePicture.h; sourceTree = "<group>"; };
 		D424A1671D2B856C00ED449A /* UBPictureBrowsePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBPictureBrowsePicture.m; sourceTree = "<group>"; };
 		D424A1691D2B860400ED449A /* UBPictureBrowseToolBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBPictureBrowseToolBarItem.h; sourceTree = "<group>"; };
@@ -531,6 +527,10 @@
 		D434F3451E2776FD00DD8932 /* UIImageView+AnimationImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AnimationImage.m"; sourceTree = "<group>"; };
 		D43E9BDA1E25C5580051B7E2 /* NSObject+ViewScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ViewScene.h"; sourceTree = "<group>"; };
 		D43E9BDB1E25C5580051B7E2 /* NSObject+ViewScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ViewScene.m"; sourceTree = "<group>"; };
+		D4426B931E4AD40B00F39964 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D4426B951E4AD41800F39964 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		D4426B971E4AD42500F39964 /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
+		D4426B991E4AD45700F39964 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		D44E483F1D73D5FC00EB6F86 /* ImageDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloadTask.h; sourceTree = "<group>"; };
 		D44E48401D73D5FC00EB6F86 /* ImageDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloadTask.m; sourceTree = "<group>"; };
 		D44E48441D7401CE00EB6F86 /* LoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginTask.h; sourceTree = "<group>"; };
@@ -612,10 +612,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D40179E91D21150600C0899E /* Photos.framework in Frameworks */,
-				D40179E71D2114FE00C0899E /* libsqlite3.tbd in Frameworks */,
-				D40179E51D2114EE00C0899E /* libz.1.2.5.tbd in Frameworks */,
-				D40179E31D2114E100C0899E /* libxml2.tbd in Frameworks */,
+				D4426B9B1E4AD45700F39964 /* Photos.framework in Frameworks */,
+				D4426B981E4AD42500F39964 /* libz.1.2.8.tbd in Frameworks */,
+				D4426B961E4AD41800F39964 /* libxml2.2.tbd in Frameworks */,
+				D4426B941E4AD40B00F39964 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,12 +625,9 @@
 		D40177121D21148000C0899E = {
 			isa = PBXGroup;
 			children = (
-				D40179E81D21150600C0899E /* Photos.framework */,
-				D40179E61D2114FE00C0899E /* libsqlite3.tbd */,
-				D40179E41D2114EE00C0899E /* libz.1.2.5.tbd */,
-				D40179E21D2114E100C0899E /* libxml2.tbd */,
 				D401771D1D21148100C0899E /* FrameworkV2 */,
 				D401771C1D21148000C0899E /* Products */,
+				D4426B921E4AD40B00F39964 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2106,6 +2103,17 @@
 				D434F3451E2776FD00DD8932 /* UIImageView+AnimationImage.m */,
 			);
 			path = AnimationImage;
+			sourceTree = "<group>";
+		};
+		D4426B921E4AD40B00F39964 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4426B991E4AD45700F39964 /* Photos.framework */,
+				D4426B971E4AD42500F39964 /* libz.1.2.8.tbd */,
+				D4426B951E4AD41800F39964 /* libxml2.2.tbd */,
+				D4426B931E4AD40B00F39964 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D44E48431D73DFF800EB6F86 /* Login */ = {
