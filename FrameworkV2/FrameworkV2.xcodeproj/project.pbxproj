@@ -190,6 +190,16 @@
 		D47663F01DC9E3650002D06C /* UIView+ProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = D47663E51DC9E3650002D06C /* UIView+ProgressIndicator.m */; };
 		D47663F11DC9E3650002D06C /* UBToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D47663E81DC9E3650002D06C /* UBToastView.m */; };
 		D47663F21DC9E3650002D06C /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = D47663EA1DC9E3650002D06C /* UIView+Toast.m */; };
+		D4A9D08F1E68163D00A037BF /* SPTaskConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D0781E68163D00A037BF /* SPTaskConfiguration.m */; };
+		D4A9D0901E68163D00A037BF /* SPTaskBackgroundPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D07B1E68163D00A037BF /* SPTaskBackgroundPool.m */; };
+		D4A9D0911E68163D00A037BF /* SPTaskDaemonPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D07D1E68163D00A037BF /* SPTaskDaemonPool.m */; };
+		D4A9D0921E68163D00A037BF /* SPTaskFreePool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D07F1E68163D00A037BF /* SPTaskFreePool.m */; };
+		D4A9D0931E68163D00A037BF /* SPTaskPool.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D0811E68163D00A037BF /* SPTaskPool.m */; };
+		D4A9D0941E68163D00A037BF /* SPTaskServiceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D0841E68163D00A037BF /* SPTaskServiceProvider.m */; };
+		D4A9D0951E68163D00A037BF /* SPTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D0871E68163D00A037BF /* SPTask.m */; };
+		D4A9D0961E68163D00A037BF /* SPTaskBlockLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D0891E68163D00A037BF /* SPTaskBlockLoader.m */; };
+		D4A9D0971E68163D00A037BF /* SPTaskQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D08B1E68163D00A037BF /* SPTaskQueue.m */; };
+		D4A9D0981E68163D00A037BF /* SPTaskDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A9D08E1E68163D00A037BF /* SPTaskDispatcher.m */; };
 		D4B867891D81594900629CB5 /* UFScrollLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B867841D81594900629CB5 /* UFScrollLoadingView.m */; };
 		D4D5AAB41DB4CB0100181C33 /* UBTextFieldInputToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5AAB31DB4CB0100181C33 /* UBTextFieldInputToolBar.m */; };
 		D4D5AAB61DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5AAB51DB4CB0D00181C33 /* UBTextFieldInputToolBar.xib */; };
@@ -569,6 +579,26 @@
 		D47663E81DC9E3650002D06C /* UBToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBToastView.m; sourceTree = "<group>"; };
 		D47663E91DC9E3650002D06C /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		D47663EA1DC9E3650002D06C /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		D4A9D0771E68163D00A037BF /* SPTaskConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskConfiguration.h; sourceTree = "<group>"; };
+		D4A9D0781E68163D00A037BF /* SPTaskConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskConfiguration.m; sourceTree = "<group>"; };
+		D4A9D07A1E68163D00A037BF /* SPTaskBackgroundPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBackgroundPool.h; sourceTree = "<group>"; };
+		D4A9D07B1E68163D00A037BF /* SPTaskBackgroundPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBackgroundPool.m; sourceTree = "<group>"; };
+		D4A9D07C1E68163D00A037BF /* SPTaskDaemonPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDaemonPool.h; sourceTree = "<group>"; };
+		D4A9D07D1E68163D00A037BF /* SPTaskDaemonPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDaemonPool.m; sourceTree = "<group>"; };
+		D4A9D07E1E68163D00A037BF /* SPTaskFreePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskFreePool.h; sourceTree = "<group>"; };
+		D4A9D07F1E68163D00A037BF /* SPTaskFreePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskFreePool.m; sourceTree = "<group>"; };
+		D4A9D0801E68163D00A037BF /* SPTaskPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskPool.h; sourceTree = "<group>"; };
+		D4A9D0811E68163D00A037BF /* SPTaskPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskPool.m; sourceTree = "<group>"; };
+		D4A9D0831E68163D00A037BF /* SPTaskServiceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskServiceProvider.h; sourceTree = "<group>"; };
+		D4A9D0841E68163D00A037BF /* SPTaskServiceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskServiceProvider.m; sourceTree = "<group>"; };
+		D4A9D0861E68163D00A037BF /* SPTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTask.h; sourceTree = "<group>"; };
+		D4A9D0871E68163D00A037BF /* SPTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTask.m; sourceTree = "<group>"; };
+		D4A9D0881E68163D00A037BF /* SPTaskBlockLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskBlockLoader.h; sourceTree = "<group>"; };
+		D4A9D0891E68163D00A037BF /* SPTaskBlockLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskBlockLoader.m; sourceTree = "<group>"; };
+		D4A9D08A1E68163D00A037BF /* SPTaskQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskQueue.h; sourceTree = "<group>"; };
+		D4A9D08B1E68163D00A037BF /* SPTaskQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskQueue.m; sourceTree = "<group>"; };
+		D4A9D08D1E68163D00A037BF /* SPTaskDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTaskDispatcher.h; sourceTree = "<group>"; };
+		D4A9D08E1E68163D00A037BF /* SPTaskDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTaskDispatcher.m; sourceTree = "<group>"; };
 		D4B867831D81594900629CB5 /* UFScrollLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UFScrollLoadingView.h; sourceTree = "<group>"; };
 		D4B867841D81594900629CB5 /* UFScrollLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UFScrollLoadingView.m; sourceTree = "<group>"; };
 		D4D5AAB21DB4CB0100181C33 /* UBTextFieldInputToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBTextFieldInputToolBar.h; sourceTree = "<group>"; };
@@ -679,6 +709,7 @@
 		D40177381D2114BF00C0899E /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				D4A9D0751E68163D00A037BF /* TaskPool */,
 				D426BE261D2263FA00B6B596 /* Task */,
 				D40177391D2114BF00C0899E /* CoreNetwork */,
 				D40177731D2114BF00C0899E /* DataBase */,
@@ -2201,6 +2232,73 @@
 			path = Toast;
 			sourceTree = "<group>";
 		};
+		D4A9D0751E68163D00A037BF /* TaskPool */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9D0761E68163D00A037BF /* Configuration */,
+				D4A9D0791E68163D00A037BF /* Pool */,
+				D4A9D0821E68163D00A037BF /* Service */,
+				D4A9D0851E68163D00A037BF /* Task */,
+				D4A9D08C1E68163D00A037BF /* TaskDispatch */,
+			);
+			path = TaskPool;
+			sourceTree = "<group>";
+		};
+		D4A9D0761E68163D00A037BF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9D0771E68163D00A037BF /* SPTaskConfiguration.h */,
+				D4A9D0781E68163D00A037BF /* SPTaskConfiguration.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D4A9D0791E68163D00A037BF /* Pool */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9D07A1E68163D00A037BF /* SPTaskBackgroundPool.h */,
+				D4A9D07B1E68163D00A037BF /* SPTaskBackgroundPool.m */,
+				D4A9D07C1E68163D00A037BF /* SPTaskDaemonPool.h */,
+				D4A9D07D1E68163D00A037BF /* SPTaskDaemonPool.m */,
+				D4A9D07E1E68163D00A037BF /* SPTaskFreePool.h */,
+				D4A9D07F1E68163D00A037BF /* SPTaskFreePool.m */,
+				D4A9D0801E68163D00A037BF /* SPTaskPool.h */,
+				D4A9D0811E68163D00A037BF /* SPTaskPool.m */,
+			);
+			path = Pool;
+			sourceTree = "<group>";
+		};
+		D4A9D0821E68163D00A037BF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9D0831E68163D00A037BF /* SPTaskServiceProvider.h */,
+				D4A9D0841E68163D00A037BF /* SPTaskServiceProvider.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D4A9D0851E68163D00A037BF /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9D0861E68163D00A037BF /* SPTask.h */,
+				D4A9D0871E68163D00A037BF /* SPTask.m */,
+				D4A9D0881E68163D00A037BF /* SPTaskBlockLoader.h */,
+				D4A9D0891E68163D00A037BF /* SPTaskBlockLoader.m */,
+				D4A9D08A1E68163D00A037BF /* SPTaskQueue.h */,
+				D4A9D08B1E68163D00A037BF /* SPTaskQueue.m */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		D4A9D08C1E68163D00A037BF /* TaskDispatch */ = {
+			isa = PBXGroup;
+			children = (
+				D4A9D08D1E68163D00A037BF /* SPTaskDispatcher.h */,
+				D4A9D08E1E68163D00A037BF /* SPTaskDispatcher.m */,
+			);
+			path = TaskDispatch;
+			sourceTree = "<group>";
+		};
 		D4B867781D81594900629CB5 /* ScrollLoading */ = {
 			isa = PBXGroup;
 			children = (
@@ -2402,8 +2500,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D40179971D2114BF00C0899E /* HTTPConnectionResumeStorage+SharedInstance.m in Sources */,
+				D4A9D0901E68163D00A037BF /* SPTaskBackgroundPool.m in Sources */,
 				D40179561D2114BF00C0899E /* ZlibCompressor.m in Sources */,
 				D40179671D2114BF00C0899E /* HTTPMultipartFormPartContentDisposition.m in Sources */,
+				D4A9D0961E68163D00A037BF /* SPTaskBlockLoader.m in Sources */,
 				D4F18AF81E349BA500C1417E /* NSString+HexEncode.m in Sources */,
 				D40179491D2114BF00C0899E /* DBSQL.m in Sources */,
 				D4D7C3251DB7780200BAEEC1 /* UBTextFieldInputHeightRange.m in Sources */,
@@ -2411,6 +2511,7 @@
 				D40179551D2114BF00C0899E /* EPubXML.m in Sources */,
 				D401795C1D2114BF00C0899E /* FileListener.m in Sources */,
 				D401793F1D2114BF00C0899E /* HTTPServerListener.m in Sources */,
+				D4A9D0971E68163D00A037BF /* SPTaskQueue.m in Sources */,
 				D46CDD591DB6112E00BFC5A4 /* UFScrollRefreshHeaderView.m in Sources */,
 				D401795E1D2114BF00C0899E /* HTTPConnectionResumeStorage.m in Sources */,
 				D426BE411D2263FA00B6B596 /* TaskOperation.m in Sources */,
@@ -2444,9 +2545,11 @@
 				D40179331D2114BF00C0899E /* HTTPMessageBodyParser.m in Sources */,
 				D401795F1D2114BF00C0899E /* HTTPDownloadConnection.m in Sources */,
 				D40179381D2114BF00C0899E /* HTTPRequestMessageHeaderParser.m in Sources */,
+				D4A9D0941E68163D00A037BF /* SPTaskServiceProvider.m in Sources */,
 				D47663EF1DC9E3650002D06C /* UIView+NothingIndicator.m in Sources */,
 				D40179641D2114BF00C0899E /* HTTPSession.m in Sources */,
 				D40179961D2114BF00C0899E /* FoundationServiceUnit.m in Sources */,
+				D4A9D0981E68163D00A037BF /* SPTaskDispatcher.m in Sources */,
 				D40179901D2114BF00C0899E /* HTTPRequestBody+MIME.m in Sources */,
 				D401796E1D2114BF00C0899E /* NSObject+Delegate.m in Sources */,
 				D4D7C30C1DB71D7500BAEEC1 /* UBTextFieldYMDDateInput.m in Sources */,
@@ -2483,6 +2586,7 @@
 				D42AACDF1E090266002B173B /* UIImageView+URL.m in Sources */,
 				D40179411D2114BF00C0899E /* TCPServerConnection.m in Sources */,
 				D40179371D2114BF00C0899E /* HTTPMessageSerializer.m in Sources */,
+				D4A9D0921E68163D00A037BF /* SPTaskFreePool.m in Sources */,
 				D40179791D2114BF00C0899E /* StateMachine.m in Sources */,
 				D40179C81D2114BF00C0899E /* UIImage+Orientation.m in Sources */,
 				D40179931D2114BF00C0899E /* HTTPRequestResponseJsonContent.m in Sources */,
@@ -2524,6 +2628,7 @@
 				D40179711D2114BF00C0899E /* NetworkReachability.m in Sources */,
 				D40179D21D2114BF00C0899E /* UITextField+KeyboardAdjust.m in Sources */,
 				D426BE401D2263FA00B6B596 /* Task+Operation.m in Sources */,
+				D4A9D0931E68163D00A037BF /* SPTaskPool.m in Sources */,
 				D401794C1D2114BF00C0899E /* DBSQL_Extension.m in Sources */,
 				D4F18AF11E345FA100C1417E /* NSFileHandle+MD5.m in Sources */,
 				D40179D11D2114BF00C0899E /* UIView+KeyboardAdjust.m in Sources */,
@@ -2541,6 +2646,7 @@
 				D4D7C3221DB777DB00BAEEC1 /* UBTextFieldHeightRangeInput.m in Sources */,
 				D424A16B1D2B860400ED449A /* UBPictureBrowseToolBarItem.m in Sources */,
 				D401797B1D2114BF00C0899E /* NSString+Character.m in Sources */,
+				D4A9D0951E68163D00A037BF /* SPTask.m in Sources */,
 				D40179721D2114BF00C0899E /* IPRouteItem.m in Sources */,
 				D40179531D2114BF00C0899E /* EPub2_OPF.m in Sources */,
 				D401796A1D2114BF00C0899E /* NSHTTPURLResponse+ContentValidation.m in Sources */,
@@ -2575,6 +2681,7 @@
 				D40179D41D2114BF00C0899E /* UITextView+KeyboardAdjust.m in Sources */,
 				D40179751D2114BF00C0899E /* NSCoder+DataedEncoding.m in Sources */,
 				D47663F11DC9E3650002D06C /* UBToastView.m in Sources */,
+				D4A9D08F1E68163D00A037BF /* SPTaskConfiguration.m in Sources */,
 				D40179A81D2114BF00C0899E /* UBPictureBrowseToolBar.m in Sources */,
 				D40179D01D2114BF00C0899E /* UFKeyboardAdjustPoint.m in Sources */,
 				D40179BE1D2114BF00C0899E /* UIColor+Hex.m in Sources */,
@@ -2585,6 +2692,7 @@
 				D40179321D2114BF00C0899E /* HTTPTrailer.m in Sources */,
 				D40179941D2114BF00C0899E /* RemoteRequestURLManager.m in Sources */,
 				D40179AA1D2114BF00C0899E /* UBPictureBrowseViewController.m in Sources */,
+				D4A9D0911E68163D00A037BF /* SPTaskDaemonPool.m in Sources */,
 				D40179A61D2114BF00C0899E /* UBPictureBrowsePictureView.m in Sources */,
 				D40177201D21148100C0899E /* main.m in Sources */,
 				D40179AC1D2114BF00C0899E /* UBListingPictureCell.m in Sources */,
