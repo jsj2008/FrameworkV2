@@ -37,7 +37,7 @@
         
         UFImageAnimationFrame *frame = [[UFImageAnimationFrame alloc] init];
         
-        frame.image = [UIImage imageWithCGImage:image];
+        frame.image = [UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
         
         NSDictionary *frameProperties = CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(GIFSource, i, NULL));
         

@@ -89,7 +89,7 @@
         
         CGImageRef image = CGImageSourceCreateImageAtIndex(gifSource, i, NULL);
         
-        fragment.image = [UIImage imageWithCGImage:image];
+        fragment.image = [UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
         
         NSDictionary *frameProperties = CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(gifSource, i, NULL));
         
