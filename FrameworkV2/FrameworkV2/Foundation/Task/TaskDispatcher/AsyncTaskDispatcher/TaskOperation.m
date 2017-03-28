@@ -49,6 +49,8 @@
     // Task结束时要求内部执行cancel操作，为避免重复执行cancel操作，这里检查Task状态
     if (self.task.status == TaskRunning)
     {
+        self.task.delegate = nil;
+        
         [self.task cancel];
     }
 }
