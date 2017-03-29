@@ -45,7 +45,7 @@
     
     NSLock *lock = [self delegateLock];
     
-    NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
+    NSString *index = [NSString stringWithFormat:@"%p", delegate];
     
     NSThread *currentThread = [NSThread currentThread];
     
@@ -76,7 +76,7 @@
     
     NSLock *lock = [self delegateLock];
     
-    NSString *index = [NSString stringWithFormat:@"%llx", (long long)delegate];
+    NSString *index = [NSString stringWithFormat:@"%p", delegate];
     
     [lock lock];
     

@@ -89,7 +89,7 @@
         [self.downloadImageObservers setObject:set forKey:URL];
     }
     
-    NSString *index = [NSString stringWithFormat:@"%llx", (long long)observer];
+    NSString *index = [NSString stringWithFormat:@"%p", observer];
     
     NotificationObserver *notificationObserver = [[NotificationObserver alloc] init];
     
@@ -108,7 +108,7 @@
         
         if (set)
         {
-            NSString *index = [NSString stringWithFormat:@"%llx", (long long)observer];
+            NSString *index = [NSString stringWithFormat:@"%p", observer];
             
             [set.observerDictionary removeObjectForKey:index];
         }
