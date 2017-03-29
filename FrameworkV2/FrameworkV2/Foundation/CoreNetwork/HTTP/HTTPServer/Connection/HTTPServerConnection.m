@@ -85,11 +85,11 @@
         
         self.receivingStream.delegate = self;
         
-        [self.receivingStream scheduleInRunLoop:self.streamRunLoop forMode:NSDefaultRunLoopMode];
+        [self.receivingStream scheduleInRunLoop:self.streamRunLoop forMode:NSRunLoopCommonModes];
         
         self.sendingStream.delegate = self;
         
-        [self.sendingStream scheduleInRunLoop:self.streamRunLoop forMode:NSDefaultRunLoopMode];
+        [self.sendingStream scheduleInRunLoop:self.streamRunLoop forMode:NSRunLoopCommonModes];
         
         self.requestParser = [[HTTPRequestMessageParser alloc] init];
     }
@@ -108,7 +108,7 @@
     
     if (self.streamRunLoop)
     {
-        [stream removeFromRunLoop:self.streamRunLoop forMode:NSDefaultRunLoopMode];
+        [stream removeFromRunLoop:self.streamRunLoop forMode:NSRunLoopCommonModes];
     }
     
     [stream close];
