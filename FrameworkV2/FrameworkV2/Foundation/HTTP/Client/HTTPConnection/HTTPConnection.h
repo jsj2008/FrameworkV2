@@ -40,11 +40,13 @@
 
 /*!
  * @brief 原始请求
+ * @discussion 需子类重写实现
  */
 @property (nonatomic, readonly, copy) NSURLRequest *originalRequest;
 
 /*!
  * @brief 当前请求
+ * @discussion 需子类重写实现
  */
 @property (nonatomic, readonly, copy) NSURLRequest *currentRequest;
 
