@@ -9,11 +9,6 @@
 #import "HTTPConnection.h"
 
 @interface HTTPConnection ()
-{
-    NSURLRequest *_request;
-    
-    HTTPSession *_session;
-}
 
 @end
 
@@ -26,22 +21,14 @@
 {
     if (self = [super init])
     {
-        _request = [request copy];
+        _originalRequest = [request copy];
+        
+        _currentRequest = [request copy];
         
         _session = session;
     }
     
     return self;
-}
-
-- (NSURLRequest *)originalRequest
-{
-    return _request;
-}
-
-- (NSURLRequest *)currentRequest
-{
-    return _request;
 }
 
 - (void)start
@@ -56,6 +43,8 @@
 
 - (void)URLSessionTask:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^)(NSURLRequest *))completionHandler
 {
+    _currentRequest = request;
+    
     if (completionHandler)
     {
         completionHandler(request);

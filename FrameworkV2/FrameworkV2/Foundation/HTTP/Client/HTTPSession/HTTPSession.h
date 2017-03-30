@@ -61,6 +61,7 @@
 
 /*!
  * @brief 取消
+ * @discussion 取消后不再发送delegate通知
  */
 - (void)cancel;
 
