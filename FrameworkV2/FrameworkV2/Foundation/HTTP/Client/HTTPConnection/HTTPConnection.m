@@ -8,14 +8,7 @@
 
 #import "HTTPConnection.h"
 
-@interface HTTPConnection ()
-
-@end
-
-
 @implementation HTTPConnection
-
-@synthesize session = _session;
 
 - (instancetype)initWithRequest:(NSURLRequest *)request session:(HTTPSession *)session
 {
