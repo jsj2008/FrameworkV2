@@ -40,7 +40,7 @@
     return instance;
 }
 
-- (void)HTTPSession:(HTTPSession *)session didBecomeInvalidWithError:(NSError *)error
+- (void)URLSession:(URLSession *)session didBecomeInvalidWithError:(NSError *)error
 {
     // 系统错误返回error，取消session返回的error为nil
     if (error)
@@ -52,7 +52,7 @@
     }
 }
 
-- (void)HTTPSessionDidFinishEventsForBackgroundSession:(HTTPSession *)session
+- (void)URLSessionDidFinishEventsForBackgroundSession:(URLSession *)session
 {
     
 }

@@ -1,15 +1,15 @@
 //
-//  HTTPSession.m
-//  Test1
+//  URLSession.m
+//  FrameworkV2
 //
-//  Created by ww on 16/4/8.
-//  Copyright © 2016年 Miaotu. All rights reserved.
+//  Created by ww on 2017/3/31.
+//  Copyright © 2017年 WW. All rights reserved.
 //
 
-#import "HTTPSession.h"
+#import "URLSession.h"
 #import "NSURLSessionTask+Delegate.h"
 
-@interface HTTPSession () <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSURLSessionStreamDelegate>
+@interface URLSession () <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSURLSessionStreamDelegate>
 {
     NSURLSession *_session;
 }
@@ -23,7 +23,7 @@
 @end
 
 
-@implementation HTTPSession
+@implementation URLSession
 
 @synthesize session = _session;
 
@@ -70,9 +70,9 @@
     
     [self operate:^{
         
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(HTTPSession:didBecomeInvalidWithError:)])
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(URLSession:didBecomeInvalidWithError:)])
         {
-            [weakSelf.delegate HTTPSession:weakSelf didBecomeInvalidWithError:error];
+            [weakSelf.delegate URLSession:weakSelf didBecomeInvalidWithError:error];
         }
         
     } onThread:self.delegateThread];
@@ -130,9 +130,9 @@
     
     [self operate:^{
         
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(HTTPSessionDidFinishEventsForBackgroundSession:)])
+        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(URLSessionDidFinishEventsForBackgroundSession:)])
         {
-            [weakSelf.delegate HTTPSessionDidFinishEventsForBackgroundSession:weakSelf];
+            [weakSelf.delegate URLSessionDidFinishEventsForBackgroundSession:weakSelf];
         }
         
     } onThread:self.delegateThread];
@@ -234,7 +234,7 @@
 @end
 
 
-@implementation HTTPSessionCredential
+@implementation URLSessionCredential
 
 - (NSURLCredential *)credentialForChallenge:(NSURLAuthenticationChallenge *)challenge
 {
@@ -242,3 +242,4 @@
 }
 
 @end
+

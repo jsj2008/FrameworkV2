@@ -22,7 +22,7 @@
  
  *********************************************************/
 
-@interface SharedHTTPSessionManager : NSObject <HTTPSessionDelegate>
+@interface SharedHTTPSessionManager : NSObject <URLSessionDelegate>
 
 /*!
  * @brief 单例
