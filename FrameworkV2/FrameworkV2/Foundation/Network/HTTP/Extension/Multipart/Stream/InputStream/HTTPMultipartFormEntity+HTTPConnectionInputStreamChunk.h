@@ -51,15 +51,45 @@
 @end
 
 
+/*********************************************************
+ 
+    @category
+        HTTPMultipartFormDataPart (HTTPConnectionInputStreamChunk)
+ 
+    @abstract
+        HTTPMultipartFormDataPart的流数据块扩展
+ 
+ *********************************************************/
+
 @interface HTTPMultipartFormDataPart (HTTPConnectionInputStreamChunk)
 
 @end
 
 
+/*********************************************************
+ 
+    @category
+        HTTPMultipartFormFilePart (HTTPConnectionInputStreamChunk)
+ 
+    @abstract
+        HTTPMultipartFormFilePart的流数据块扩展
+ 
+ *********************************************************/
+
 @interface HTTPMultipartFormFilePart (HTTPConnectionInputStreamChunk)
 
 @end
 
+
+/*********************************************************
+ 
+    @category
+        HTTPMultipartFormEntityPart (HTTPConnectionInputStreamChunk)
+ 
+    @abstract
+        HTTPMultipartFormEntityPart的流数据块扩展
+ 
+ *********************************************************/
 
 @interface HTTPMultipartFormEntityPart (HTTPConnectionInputStreamChunk)
 
