@@ -13,13 +13,15 @@
 
 - (BOOL)isContentValidInCondition:(HTTPResponseValidationCondition *)condition error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+    
     NSInteger statusCode = self.statusCode;
     
     NSString *MIMEType = self.MIMEType;
     
     CFStringEncoding stringEncoding = self.textEncodingName ? CFStringConvertIANACharSetNameToEncoding((CFStringRef)self.textEncodingName) : kCFStringEncodingInvalidId;
     
-    if (![condition.acceptableStatusCodes containsObject:[NSNumber numberWithInteger:statusCode]])
+    if (condition.acceptableStatusCodes.count > 0 && ![condition.acceptableStatusCodes containsObject:[NSNumber numberWithInteger:statusCode]])
     {
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         
@@ -29,7 +31,7 @@
         
         *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:HTTPResponseContentValidationErrorUnacceptableStatusCode userInfo:userInfo];
     }
-    else if (!MIMEType || ![condition.acceptableMIMETypes containsObject:MIMEType])
+    else if (condition.acceptableMIMETypes.count > 0 && (!MIMEType || ![condition.acceptableMIMETypes containsObject:MIMEType]))
     {
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         
@@ -39,7 +41,7 @@
         
         *error = [NSError errorWithDomain:HTTPResponseContentValidationErrorDomain code:HTTPResponseContentValidationErrorUnacceptableMIMEType userInfo:userInfo];
     }
-    else if (stringEncoding == kCFStringEncodingInvalidId || ![condition.acceptableStringEncodings containsObject:[NSNumber numberWithLongLong:stringEncoding]])
+    else if (condition.acceptableStringEncodings.count > 0 && (stringEncoding == kCFStringEncodingInvalidId || ![condition.acceptableStringEncodings containsObject:[NSNumber numberWithLongLong:stringEncoding]]))
     {
         NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
         

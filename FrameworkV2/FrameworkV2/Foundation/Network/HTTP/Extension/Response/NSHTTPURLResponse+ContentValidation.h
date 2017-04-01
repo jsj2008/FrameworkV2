@@ -42,6 +42,9 @@
     @abstract
         HTTP响应有效性条件
  
+    @discussion
+        各项有效性条件允许为空，为空将跳过该项检查
+ 
  *********************************************************/
 
 @interface HTTPResponseValidationCondition : NSObject
