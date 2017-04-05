@@ -126,7 +126,7 @@
         
         self.displayLink.frameInterval = self.updateFrameInterval;
         
-        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+        [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     }
     
     [self update];

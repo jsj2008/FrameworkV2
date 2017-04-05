@@ -40,7 +40,7 @@
         
         while (!self.task.markOperationCancel && self.task.status == TaskRunning)
         {
-            [[NSRunLoop currentRunLoop] runMode:NSRunLoopCommonModes beforeDate:[NSDate distantFuture]];
+            [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
         }
         
         [timer invalidate];
