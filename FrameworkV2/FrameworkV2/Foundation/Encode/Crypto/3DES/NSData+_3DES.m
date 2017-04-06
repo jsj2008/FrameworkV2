@@ -27,6 +27,8 @@
         data = [NSData dataWithBytes:buffer length:dataNumber];
     }
     
+    free(buffer);
+    
     return data;
 }
 
