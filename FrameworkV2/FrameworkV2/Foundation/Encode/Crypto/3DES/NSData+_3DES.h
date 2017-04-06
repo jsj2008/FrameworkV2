@@ -23,7 +23,7 @@
 
 /*!
  * @brief 3DES编解码
- * @discussion 采用kCCOptionECBMode | kCCOptionPKCS7Padding方式编解码
+ * @discussion 建议采用kCCOptionECBMode | kCCOptionPKCS7Padding方式编解码
  * @param operation 编解码操作
  * @param options 编解码选项
  * @param key 编解码密钥，要求长度为16位
