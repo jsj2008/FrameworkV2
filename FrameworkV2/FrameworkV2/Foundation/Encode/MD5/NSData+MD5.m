@@ -7,7 +7,7 @@
 //
 
 #import "NSData+MD5.h"
-#import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSData (MD5)
 

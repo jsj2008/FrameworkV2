@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonCryptor.h>
+#import <CommonCrypto/CommonCrypto.h>
 
 /*********************************************************
  
