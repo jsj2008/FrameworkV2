@@ -201,13 +201,13 @@
     
     [self executeSQL:@"begin transaction;" error:error];
     
-    if (!error)
+    if (!*error)
     {
         block();
         
         [self executeSQL:@"commit transaction;" error:error];
         
-        if (error)
+        if (*error)
         {
             [self executeSQL:@"rollback transaction" error:error];
         }
