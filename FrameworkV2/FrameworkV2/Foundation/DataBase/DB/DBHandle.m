@@ -93,7 +93,7 @@
     }
 }
 
-- (void)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError *__autoreleasing *)error
+- (void)updateDBByBindingSQL:(NSString *)sql withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError *__autoreleasing *)error
 {
     *error = nil;
     
@@ -106,13 +106,11 @@
     {
         dispatch_sync(_syncQueue, ^{
             
-            BOOL (^exe)(NSString *, NSArray *, NSArray *) = ^(NSString *sql, NSArray *fields, NSArray *records){
-                
-                BOOL success = YES;
+            void (^exe)(NSString *, NSArray *, NSArray *) = ^(NSString *sql, NSArray *fields, NSArray *records){
                 
                 sqlite3_stmt *statement = NULL;
                 
-                if ((statement = [_machine preparedStatementForSQL:unbindSQL error:error]))
+                if ((statement = [_machine preparedStatementForSQL:sql error:error]))
                 {
                     for (NSDictionary *record in records)
                     {
@@ -130,19 +128,17 @@
                 }
                 
                 [_machine finalizeStatement:statement error:error];
-                
-                return success;
             };
             
             if ([records count] == 1)
             {
-                exe(unbindSQL, fields, records);
+                exe(sql, fields, records);
             }
             else
             {
                 [_machine commitTransactionBlock:^{
                     
-                    exe(unbindSQL, fields, records);
+                    exe(sql, fields, records);
                     
                 } error:error];
             }

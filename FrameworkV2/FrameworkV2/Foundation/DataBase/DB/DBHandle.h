@@ -55,12 +55,12 @@
 /*!
  * @brief 更改数据库，执行SQL绑定语句
  * @discussion 执行失败，数据自动回滚
- * @param unbindSQL SQL语句
+ * @param sql SQL语句
  * @param fields 绑定列
  * @param records 绑定数据
  * @param error 错误信息
  */
-- (void)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError **)error;
+- (void)updateDBByBindingSQL:(NSString *)sql withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError **)error;
 
 /*!
  * @brief 查询数据库，执行SQL查询语句
