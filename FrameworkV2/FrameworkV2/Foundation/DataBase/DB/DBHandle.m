@@ -81,13 +81,20 @@
             }
             else
             {
+                NSError *commitError = nil;
+                
                 [_machine commitTransactionBlock:^{
                     
                     for (NSString *sql in sqls)
                     {
                         [_machine executeSQL:sql error:error];
                     }
-                } error:error];
+                } error:&commitError];
+                
+                if (!*error)
+                {
+                    *error = commitError;
+                }
             }
         });
     }
@@ -110,7 +117,7 @@
                 
                 sqlite3_stmt *statement = NULL;
                 
-                if ((statement = [_machine preparedStatementForSQL:sql error:error]))
+                if ((statement = [_machine preparedStatementForSQL:sql error:error]) && !*error)
                 {
                     for (NSDictionary *record in records)
                     {
@@ -136,11 +143,18 @@
             }
             else
             {
+                NSError *commitError = nil;
+                
                 [_machine commitTransactionBlock:^{
                     
                     exe(sql, fields, records);
                     
-                } error:error];
+                } error:&commitError];
+                
+                if (!*error)
+                {
+                    *error = commitError;
+                }
             }
         });
     }
@@ -148,6 +162,8 @@
 
 - (NSArray<NSDictionary<NSString *,id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+    
     if (!_machine)
     {
         return nil;
@@ -171,7 +187,7 @@
             
             sqlite3_stmt *statement = NULL;
             
-            if ((statement = [_machine preparedStatementForSQL:sql error:error]))
+            if ((statement = [_machine preparedStatementForSQL:sql error:error]) && !*error)
             {
                 while ([_machine stepStatement:statement error:error] == SQLITE_ROW)
                 {
@@ -207,6 +223,8 @@
 
 - (int)selectRecordCountBySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+    
     if (!_machine)
     {
         return 0;
@@ -220,9 +238,9 @@
             
             sqlite3_stmt *statement = NULL;
             
-            if ((statement = [_machine preparedStatementForSQL:sql error:error]))
+            if ((statement = [_machine preparedStatementForSQL:sql error:error]) && !*error)
             {
-                while ([_machine stepStatement:statement error:error] == SQLITE_ROW)
+                while (([_machine stepStatement:statement error:error] == SQLITE_ROW) && !*error)
                 {
                     NSNumber *value = [_machine columnValueFromPreparedStatement:statement inLocation:0 inType:DBValueType_Int];
                     

@@ -71,7 +71,7 @@
         
         [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:createTableSQL] error:error];
         
-        if (!error)
+        if (!*error)
         {
             NSString *getFieldsSQL = [DBSQL SQLOfGetAllFieldsOfTable:_name];
             
@@ -144,7 +144,7 @@
                 
                 [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
                 
-                if (!error && _name)
+                if (!*error && _name)
                 {
                     _name = [name copy];
                 }
@@ -167,7 +167,7 @@
                 
                 [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
                 
-                if (!error)
+                if (!*error)
                 {
                     [_fields addObject:field];
                 }
@@ -215,7 +215,7 @@
                     [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:renameSQL] error:error];
                 }
                 
-                if (!error)
+                if (!*error)
                 {
                     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
                     
@@ -238,7 +238,7 @@
                         [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:createTableSQL] error:error];
                     }
                     
-                    if (!error && [fields1 count] && [fields2 count])
+                    if (!*error && [fields1 count] && [fields2 count])
                     {
                         void (^combineFieldsToString)(NSArray *, NSMutableString *) = ^(NSArray *fields, NSMutableString *string){
                             
@@ -270,7 +270,7 @@
                     }
                     
                     // 创建新表或迁移数据时出错，删除新表，将临时表转回原表（临时表是原表的拷贝，没有进行数据改动）
-                    if (error)
+                    if (*error)
                     {
                         NSString *dropSQL = [DBSQL SQLOfDropTable:_name];
                         
