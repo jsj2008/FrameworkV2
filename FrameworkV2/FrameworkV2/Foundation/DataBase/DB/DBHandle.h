@@ -62,7 +62,6 @@
  */
 - (void)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError **)error;
 
-// 查询数据库，执行SQL查询语句
 /*!
  * @brief 查询数据库，执行SQL查询语句
  * @param fields 绑定列

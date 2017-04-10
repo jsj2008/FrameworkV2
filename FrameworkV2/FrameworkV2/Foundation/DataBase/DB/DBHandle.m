@@ -59,11 +59,6 @@
     dispatch_sync(_syncQueue, ^{
         
         [_machine startWithError:error];
-        
-        if (error && _machine)
-        {
-            _machine = nil;
-        }
     });
 }
 
@@ -157,6 +152,11 @@
 
 - (NSArray<NSDictionary<NSString *,id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
+    if (!_machine)
+    {
+        return nil;
+    }
+    
     NSMutableArray *records = [NSMutableArray array];
     
     NSMutableDictionary *fieldsDic = [NSMutableDictionary dictionary];
@@ -169,7 +169,7 @@
         }
     }
     
-    if (_machine && [fields count] && sql)
+    if ([fields count] && sql)
     {
         dispatch_sync(_syncQueue, ^{
             
@@ -211,9 +211,14 @@
 
 - (int)selectRecordCountBySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
+    if (!_machine)
+    {
+        return 0;
+    }
+    
     __block int count = 0;
     
-    if (_machine && sql)
+    if (sql)
     {
         dispatch_sync(_syncQueue, ^{
             
