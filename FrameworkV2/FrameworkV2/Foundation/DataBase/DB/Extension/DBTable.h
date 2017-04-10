@@ -47,9 +47,8 @@
 /*!
  * @brief 在数据库文件中创建表格(执行create if not exist命令)
  * @param error 错误信息
- * @result 表格是否创建成功
  */
-- (BOOL)startWithError:(NSError **)error;
+- (void)startWithError:(NSError **)error;
 
 /*!
  * @brief 获取当前数据表名称
@@ -67,18 +66,16 @@
  * @brief 重命名表格
  * @param name 新表名
  * @param error 错误信息
- * @result 重命名是否成功
  */
-- (BOOL)renameToNewName:(NSString *)name error:(NSError **)error;
+- (void)renameToNewName:(NSString *)name error:(NSError **)error;
 
 /*!
  * @brief 添加新列
  * @discussion 不支持新增的列作为主键（之一），即DBTableField.primary无效
  * @param fields 新列
  * @param error 错误信息
- * @result 添加是否成功
  */
-- (BOOL)addNewFields:(NSArray<DBTableField *> *)fields error:(NSError **)error;
+- (void)addNewFields:(NSArray<DBTableField *> *)fields error:(NSError **)error;
 
 /*!
  * @brief 映射列：将表格数据列从原有列转换成新列，包括重命名和删除
@@ -94,24 +91,21 @@
  * @param fromFields 待映射的列
  * @param toFields 映射后的列
  * @param error 错误信息
- * @result 映射是否成功
  */
-- (BOOL)mapFields:(NSArray<DBTableField *> *)fromFields toFields:(NSArray<DBTableField *> *)toFields error:(NSError **)error;
+- (void)mapFields:(NSArray<DBTableField *> *)fromFields toFields:(NSArray<DBTableField *> *)toFields error:(NSError **)error;
 
 /*!
  * @brief 删除表格
  * @param error 错误信息
- * @result 删除是否成功
  */
-- (BOOL)dropWithError:(NSError **)error;
+- (void)dropWithError:(NSError **)error;
 
 /*!
  * @brief 压缩表格
  * @discussion 此方法可能占用较长时间，请慎用
  * @param error 错误信息
- * @result 压缩是否成功
  */
-- (BOOL)vacuumWithError:(NSError **)error;
+- (void)vacuumWithError:(NSError **)error;
 
 /*!
  * @brief 插入记录
@@ -120,9 +114,8 @@
  * @param fields 待插入的数据对应的列
  * @param method 插入方法，要求符合SQL语法，例如“insert”，“insert or replace”，“insert or ignore”等。method = nil等价于“insert or replace”
  * @param error 错误信息
- * @result 插入是否成功
  */
-- (BOOL)insertRecords:(NSArray<NSDictionary<NSString *, id> *> *)records intoFields:(NSArray<DBTableField *> *)fields withInsertMethod:(NSString *)method error:(NSError **)error;
+- (void)insertRecords:(NSArray<NSDictionary<NSString *, id> *> *)records intoFields:(NSArray<DBTableField *> *)fields withInsertMethod:(NSString *)method error:(NSError **)error;
 
 /*!
  * @brief 更新记录
@@ -131,9 +124,8 @@
  * @param condition 更新时的条件，要求符合SQL语法
  * @param method 更新方法，要求符合SQL语法，例如“update”，“update or replace”，“update or ignore”等。method = nil等价于“update”
  * @param error 错误信息
- * @result 插入是否成功
  */
-- (BOOL)updateRecord:(NSDictionary<NSString *, id> *)record intoFields:(NSArray<DBTableField *> *)fields inCondition:(NSString *)condition withUpdateMethod:(NSString *)method error:(NSError **)error;
+- (void)updateRecord:(NSDictionary<NSString *, id> *)record intoFields:(NSArray<DBTableField *> *)fields inCondition:(NSString *)condition withUpdateMethod:(NSString *)method error:(NSError **)error;
 
 /*!
  * @brief 查询指定列记录
@@ -156,9 +148,8 @@
  * @brief 删除记录
  * @param condition 删除时的条件，要求符合SQL语法
  * @param error 错误信息
- * @result 删除是否成功
  */
-- (BOOL)deleteRecordsInCondition:(NSString *)condition error:(NSError **)error;
+- (void)deleteRecordsInCondition:(NSString *)condition error:(NSError **)error;
 
 @end
 

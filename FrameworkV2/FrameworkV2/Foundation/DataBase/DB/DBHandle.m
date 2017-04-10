@@ -52,58 +52,62 @@
     return self;
 }
 
-- (BOOL)startWithError:(NSError *__autoreleasing *)error
+- (void)startWithError:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     dispatch_sync(_syncQueue, ^{
         
-        success = [_machine startWithError:error];
+        [_machine startWithError:error];
         
-        if (!success && _machine)
+        if (error && _machine)
         {
             _machine = nil;
         }
     });
-    
-    return success;
 }
 
-- (BOOL)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls error:(NSError *__autoreleasing *)error
+- (void)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = _machine ? YES : NO;
+    *error = nil;
     
-    if (success && [sqls count])
+    if (!_machine)
+    {
+        return;
+    }
+    
+    if ([sqls count] > 0)
     {
         dispatch_sync(_syncQueue, ^{
             
             if ([sqls count] == 1)
             {
-                success = [_machine executeSQL:[sqls objectAtIndex:0] error:error];
+                [_machine executeSQL:[sqls objectAtIndex:0] error:error];
             }
             else
             {
-                BOOL commitSuccess = [_machine commitTransactionBlock:^{
+                [_machine commitTransactionBlock:^{
                     
                     for (NSString *sql in sqls)
                     {
-                        success = [_machine executeSQL:sql error:error] && success;
+                        [_machine executeSQL:sql error:error];
                     }
                 } error:error];
-                
-                success = success && commitSuccess;
             }
         });
     }
-    
-    return success;
 }
 
-- (BOOL)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError *__autoreleasing *)error
+- (void)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = _machine ? YES : NO;;
+    *error = nil;
     
-    if (success && [records count])
+    if (!_machine)
+    {
+        return;
+    }
+    
+    if ([records count] > 0)
     {
         dispatch_sync(_syncQueue, ^{
             
@@ -124,12 +128,7 @@
                             [_machine bindValue:[record objectForKey:field.name] byType:field.type toPreparedStatement:statement inLocation:(i + 1) error:error];
                         }
                         
-                        int stepCode = [_machine stepStatement:statement error:error];
-                        
-                        if (stepCode != SQLITE_DONE)
-                        {
-                            success = NO;
-                        }
+                        [_machine stepStatement:statement error:error];
                         
                         [_machine resetStatement:statement error:error];
                     }
@@ -142,22 +141,18 @@
             
             if ([records count] == 1)
             {
-                success = exe(unbindSQL, fields, records);
+                exe(unbindSQL, fields, records);
             }
             else
             {
-                BOOL commitSuccess = [_machine commitTransactionBlock:^{
+                [_machine commitTransactionBlock:^{
                     
-                    success = exe(unbindSQL, fields, records) && success;
+                    exe(unbindSQL, fields, records);
                     
                 } error:error];
-                
-                success = success && commitSuccess;
             }
         });
     }
-    
-    return success;
 }
 
 - (NSArray<NSDictionary<NSString *,id> *> *)selectRecordsInFields:(NSArray<DBTableField *> *)fields bySQL:(NSString *)sql error:(NSError *__autoreleasing *)error
@@ -201,8 +196,6 @@
                                 [record setObject:value forKey:name];
                             }
                         }
-                        
-                        
                     }
                     
                     [records addObject:record];

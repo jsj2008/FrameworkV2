@@ -34,6 +34,14 @@ extern NSString * const DBErrorDomain;
 + (NSError *)DBErrorWithCode:(int)code message:(NSString *)message;
 
 /*!
+ * @brief 根据错误信息生成错误
+ * @param code 错误码
+ * @result 错误对象
+ */
++ (NSError *)DBErrorWithCode:(int)code;
+
+
+/*!
  * @brief 获取数据库对象的错误
  * @param db 数据库对象
  * @result 错误对象

@@ -18,6 +18,20 @@ NSString * const DBErrorDomain = @"DB";
     return [NSError errorWithDomain:DBErrorDomain code:code userInfo:message ? [NSDictionary dictionaryWithObject:message forKey:NSLocalizedDescriptionKey] : nil];
 }
 
++ (NSError *)DBErrorWithCode:(int)code
+{
+    NSString *message = nil;
+    
+    const char *str = sqlite3_errstr(code);
+    
+    if (str)
+    {
+        message = [[NSString alloc] initWithCString:str encoding:NSUTF8StringEncoding];
+    }
+    
+    return [NSError DBErrorWithCode:code message:message];
+}
+
 + (NSError *)DBErrorWithDB:(sqlite3 *)db
 {
     const char *msg = sqlite3_errmsg(db);

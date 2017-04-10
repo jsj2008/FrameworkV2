@@ -61,17 +61,17 @@
     return self;
 }
 
-- (BOOL)startWithError:(NSError *__autoreleasing *)error
+- (void)startWithError:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     dispatch_sync(_syncQueue, ^{
         
         NSString *createTableSQL = [DBSQL SQLOfCreateTableIfNotExistsWithTableName:_name fields:_fields];
         
-        success = createTableSQL ? [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:createTableSQL] error:error] : NO;
+        [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:createTableSQL] error:error];
         
-        if (success)
+        if (!error)
         {
             NSString *getFieldsSQL = [DBSQL SQLOfGetAllFieldsOfTable:_name];
             
@@ -100,8 +100,6 @@
             }  
         }
     });
-    
-    return success;
 }
 
 - (NSString *)currentTableName
@@ -128,13 +126,13 @@
     return fields;
 }
 
-- (BOOL)renameToNewName:(NSString *)name error:(NSError *__autoreleasing *)error
+- (void)renameToNewName:(NSString *)name error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     if ([_name isEqualToString:name])
     {
-        success = YES;
+        return;
     }
     else
     {
@@ -144,22 +142,20 @@
         {
             dispatch_sync(_syncQueue, ^{
                 
-                success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
+                [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
                 
-                if (success && _name)
+                if (!error && _name)
                 {
                     _name = [name copy];
                 }
             });
         } 
     }
-    
-    return success;
 }
 
-- (BOOL)addNewFields:(NSArray<DBTableField *> *)fields error:(NSError *__autoreleasing *)error
+- (void)addNewFields:(NSArray<DBTableField *> *)fields error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = YES;
+    *error = nil;
     
     if ([fields count])
     {
@@ -169,27 +165,23 @@
             {
                 NSString *sql = [DBSQL SQLOfAddField:field toTable:_name];
                 
-                success = sql ? [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error] : NO;
+                [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
                 
-                if (success)
+                if (!error)
                 {
                     [_fields addObject:field];
                 }
             }
         });
     }
-    
-    return success;
 }
 
-- (BOOL)mapFields:(NSArray<DBTableField *> *)fromFields toFields:(NSArray<DBTableField *> *)toFields error:(NSError *__autoreleasing *)error
+- (void)mapFields:(NSArray<DBTableField *> *)fromFields toFields:(NSArray<DBTableField *> *)toFields error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     if (fromFields && toFields && [fromFields count] == [toFields count])
     {
-        success = YES;
-        
         dispatch_sync(_syncQueue, ^{
             
             NSMutableArray *fields1 = [NSMutableArray arrayWithArray:_fields];
@@ -220,10 +212,10 @@
                 
                 if (renameSQL)
                 {
-                    success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:renameSQL] error:error];
+                    [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:renameSQL] error:error];
                 }
                 
-                if (success)
+                if (!error)
                 {
                     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
                     
@@ -243,10 +235,10 @@
                     
                     if (createTableSQL)
                     {
-                        success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:createTableSQL] error:error];
+                        [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:createTableSQL] error:error];
                     }
                     
-                    if (success && [fields1 count] && [fields2 count])
+                    if (!error && [fields1 count] && [fields2 count])
                     {
                         void (^combineFieldsToString)(NSArray *, NSMutableString *) = ^(NSArray *fields, NSMutableString *string){
                             
@@ -273,12 +265,12 @@
                         
                         if (selectFieldsSQL)
                         {
-                            success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:selectFieldsSQL] error:error];
+                            [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:selectFieldsSQL] error:error];
                         } 
                     }
                     
                     // 创建新表或迁移数据时出错，删除新表，将临时表转回原表（临时表是原表的拷贝，没有进行数据改动）
-                    if (!success)
+                    if (error)
                     {
                         NSString *dropSQL = [DBSQL SQLOfDropTable:_name];
                         
@@ -300,19 +292,17 @@
                     
                     if (dropSQL)
                     {
-                        success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:dropSQL] error:error];
+                        [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:dropSQL] error:error];
                     }
                 }
             }
         });
     }
-    
-    return success;
 }
 
-- (BOOL)dropWithError:(NSError *__autoreleasing *)error
+- (void)dropWithError:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     NSString *sql = [DBSQL SQLOfDropTable:_name];
     
@@ -320,16 +310,14 @@
     {
         dispatch_sync(_syncQueue, ^{
             
-            success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
+            [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
         });
     }
-    
-    return success;
 }
 
-- (BOOL)vacuumWithError:(NSError *__autoreleasing *)error
+- (void)vacuumWithError:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     NSString *sql = [DBSQL SQLOfVacuumTable:_name];
     
@@ -337,16 +325,14 @@
     {
         dispatch_sync(_syncQueue, ^{
             
-            success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
+            [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
         });
     }
-    
-    return success;
 }
 
-- (BOOL)insertRecords:(NSArray<NSDictionary<NSString *,id> *> *)records intoFields:(NSArray<DBTableField *> *)fields withInsertMethod:(NSString *)method error:(NSError *__autoreleasing *)error
+- (void)insertRecords:(NSArray<NSDictionary<NSString *,id> *> *)records intoFields:(NSArray<DBTableField *> *)fields withInsertMethod:(NSString *)method error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = YES;
+    *error = nil;
     
     NSString *sql = [DBSQL SQLOfInsertIntoTable:_name withFields:fields method:method];
     
@@ -354,16 +340,14 @@
     {
         dispatch_sync(_syncQueue, ^{
             
-            success = [_handle updateDBByBindingSQL:sql withFields:fields records:records error:error];
+            [_handle updateDBByBindingSQL:sql withFields:fields records:records error:error];
         });
-    }    
-    
-    return success;
+    }
 }
 
-- (BOOL)updateRecord:(NSDictionary<NSString *,id> *)record intoFields:(NSArray<DBTableField *> *)fields inCondition:(NSString *)condition withUpdateMethod:(NSString *)method error:(NSError *__autoreleasing *)error
+- (void)updateRecord:(NSDictionary<NSString *,id> *)record intoFields:(NSArray<DBTableField *> *)fields inCondition:(NSString *)condition withUpdateMethod:(NSString *)method error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = YES;
+    *error = nil;
     
     NSString *sql = [DBSQL SQLOfUpdateTable:_name withFields:fields inCondition:condition method:method];
     
@@ -371,11 +355,9 @@
     {
         dispatch_sync(_syncQueue, ^{
             
-            success = [_handle updateDBByBindingSQL:sql withFields:fields records:[NSArray arrayWithObject:record] error:error];
+            [_handle updateDBByBindingSQL:sql withFields:fields records:[NSArray arrayWithObject:record] error:error];
         });
     }
-    
-    return success;
 }
 
 - (NSArray<NSDictionary<NSString *,id> *> *)recordsFromFields:(NSArray<DBTableField *> *)fields inCondition:(NSString *)condition error:(NSError *__autoreleasing *)error
@@ -414,9 +396,9 @@
     return count;
 }
 
-- (BOOL)deleteRecordsInCondition:(NSString *)condition error:(NSError *__autoreleasing *)error
+- (void)deleteRecordsInCondition:(NSString *)condition error:(NSError *__autoreleasing *)error
 {
-    __block BOOL success = NO;
+    *error = nil;
     
     NSString *sql = [DBSQL SQLOfDeleteTable:_name inCondition:condition];
     
@@ -424,11 +406,9 @@
     {
         dispatch_sync(_syncQueue, ^{
             
-            success = [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
+            [_handle updateDBByExecutingSQLs:[NSArray arrayWithObject:sql] error:error];
         });
     }
-    
-    return success;
 }
 
 @end

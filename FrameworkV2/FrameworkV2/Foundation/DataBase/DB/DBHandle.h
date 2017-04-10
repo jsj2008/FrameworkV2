@@ -41,27 +41,26 @@
 /*!
  * @brief 启动数据库
  * @param error 错误信息
- * @result 启动是否成功
  */
-- (BOOL)startWithError:(NSError **)error;
+- (void)startWithError:(NSError **)error;
 
 /*!
  * @brief 更改数据库，执行SQL语句
+ * @discussion 执行失败，数据自动回滚
  * @param sqls SQL语句
  * @param error 错误信息
- * @result 执行是否成功，若失败，数据自动回滚
  */
-- (BOOL)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls error:(NSError **)error;
+- (void)updateDBByExecutingSQLs:(NSArray<NSString *> *)sqls error:(NSError **)error;
 
 /*!
  * @brief 更改数据库，执行SQL绑定语句
+ * @discussion 执行失败，数据自动回滚
  * @param unbindSQL SQL语句
  * @param fields 绑定列
  * @param records 绑定数据
  * @param error 错误信息
- * @result 执行是否成功，若失败，数据自动回滚
  */
-- (BOOL)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError **)error;
+- (void)updateDBByBindingSQL:(NSString *)unbindSQL withFields:(NSArray<DBTableField *> *)fields records:(NSArray *)records error:(NSError **)error;
 
 // 查询数据库，执行SQL查询语句
 /*!

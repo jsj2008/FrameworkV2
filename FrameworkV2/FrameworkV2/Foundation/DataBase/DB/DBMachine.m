@@ -29,47 +29,45 @@
     return self;
 }
 
-- (BOOL)startWithError:(NSError *__autoreleasing *)error
+- (void)startWithError:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+    
     int code = sqlite3_open([_filePath UTF8String], &_db);
     
-    BOOL success = (code == SQLITE_OK);
-    
-    if (!success)
+    if (code != SQLITE_OK)
     {
-        *error = [NSError DBErrorWithDB:_db];
+        *error = [NSError DBErrorWithCode:code];
     }
-    
-    return success;
 }
 
-- (BOOL)executeSQL:(NSString *)sql error:(NSError *__autoreleasing *)error
+- (void)executeSQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+
     char *errorMsg;
     
     int code = sqlite3_exec(_db, [sql UTF8String], NULL, NULL, &errorMsg);
     
-    BOOL success = (code == SQLITE_OK);
-    
-    if (!success)
+    if (code != SQLITE_OK)
     {
         *error = [NSError DBErrorWithCode:code message:errorMsg ? [NSString stringWithUTF8String:errorMsg] : nil];
     }
     
     sqlite3_free(errorMsg);
-    
-    return success;
 }
 
 - (sqlite3_stmt *)preparedStatementForSQL:(NSString *)sql error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+
     sqlite3_stmt *statement = NULL;
     
     int code = sqlite3_prepare_v2(_db, [sql UTF8String], -1, &statement, NULL);
     
     if (code != SQLITE_OK)
     {
-        *error = [NSError DBErrorWithDB:_db];
+        *error = [NSError DBErrorWithCode:code];
         
         sqlite3_finalize(statement);
         
@@ -81,6 +79,8 @@
 
 - (void)bindValue:(id)value byType:(DBValueType)type toPreparedStatement:(sqlite3_stmt *)statement inLocation:(int)location error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+
     if (value && statement)
     {
         int code = SQLITE_OK;
@@ -108,7 +108,7 @@
         
         if (code != SQLITE_OK)
         {
-            *error = [NSError DBErrorWithDB:_db];
+            *error = [NSError DBErrorWithCode:code];
         }
     }
 }
@@ -159,11 +159,13 @@
 
 - (int)stepStatement:(sqlite3_stmt *)statement error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+
     int code = sqlite3_step(statement);
     
     if (code != SQLITE_OK && code != SQLITE_DONE)
     {
-        *error = [NSError DBErrorWithDB:_db];
+        *error = [NSError DBErrorWithCode:code];
     }
     
     return code;
@@ -171,45 +173,45 @@
 
 - (void)resetStatement:(sqlite3_stmt *)statement error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+
     int code = sqlite3_reset(statement);
     
     if (code != SQLITE_OK)
     {
-        *error = [NSError DBErrorWithDB:_db];
+        *error = [NSError DBErrorWithCode:code];
     }
 }
 
 - (void)finalizeStatement:(sqlite3_stmt *)statement error:(NSError *__autoreleasing *)error
 {
+    *error = nil;
+
     int code = sqlite3_finalize(statement);
     
     if (code != SQLITE_OK)
     {
-        *error = [NSError DBErrorWithDB:_db];
+        *error = [NSError DBErrorWithCode:code];
     }
 }
 
-- (BOOL)commitTransactionBlock:(void (^)(void))block error:(NSError *__autoreleasing *)error
+- (void)commitTransactionBlock:(void (^)(void))block error:(NSError *__autoreleasing *)error
 {
-    BOOL success = YES;
+    *error = nil;
     
-    if ([self executeSQL:@"begin transaction;" error:error])
+    [self executeSQL:@"begin transaction;" error:error];
+    
+    if (!error)
     {
         block();
         
-        if (![self executeSQL:@"commit transaction;" error:error])
+        [self executeSQL:@"commit transaction;" error:error];
+        
+        if (error)
         {
-            success = NO;
-            
             [self executeSQL:@"rollback transaction" error:error];
         }
     }
-    else
-    {
-        success = NO;
-    }
-    
-    return success;
 }
 
 @end
